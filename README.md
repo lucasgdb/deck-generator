@@ -6,7 +6,7 @@
 - **Escrito do zero, com Código aprimorado.**
 - **Gerador de Deck multifunções para Clash Royale.**
 - **Gere de Decks aleatórios e Inteligentes.**
-- **Mais de  possibilidades de Decks diferentes.**
+- **Mais de 39.443.226.966 possibilidades de Decks diferentes.**
 - **Remova do ciclo de geração as Cartas que você não possui.**
 - **Salve seus melhores Decks para maior controle de Decks. (Max: 50)**
 - **Veja os melhores Decks atualmente, em Melhores Decks.**
