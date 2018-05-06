@@ -1,0 +1,396 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D5878437-DCA1-4F06-AD0E-A316769A2CC8}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Gerador_de_Deck</RootNamespace>
+    <AssemblyName>Gerador de Deck</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <HockeyAppResourceId>792ca8c2d4be4df69274780885697656</HockeyAppResourceId>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>Gerador_de_Deck.InicializaPrograma</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\ArquivoRegras.cs" />
+    <Compile Include="Classes\CartasDescricao.cs" />
+    <Compile Include="Classes\CartasInformacoes.cs" />
+    <Compile Include="GeradorDeDeck.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\archers.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrows.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\baby-dragon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\balloon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bandit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\barbarian-hut.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\barbarians.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bats.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\battle-ram.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bomber.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bomb-tower.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bowler.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cannon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cannon-cart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dark-prince.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dart-goblin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\electro-wizard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\elite-barbarians.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\elixir-collector.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\executioner.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fireball.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fire-spirits.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\flying-machine.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\freeze.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\furnace.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\giant.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\giant-skeleton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\goblin-barrel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\goblin-gang.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\goblin-hut.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\goblins.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\golem.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\graveyard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\guards.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\heal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hog-rider.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hunter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ice-golem.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ice-spirit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ice-wizard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inferno-dragon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inferno-tower.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\knight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lava-hound.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lightning.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lumberjack.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mega-knight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mega-minion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\miner.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minion-horde.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minions.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mini-pekka.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mirror.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mortar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\musketeer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\night-witch.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nova-carta-clash-royale.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pekka.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\poison.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\prince.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\princess.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rocket.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\royal-ghost.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\royal-giant.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\skeleton-army.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\skeleton-barrel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\skeletons.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sparky.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\spear-goblins.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tesla.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\the-log.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\three-musketeers.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tornado.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\valkyrie.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\witch.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wizard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\x-bow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zap.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zappies.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tombstone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\magic-archer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\apagar.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\barbarian-barrel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\atualizar.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\info.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\salvar.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\colar.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\copiar.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mostrar.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="icon.ico" />
+    <None Include="Resources\atalho.ico" />
+    <None Include="Resources\balancear.ico" />
+    <None Include="Resources\melhoresdecks.png" />
+    <None Include="Resources\icon.ico" />
+    <None Include="Resources\Logo.png" />
+    <None Include="Resources\dica.ico" />
+    <None Include="Resources\youtube.png" />
+    <None Include="Resources\bau.ico" />
+    <None Include="Resources\select.ico" />
+    <None Include="Resources\update.ico" />
+    <None Include="Resources\config.ico" />
+    <None Include="Resources\github-icon.png" />
+    <None Include="Resources\gifBranco.gif" />
+    <None Include="Resources\github.ico" />
+    <None Include="Resources\gifEscuro.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.1 %28x86 e x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
