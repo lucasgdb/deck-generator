@@ -25,7 +25,11 @@
 - **Build atual: 34.**
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 <img align="center" src="https://i.imgur.com/jEM3RL4.jpg">
+=======
+<img align="center" src="https://i.imgur.com/RZjC87W.jpg">
+>>>>>>> fcf4c97d9068282ee1a6a45fd5a779f69677e7b0
 =======
 <img align="center" src="https://i.imgur.com/RZjC87W.jpg">
 >>>>>>> fcf4c97d9068282ee1a6a45fd5a779f69677e7b0
