@@ -6,7 +6,7 @@
         {
             try
             {
-                if (!System.IO.File.Exists(pathSCartas)) CriarArquivo();                
+                if (!System.IO.File.Exists(pathSCartas)) CriarArquivo();
                 else if (System.IO.File.ReadAllLines(pathSCartas).Length < 82)
                 {
                     if (System.IO.File.Exists(pathSCartas)) System.IO.File.SetAttributes(pathSCartas, System.IO.FileAttributes.Normal);
@@ -40,7 +40,8 @@
         {
             try
             {
-                if (System.IO.File.Exists(pathSCartas)) System.IO.File.Delete(pathSCartas);
+                if (System.IO.File.Exists(pathSCartas))
+                { System.IO.File.SetAttributes(pathSCartas, System.IO.FileAttributes.Normal); System.IO.File.Delete(pathSCartas); }
                 System.IO.StreamWriter sw = new System.IO.StreamWriter(pathSCartas);
                 System.Text.StringBuilder sb = new System.Text.StringBuilder();
                 for (byte i = 1; i < Programa._Deck.CartasInformacao.Length; i++)

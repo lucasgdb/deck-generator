@@ -281,7 +281,7 @@
             this.tip.SetToolTip(this.btnGeradorDeck, "Gerador de Deck");
             this.btnGeradorDeck.FlatAppearance.BorderSize = 0;
             this.btnGeradorDeck.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGeradorDeck.Click += (s, e) => clickGeradorDeDeck(true);
+            this.btnGeradorDeck.Click += (s, e) => clickBotao(true, pGerador, btnGeradorDeck);
 
             this.btnSelecaoDeCartas = new System.Windows.Forms.Button
             {
@@ -296,7 +296,7 @@
             this.tip.SetToolTip(this.btnSelecaoDeCartas, "Seleção de Cartas");
             this.btnSelecaoDeCartas.FlatAppearance.BorderSize = 0;
             this.btnSelecaoDeCartas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSelecaoDeCartas.Click += (s, e) => clickSelecaoDeCartas(true);
+            this.btnSelecaoDeCartas.Click += (s, e) => clickBotao(true, pSelecaoDeCartas, btnSelecaoDeCartas);
 
             this.btnDecksSalvos = new System.Windows.Forms.Button
             {
@@ -311,7 +311,7 @@
             this.tip.SetToolTip(this.btnDecksSalvos, "Decks salvos");
             this.btnDecksSalvos.FlatAppearance.BorderSize = 0;
             this.btnDecksSalvos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDecksSalvos.Click += (s, e) => clickDecksSalvos(true);
+            this.btnDecksSalvos.Click += (s, e) => clickBotao(true, pDecksSalvos, btnDecksSalvos);
 
             this.btnMelhoresDecks = new System.Windows.Forms.Button()
             {
@@ -326,7 +326,7 @@
             };
             this.tip.SetToolTip(this.btnMelhoresDecks, "Melhores Decks");
             this.btnMelhoresDecks.FlatAppearance.BorderSize = 0;
-            this.btnMelhoresDecks.Click += (s, e) => clickMelhoresDecks(true);
+            this.btnMelhoresDecks.Click += (s, e) => clickBotao(true, pMelhoresDecks, btnMelhoresDecks);
 
             this.btnBalanceamento = new System.Windows.Forms.Button()
             {
@@ -342,7 +342,7 @@
             };
             this.tip.SetToolTip(this.btnBalanceamento, "Balanceamento");
             this.btnBalanceamento.FlatAppearance.BorderSize = 0;
-            this.btnBalanceamento.Click += (s, e) => clickBalanceamento(true);
+            this.btnBalanceamento.Click += (s, e) => clickBotao(true, pBalanceamento, btnBalanceamento);
 
             this.btnConfig = new System.Windows.Forms.Button
             {
@@ -357,7 +357,7 @@
             this.tip.SetToolTip(this.btnConfig, "Configurações");
             this.btnConfig.FlatAppearance.BorderSize = 0;
             this.btnConfig.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConfig.Click += (s, e) => clickConfiguracoes(true);
+            this.btnConfig.Click += (s, e) => clickBotao(true, pConfig, btnConfig);
 
             this.btnAtualizador = new System.Windows.Forms.Button
             {
@@ -372,7 +372,7 @@
             this.tip.SetToolTip(this.btnAtualizador, "Atualizador");
             this.btnAtualizador.FlatAppearance.BorderSize = 0;
             this.btnAtualizador.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAtualizador.Click += (s, e) => clickAtualizador(true);
+            this.btnAtualizador.Click += (s, e) => clickBotao(true, pAtualizador, btnAtualizador);
 
             this.btnSobre = new System.Windows.Forms.Button
             {
@@ -391,7 +391,7 @@
             this.tip.SetToolTip(this.btnSobre, "Sobre");
             this.btnSobre.FlatAppearance.BorderSize = 0;
             this.btnSobre.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSobre.Click += (s, e) => clickSobre(true);
+            this.btnSobre.Click += (s, e) => clickBotao(true, pSobre, btnSobre);
 
             this.pSelected = new System.Windows.Forms.Panel
             {
@@ -411,8 +411,8 @@
                     point.X = pSelected.Location.X;
                     point.Y -= y;
                     if (point.Y >= 7 && point.Y <= btnSobre.Location.Y) { pSelected.Location = point; Seleciona(false); }
-                    else if (point.Y < 7) clickGeradorDeDeck(true);
-                    else if (point.Y > btnSobre.Location.Y) clickSobre(true);
+                    else if (point.Y < 7) clickBotao(true, pGerador, btnGeradorDeck);
+                    else if (point.Y > btnSobre.Location.Y) clickBotao(true, pSobre, btnSobre);
                     System.Windows.Forms.Application.DoEvents();
                 }
             };
@@ -586,7 +586,7 @@
                 Cursor = System.Windows.Forms.Cursors.Hand,
                 ForeColor = System.Drawing.Color.White,
                 ImageAlign = System.Drawing.ContentAlignment.TopRight,
-                Location = new System.Drawing.Point(11, 37),
+                Location = new System.Drawing.Point(9, 37),
                 Size = new System.Drawing.Size(23, 24),
                 Text = "-",
                 Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0),
@@ -606,8 +606,8 @@
                 Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0),
                 ForeColor = System.Drawing.Color.White,
                 FormattingEnabled = true,
-                Location = new System.Drawing.Point(40, 37),
-                Size = new System.Drawing.Size(152, 24),
+                Location = new System.Drawing.Point(38, 37),
+                Size = new System.Drawing.Size(155, 24),
                 TabIndex = 1
             };
             this.cbArena.Items.AddRange(new string[] {
@@ -640,7 +640,7 @@
                 Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0),
                 ForeColor = System.Drawing.Color.White,
                 ImageAlign = System.Drawing.ContentAlignment.TopRight,
-                Location = new System.Drawing.Point(198, 37),
+                Location = new System.Drawing.Point(199, 37),
                 Size = new System.Drawing.Size(23, 24),
                 Text = "+",
                 UseVisualStyleBackColor = false,
@@ -657,7 +657,7 @@
                 Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0),
                 ForeColor = System.Drawing.Color.White,
                 ImageAlign = System.Drawing.ContentAlignment.TopRight,
-                Location = new System.Drawing.Point(11, 67),
+                Location = new System.Drawing.Point(9, 67),
                 Size = new System.Drawing.Size(23, 24),
                 Text = "-",
                 UseVisualStyleBackColor = false,
@@ -673,21 +673,19 @@
                 Cursor = System.Windows.Forms.Cursors.Hand,
                 DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList,
                 FlatStyle = System.Windows.Forms.FlatStyle.Flat,
-                Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0),
                 ForeColor = System.Drawing.Color.White,
                 FormattingEnabled = true,
-                Location = new System.Drawing.Point(40, 67),
-                Size = new System.Drawing.Size(152, 24),
+                Location = new System.Drawing.Point(38, 67),
+                Size = new System.Drawing.Size(155, 24),
                 TabIndex = 4
             };
-            this.cbRaridade.Items.AddRange(new string[] { "Todas Raridades", "Comuns", "Raras", "Épicas", "Lendárias" });
+            this.cbRaridade.Items.AddRange(new string[] { "Todas as Raridades", "Comuns", "Raras", "Épicas", "Lendárias" });
             this.cbRaridade.SelectedIndex = Properties.Settings.Default.raridade;
             this.cbRaridade.SelectedIndexChanged += (s, e) =>
             {
                 pGerador.Select();
                 AtualizaRaridade();
                 CalcularMedia();
-
             };
 
             this.btnAumentarRaridade = new System.Windows.Forms.Button
@@ -698,7 +696,7 @@
                 Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0),
                 ForeColor = System.Drawing.Color.White,
                 ImageAlign = System.Drawing.ContentAlignment.TopRight,
-                Location = new System.Drawing.Point(198, 67),
+                Location = new System.Drawing.Point(199, 67),
                 Size = new System.Drawing.Size(23, 24),
                 Text = "+",
                 UseVisualStyleBackColor = false,
@@ -715,7 +713,7 @@
                 Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0),
                 ForeColor = System.Drawing.Color.White,
                 ImageAlign = System.Drawing.ContentAlignment.TopRight,
-                Location = new System.Drawing.Point(11, 97),
+                Location = new System.Drawing.Point(9, 97),
                 Size = new System.Drawing.Size(23, 24),
                 Text = "-",
                 UseVisualStyleBackColor = false,
@@ -731,14 +729,13 @@
                 Cursor = System.Windows.Forms.Cursors.Hand,
                 DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList,
                 FlatStyle = System.Windows.Forms.FlatStyle.Flat,
-                Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0),
                 ForeColor = System.Drawing.Color.White,
                 FormattingEnabled = true,
-                Location = new System.Drawing.Point(40, 97),
-                Size = new System.Drawing.Size(152, 24),
+                Location = new System.Drawing.Point(38, 97),
+                Size = new System.Drawing.Size(155, 24),
                 TabIndex = 7
             };
-            this.cbTipo.Items.AddRange(new string[] { "Todos Tipos", "Tropas", "Construções", "Feitiços" });
+            this.cbTipo.Items.AddRange(new string[] { "Todos os Tipos", "Tropas", "Construções", "Feitiços" });
             this.cbTipo.SelectedIndex = Properties.Settings.Default.tipo;
             this.cbTipo.SelectedIndexChanged += (s, e) =>
             {
@@ -755,7 +752,7 @@
                 Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0),
                 ForeColor = System.Drawing.Color.White,
                 ImageAlign = System.Drawing.ContentAlignment.TopRight,
-                Location = new System.Drawing.Point(198, 97),
+                Location = new System.Drawing.Point(199, 97),
                 Size = new System.Drawing.Size(23, 24),
                 Text = "+",
                 UseVisualStyleBackColor = false,
@@ -1190,7 +1187,7 @@
                                 if (bAtual < bAtualizada)
                                 {
                                     SwitchToThisWindow(this.Handle);
-                                    nIcon.BalloonTipClicked += (sss, eee) => { SwitchToThisWindow(this.Handle); clickAtualizador(true); };
+                                    nIcon.BalloonTipClicked += (sss, eee) => { SwitchToThisWindow(this.Handle); clickBotao(true, pAtualizador, btnAtualizador); };
                                     nIcon.BalloonTipText = "Existe uma nova Build disponível para download.";
                                     nIcon.ShowBalloonTip(200);
                                     lblStatus.Text = "Status: Existe uma nova Build disponível para download.";
@@ -1229,7 +1226,7 @@
                             picGIF.Hide();
                             lblStatus.Cursor = System.Windows.Forms.Cursors.Hand;
                             SwitchToThisWindow(this.Handle);
-                            clickAtualizador(true);
+                            clickBotao(true, pAtualizador, btnAtualizador);
                             lblStatus.Text = "Status: Download concluído. Extraia a nova versão do Gerador na pasta do\nexecutável. Clique aqui!";
                             lblStatus.Click += (sss, eee) =>
                             {
@@ -1332,7 +1329,6 @@
                 BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle,
                 Location = new System.Drawing.Point(167, 29),
                 Size = new System.Drawing.Size(766, 441),
-                Visible = false
             };
             this.pAtualizador.SuspendLayout();
             this.pAtualizador.Controls.Add(this.lblV25);
@@ -1462,7 +1458,7 @@
                 Size = new System.Drawing.Size(248, 25),
                 Text = "• &Sistema de atualização"
             };
-            this.lbl10.Click += (s, e) => clickAtualizador(true);
+            this.lbl10.Click += (s, e) => clickBotao(true, pAtualizador, btnAtualizador);
 
             this.lbl11 = new System.Windows.Forms.Label
             {
@@ -1604,7 +1600,6 @@
                 BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle,
                 Location = new System.Drawing.Point(167, 29),
                 Size = new System.Drawing.Size(766, 441),
-                Visible = false
             };
             this.pSobre.SuspendLayout();
             this.pSobre.Controls.Add(this.lbl12);
@@ -2065,7 +2060,6 @@
                 ForeColor = System.Drawing.Color.White,
                 Location = new System.Drawing.Point(167, 29),
                 Size = new System.Drawing.Size(766, 441),
-                Visible = false
             };
             this.pConfig.SuspendLayout();
             this.pConfig.Controls.Add(this.gbModo);
@@ -2091,8 +2085,7 @@
                 AutoScroll = true,
                 BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle,
                 Location = new System.Drawing.Point(167, 29),
-                ClientSize = new System.Drawing.Size(766, 441),
-                Visible = false
+                Size = new System.Drawing.Size(766, 441),
             };
             this.pSelecaoDeCartas.Click += (s, e) => pSelecaoDeCartas.Select();
 
@@ -2107,18 +2100,18 @@
 
             txtPesquisa.AutoCompleteCustomSource = dados;
             int yy = -110;
-            int xx = 110;
+            int xx = 109;
 
             for (byte i = 0; i < grpBoxSCartas.Length; i++)
             {
                 byte valorI = i;
                 #region Sets
-                if (i % 2 == 0) { xx = 110; yy += 175; }
-                else if (i % 2 == 1) { xx = 379; }
+                if (i % 2 == 0) { xx = 109; yy += 175; }
+                else if (i % 2 == 1) { xx = 380; }
                 // grpBox
                 grpBoxSCartas[i] = new System.Windows.Forms.GroupBox
                 {
-                    ClientSize = new System.Drawing.Size(265, 170),
+                    Size = new System.Drawing.Size(265, 170),
                     BackColor = System.Drawing.Color.Transparent,
                     Font = new System.Drawing.Font(Font.FontFamily, 8.25f, System.Drawing.FontStyle.Bold),
                     Text = string.Format("{0} ({1} - {2})", _Deck.CartasInformacao[i + 1].Split('\n')[0], _Deck.CartasInformacao[i + 1].Split('\n')[1].Split()[1], _Deck.CartasInformacao[i + 1].Split('\n')[2].Split()[1])
@@ -2128,7 +2121,7 @@
                 // picCarta
                 picCarta[i] = new System.Windows.Forms.PictureBox
                 {
-                    ClientSize = new System.Drawing.Size(129, 151),
+                    Size = new System.Drawing.Size(129, 151),
                     Location = new System.Drawing.Point(3, 13),
                     BackColor = System.Drawing.Color.Transparent,
                     SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage,
@@ -2159,7 +2152,7 @@
                     Text = "Descrição",
                     FlatStyle = System.Windows.Forms.FlatStyle.Flat,
                     Cursor = System.Windows.Forms.Cursors.Hand,
-                    ClientSize = new System.Drawing.Size(80, 25),
+                    Size = new System.Drawing.Size(80, 25),
                     Font = new System.Drawing.Font(Font.FontFamily, 8.25f, System.Drawing.FontStyle.Bold),
                     Location = new System.Drawing.Point(177, 136),
                     ForeColor = System.Drawing.Color.White
@@ -2230,8 +2223,8 @@
                 grpBoxSCartas[i].Controls.Add(cbPermitir[i]);
                 #endregion
 
-                if (i == grpBoxSCartas.Length - 1 && i % 2 == 1) { xx = 110; y += 175; }
-                else if (i == grpBoxSCartas.Length - 1 && i % 2 == 0) { xx = 379; }
+                if (i == grpBoxSCartas.Length - 1 && i % 2 == 1) { xx = 109; y += 175; }
+                else if (i == grpBoxSCartas.Length - 1 && i % 2 == 0) { xx = 380; }
             }
 
             lblProx = new System.Windows.Forms.Label()
@@ -2309,7 +2302,7 @@
             menuStripSC.Dock = System.Windows.Forms.DockStyle.None;
             menuStripSC.Location = new System.Drawing.Point(0, 0);
             // btnSalvar
-            btnSalvar.Location = new System.Drawing.Point(564, yy + 175);
+            btnSalvar.Location = new System.Drawing.Point(565, yy + 175);
             // cbSort
             cbSort.Items.Add("Por Arena");
             cbSort.Items.Add("Por Arena (Decrescente)");
@@ -2611,9 +2604,9 @@
                 BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle,
                 Location = new System.Drawing.Point(167, 29),
                 Size = new System.Drawing.Size(766, 441),
-                Visible = false
             };
             this.pDecksSalvos.Click += (s, e) => pDecksSalvos.Select();
+
             // Métodos
             void ApagarTodos()
             {
@@ -2629,8 +2622,9 @@
                         CriaDecksSalvos();
                     }
                 }
-                else System.Windows.Forms.MessageBox.Show("Não há Decks salvos para serem excluídos.", "Decks salvos", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Information);
+                else System.Windows.Forms.MessageBox.Show("Não há Decks salvos para serem apagados.", "Decks salvos", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Information);
             }
+
             // conMenu
             conMenu.Items.Add("Atualizar");
             conMenu.Items[0].Image = Properties.Resources.atualizar.ToBitmap();
@@ -2705,14 +2699,14 @@
                     // gpBox
                     grpBoxDSalvos[i] = new System.Windows.Forms.GroupBox
                     {
-                        ClientSize = new System.Drawing.Size(536, 0),
+                        Size = new System.Drawing.Size(536, 0),
                         ContextMenuStrip = conOpcoes[i],
                         BackColor = System.Drawing.Color.Transparent,
                         ForeColor = corLetra,
                         Font = new System.Drawing.Font(Font.FontFamily, 8.25f, System.Drawing.FontStyle.Bold),
                         TabStop = false
                     };
-                    grpBoxDSalvos[i].Location = new System.Drawing.Point((pDecksSalvos.ClientSize.Width - grpBoxDSalvos[i].ClientSize.Width) / 2 - 30, yG);
+                    grpBoxDSalvos[i].Location = new System.Drawing.Point((pDecksSalvos.Size.Width - grpBoxDSalvos[i].Size.Width) / 2 - 30, yG);
 
                     float m = 0.0f;
                     for (byte b = 0; b < decksSalvos[i].Split(';').Length; b++)
@@ -2729,8 +2723,8 @@
                         BackColor = corFundo2,
                         ForeColor = System.Drawing.Color.White,
                         Cursor = System.Windows.Forms.Cursors.Hand,
-                        ClientSize = new System.Drawing.Size(98, 27),
-                        Location = new System.Drawing.Point(grpBoxDSalvos[i].Location.X + grpBoxDSalvos[i].ClientSize.Width + 10, yB1)
+                        Size = new System.Drawing.Size(98, 27),
+                        Location = new System.Drawing.Point(grpBoxDSalvos[i].Location.X + grpBoxDSalvos[i].Size.Width + 10, yB1)
                     };
                     btnCopia[i].FlatAppearance.MouseDownBackColor = corFundoClick;
 
@@ -2744,8 +2738,8 @@
                         BackColor = corFundo2,
                         ForeColor = System.Drawing.Color.White,
                         Cursor = System.Windows.Forms.Cursors.Hand,
-                        ClientSize = new System.Drawing.Size(98, 27),
-                        Location = new System.Drawing.Point(grpBoxDSalvos[i].Location.X + grpBoxDSalvos[i].ClientSize.Width + 10, yB2)
+                        Size = new System.Drawing.Size(98, 27),
+                        Location = new System.Drawing.Point(grpBoxDSalvos[i].Location.X + grpBoxDSalvos[i].Size.Width + 10, yB2)
                     };
                     btnCola[i].FlatAppearance.MouseDownBackColor = corFundoClick;
 
@@ -2869,13 +2863,13 @@
                         {
                             Text = "Apagar Deck",
                             TabIndex = copiaI + 1,
-                            ClientSize = new System.Drawing.Size(98, 27),
+                            Size = new System.Drawing.Size(98, 27),
                             FlatStyle = System.Windows.Forms.FlatStyle.Flat,
                             BackColor = corFundo2,
                             Cursor = System.Windows.Forms.Cursors.Hand,
                             ForeColor = System.Drawing.Color.White,
                             Font = new System.Drawing.Font(Font.FontFamily, 9f, System.Drawing.FontStyle.Bold),
-                            Location = new System.Drawing.Point(grpBoxDSalvos[copiaI].Location.X + grpBoxDSalvos[copiaI].ClientSize.Width + 10, btnCola[copiaI].Location.Y + 34),
+                            Location = new System.Drawing.Point(grpBoxDSalvos[copiaI].Location.X + grpBoxDSalvos[copiaI].Size.Width + 10, btnCola[copiaI].Location.Y + 34),
                         };
                         btnApagar[copiaI].FlatAppearance.MouseDownBackColor = corFundo2;
                         btnApagar[copiaI].Click += (s, e) => ApagarAtual();
@@ -2976,8 +2970,7 @@
                 AutoScroll = true,
                 BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle,
                 Location = new System.Drawing.Point(167, 29),
-                ClientSize = new System.Drawing.Size(766, 441),
-                Visible = false
+                Size = new System.Drawing.Size(766, 441),
             };
             this.pMelhoresDecks.Click += (s, e) => pMelhoresDecks.Select();
 
@@ -2985,6 +2978,9 @@
             tsmiMDecks.DropDownItems.Add("Atualizar");
             tsmiMDecks.DropDownItems[0].Image = Properties.Resources.atualizar.ToBitmap();
             tsmiMDecks.DropDownItems[0].Click += (s, e) => { pMelhoresDecks.Select(); BaixaMelhoresDecks(); };
+            tsmiMDecks.DropDownItems.Add("Apagar Melhores Decks");
+            tsmiMDecks.DropDownItems[1].Image = Properties.Resources.apagar.ToBitmap();
+            tsmiMDecks.DropDownItems[1].Click += (s, e) => ApagaMelhoresDecks();
 
             menuStripMDecks.Items.Add(tsmiMDecks);
 
@@ -2992,6 +2988,9 @@
             cmsMDecks.Items.Add("Atualizar");
             cmsMDecks.Items[0].Image = Properties.Resources.atualizar.ToBitmap();
             cmsMDecks.Items[0].Click += (s, e) => BaixaMelhoresDecks();
+            cmsMDecks.Items.Add("Apagar Melhores Decks");
+            cmsMDecks.Items[1].Image = Properties.Resources.apagar.ToBitmap();
+            cmsMDecks.Items[1].Click += (s, e) => ApagaMelhoresDecks();
 
             pMelhoresDecks.ContextMenuStrip = cmsMDecks;
             pMelhoresDecks.Controls.Add(menuStripMDecks);
@@ -3006,12 +3005,12 @@
                 System.IO.File.SetAttributes(Classes.ArquivoRegras.pathMDecks, System.IO.FileAttributes.Normal);
                 pMelhoresDecks.Controls.Remove(lblAjuda2);
 
+                for (byte i = 0; i < (picImagemMDecks == null ? 0 : picImagemMDecks.Length); i++)
+                    for (byte j = 0; j < (picImagemMDecks[i] == null ? 0 : picImagemMDecks[i].Length); j++) picImagemMDecks[i][j].Dispose();
                 for (byte i = 0; i < (grpBoxMDecks == null ? 0 : grpBoxMDecks.Length); i++) grpBoxMDecks[i].Dispose();
                 for (byte i = 0; i < (btnCopiaMDecks == null ? 0 : btnCopiaMDecks.Length); i++) btnCopiaMDecks[i].Dispose();
                 for (byte i = 0; i < (btnColaMDecks == null ? 0 : btnColaMDecks.Length); i++) btnColaMDecks[i].Dispose();
                 for (byte i = 0; i < (btnSalvaMDecks == null ? 0 : btnSalvaMDecks.Length); i++) btnSalvaMDecks[i].Dispose();
-                for (byte i = 0; i < (picImagemMDecks == null ? 0 : picImagemMDecks.Length); i++)
-                    for (byte j = 0; j < (picImagemMDecks[i] == null ? 0 : picImagemMDecks[i].Length); j++) picImagemMDecks[i][j].Dispose();
 
                 int yG = 10, yB1 = 17, yB2 = 50, yB3 = 83;
                 melhoresDecks = System.IO.File.ReadAllLines(Classes.ArquivoRegras.pathMDecks);
@@ -3122,7 +3121,7 @@
                         Font = new System.Drawing.Font(Font.FontFamily, 8.25f, System.Drawing.FontStyle.Bold),
                         Text = string.Format("Elixir Médio: {0:f1} - Arena {1} +", elixirMedio, melhoresDecks[i].Split('|')[1]).Replace(',', '.'),
                     };
-                    grpBoxMDecks[i].Location = new System.Drawing.Point((pMelhoresDecks.Size.Width - grpBoxMDecks[i].ClientSize.Width) / 2 - 30, yG);
+                    grpBoxMDecks[i].Location = new System.Drawing.Point((pMelhoresDecks.Size.Width - grpBoxMDecks[i].Size.Width) / 2 - 30, yG);
                     grpBoxMDecks[i].Click += (s, e) => grpBoxMDecks[copiaI].Select();
                     grpBoxMDecks[i].ContextMenuStrip = cmsGBMDecks[i];
 
@@ -3201,7 +3200,7 @@
                         ForeColor = System.Drawing.Color.White,
                         Cursor = System.Windows.Forms.Cursors.Hand,
                         Size = new System.Drawing.Size(98, 27),
-                        Location = new System.Drawing.Point(grpBoxMDecks[i].Location.X + grpBoxMDecks[i].ClientSize.Width + 10, yB1)
+                        Location = new System.Drawing.Point(grpBoxMDecks[i].Location.X + grpBoxMDecks[i].Size.Width + 10, yB1)
                     };
                     btnCopiaMDecks[i].Click += (s, e) => Copiar();
                     btnCopiaMDecks[i].FlatAppearance.MouseDownBackColor = corFundoClick;
@@ -3216,7 +3215,7 @@
                         ForeColor = System.Drawing.Color.White,
                         Cursor = System.Windows.Forms.Cursors.Hand,
                         Size = new System.Drawing.Size(98, 27),
-                        Location = new System.Drawing.Point(grpBoxMDecks[i].Location.X + grpBoxMDecks[i].ClientSize.Width + 10, yB2)
+                        Location = new System.Drawing.Point(grpBoxMDecks[i].Location.X + grpBoxMDecks[i].Size.Width + 10, yB2)
                     };
                     btnColaMDecks[i].Click += (s, e) => Colar();
                     btnColaMDecks[i].FlatAppearance.MouseDownBackColor = corFundoClick;
@@ -3231,7 +3230,7 @@
                         ForeColor = System.Drawing.Color.White,
                         Cursor = System.Windows.Forms.Cursors.Hand,
                         Size = new System.Drawing.Size(98, 27),
-                        Location = new System.Drawing.Point(grpBoxMDecks[i].Location.X + grpBoxMDecks[i].ClientSize.Width + 10, yB3)
+                        Location = new System.Drawing.Point(grpBoxMDecks[i].Location.X + grpBoxMDecks[i].Size.Width + 10, yB3)
                     };
                     btnSalvaMDecks[i].Click += (s, e) => SalvarMD();
                     btnSalvaMDecks[i].FlatAppearance.MouseDownBackColor = corFundoClick;
@@ -3280,6 +3279,26 @@
                     }
                 };
             }
+
+            void ApagaMelhoresDecks()
+            {
+                if (System.IO.File.Exists(Classes.ArquivoRegras.pathMDecks) && System.IO.File.ReadAllLines(Classes.ArquivoRegras.pathMDecks).Length > 0)
+                {
+                    if (System.Windows.Forms.MessageBox.Show("Deseja apagar os Melhores Decks?", "Melhores Decks", System.Windows.Forms.MessageBoxButtons.YesNo, System.Windows.Forms.MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
+                    {
+                        System.IO.File.SetAttributes(Classes.ArquivoRegras.pathMDecks, System.IO.FileAttributes.Normal);
+                        System.IO.File.Delete(Classes.ArquivoRegras.pathMDecks);
+                        for (byte i = 0; i < (picImagemMDecks == null ? 0 : picImagemMDecks.Length); i++)
+                            for (byte j = 0; j < (picImagemMDecks[i] == null ? 0 : picImagemMDecks[i].Length); j++) picImagemMDecks[i][j].Dispose();
+                        for (byte i = 0; i < (grpBoxMDecks == null ? 0 : grpBoxMDecks.Length); i++) grpBoxMDecks[i].Dispose();
+                        for (byte i = 0; i < (btnCopiaMDecks == null ? 0 : btnCopiaMDecks.Length); i++) btnCopiaMDecks[i].Dispose();
+                        for (byte i = 0; i < (btnColaMDecks == null ? 0 : btnColaMDecks.Length); i++) btnColaMDecks[i].Dispose();
+                        for (byte i = 0; i < (btnSalvaMDecks == null ? 0 : btnSalvaMDecks.Length); i++) btnSalvaMDecks[i].Dispose();
+                        pMelhoresDecks.Controls.Add(lblAjuda2);
+                    }
+                }
+                else System.Windows.Forms.MessageBox.Show("Não há Melhores Decks para serem apagados.", "Melhores Decks", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Information);
+            }
             #endregion
 
             #region Balanceamento
@@ -3290,7 +3309,6 @@
                 BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle,
                 Location = new System.Drawing.Point(167, 29),
                 Size = new System.Drawing.Size(766, 441),
-                Visible = false
             };
             this.pBalanceamento.Click += (s, e) => pBalanceamento.Select();
 
@@ -3298,6 +3316,9 @@
             tsmiBalanceamento.DropDownItems.Add("Atualizar");
             tsmiBalanceamento.DropDownItems[0].Image = Properties.Resources.atualizar.ToBitmap();
             tsmiBalanceamento.DropDownItems[0].Click += (s, e) => { pBalanceamento.Select(); BaixaBalanceamento(); };
+            tsmiBalanceamento.DropDownItems.Add("Apagar Cartas Balanceadas");
+            tsmiBalanceamento.DropDownItems[1].Image = Properties.Resources.apagar.ToBitmap();
+            tsmiBalanceamento.DropDownItems[1].Click += (s, e) => ApagaBalanceamento();
 
             menuStripBalanceamento.Items.Add(tsmiBalanceamento);
             pBalanceamento.Controls.Add(menuStripBalanceamento);
@@ -3306,6 +3327,9 @@
             cmsBalanceamento.Items.Add("Atualizar");
             cmsBalanceamento.Items[0].Image = Properties.Resources.atualizar.ToBitmap();
             cmsBalanceamento.Items[0].Click += (s, e) => BaixaBalanceamento();
+            cmsBalanceamento.Items.Add("Apagar Cartas Balanceadas");
+            cmsBalanceamento.Items[1].Image = Properties.Resources.apagar.ToBitmap();
+            cmsBalanceamento.Items[1].Click += (s, e) => ApagaBalanceamento();
 
             pBalanceamento.ContextMenuStrip = cmsBalanceamento;
 
@@ -3317,9 +3341,9 @@
             {
                 System.IO.File.SetAttributes(Classes.ArquivoRegras.pathBalanceamento, System.IO.FileAttributes.Normal);
 
-                for (byte i = 0; i < (grpBoxBalanceamento == null ? 0 : grpBoxBalanceamento.Length); i++) grpBoxBalanceamento[i].Dispose();
                 for (byte i = 0; i < (picImagemBalanceamento == null ? 0 : picImagemBalanceamento.Length); i++) picImagemBalanceamento[i].Dispose();
                 for (byte i = 0; i < (lblBalanceamento == null ? 0 : lblBalanceamento.Length); i++) lblBalanceamento[i].Dispose();
+                for (byte i = 0; i < (grpBoxBalanceamento == null ? 0 : grpBoxBalanceamento.Length); i++) grpBoxBalanceamento[i].Dispose();
                 for (byte i = 0; i < (cmsPicBalanceamento == null ? 0 : cmsPicBalanceamento.Length); i++) cmsPicBalanceamento[i].Dispose();
 
                 pBalanceamento.Controls.Remove(lblAjuda3);
@@ -3338,8 +3362,8 @@
 
                     grpBoxBalanceamento[i] = new System.Windows.Forms.GroupBox()
                     {
-                        Location = new System.Drawing.Point(11, yG),
-                        ClientSize = new System.Drawing.Size(pBalanceamento.Size.Width - 43, 173),
+                        Location = new System.Drawing.Point(12, yG),
+                        Size = new System.Drawing.Size(pBalanceamento.Size.Width - 43, 173),
                         BackColor = System.Drawing.Color.Transparent,
                         ForeColor = corLetra,
                         Font = new System.Drawing.Font(Font.FontFamily, 8.25f, System.Drawing.FontStyle.Bold)
@@ -3472,6 +3496,24 @@
                     }
                 };
             }
+
+            void ApagaBalanceamento()
+            {
+                if (System.IO.File.Exists(Classes.ArquivoRegras.pathBalanceamento) && System.IO.File.ReadAllLines(Classes.ArquivoRegras.pathBalanceamento).Length > 0)
+                {
+                    if (System.Windows.Forms.MessageBox.Show("Deseja apagar as Cartas Balanceadas?", "Balanceamento", System.Windows.Forms.MessageBoxButtons.YesNo, System.Windows.Forms.MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
+                    {
+                        System.IO.File.SetAttributes(Classes.ArquivoRegras.pathBalanceamento, System.IO.FileAttributes.Normal);
+                        System.IO.File.Delete(Classes.ArquivoRegras.pathBalanceamento);
+                        for (byte i = 0; i < (picImagemBalanceamento == null ? 0 : picImagemBalanceamento.Length); i++) picImagemBalanceamento[i].Dispose();
+                        for (byte i = 0; i < (lblBalanceamento == null ? 0 : lblBalanceamento.Length); i++) lblBalanceamento[i].Dispose();
+                        for (byte i = 0; i < (grpBoxBalanceamento == null ? 0 : grpBoxBalanceamento.Length); i++) grpBoxBalanceamento[i].Dispose();
+                        for (byte i = 0; i < (cmsPicBalanceamento == null ? 0 : cmsPicBalanceamento.Length); i++) cmsPicBalanceamento[i].Dispose();
+                        pBalanceamento.Controls.Add(lblAjuda3);
+                    }
+                }
+                else System.Windows.Forms.MessageBox.Show("Não há Cartas Balanceadas para serem apagadas.", "Balanceamento", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Information);
+            }
             #endregion
 
             // Outras configurações
@@ -3524,8 +3566,11 @@
             };
             this.Load += (s, e) =>
             {
-                AttNome("Gerador de Deck");
-                pGerador.Select();
+                for (byte i = 0; i < grpBoxSCartas.Length; i++)
+                    grpBoxSCartas[i].Anchor = System.Windows.Forms.AnchorStyles.Top;
+                gbProx.Anchor = System.Windows.Forms.AnchorStyles.Top;
+
+                clickBotao(true, pGerador, btnGeradorDeck);
                 AtualizaArena(); AtualizaRaridade(); AtualizaTipo();
                 if (Properties.Settings.Default.minmmax == 0) rbMin.Checked = true;
                 else if (Properties.Settings.Default.minmmax == 1) rbMed.Checked = true;
@@ -3533,28 +3578,28 @@
                 System.Windows.Forms.ContextMenuStrip cmsNIcon = new System.Windows.Forms.ContextMenuStrip();
                 cmsNIcon.Items.Add("Gerador de Deck");
                 cmsNIcon.Items[0].Image = Properties.Resources.icon.ToBitmap();
-                cmsNIcon.Items[0].Click += (ss, ee) => { SwitchToThisWindow(this.Handle); clickGeradorDeDeck(true); };
+                cmsNIcon.Items[0].Click += (ss, ee) => { SwitchToThisWindow(this.Handle); clickBotao(true, pGerador, btnGeradorDeck); };
                 cmsNIcon.Items.Add("Seleção de Cartas");
                 cmsNIcon.Items[1].Image = Properties.Resources.select.ToBitmap();
-                cmsNIcon.Items[1].Click += (ss, ee) => { SwitchToThisWindow(this.Handle); clickSelecaoDeCartas(true); };
+                cmsNIcon.Items[1].Click += (ss, ee) => { SwitchToThisWindow(this.Handle); clickBotao(true, pSelecaoDeCartas, btnSelecaoDeCartas); };
                 cmsNIcon.Items.Add("Decks salvos");
                 cmsNIcon.Items[2].Image = Properties.Resources.salvar.ToBitmap();
-                cmsNIcon.Items[2].Click += (ss, ee) => { SwitchToThisWindow(this.Handle); clickDecksSalvos(true); };
+                cmsNIcon.Items[2].Click += (ss, ee) => { SwitchToThisWindow(this.Handle); clickBotao(true, pDecksSalvos, btnDecksSalvos); };
                 cmsNIcon.Items.Add("Melhores Decks");
                 cmsNIcon.Items[3].Image = Properties.Resources.melhoresdecks;
-                cmsNIcon.Items[3].Click += (ss, ee) => { SwitchToThisWindow(this.Handle); clickMelhoresDecks(true); };
+                cmsNIcon.Items[3].Click += (ss, ee) => { SwitchToThisWindow(this.Handle); clickBotao(true, pMelhoresDecks, btnMelhoresDecks); };
                 cmsNIcon.Items.Add("Balanceamento");
                 cmsNIcon.Items[4].Image = Properties.Resources.balancear.ToBitmap();
-                cmsNIcon.Items[4].Click += (ss, ee) => { SwitchToThisWindow(this.Handle); clickBalanceamento(true); };
+                cmsNIcon.Items[4].Click += (ss, ee) => { SwitchToThisWindow(this.Handle); clickBotao(true, pBalanceamento, btnBalanceamento); };
                 cmsNIcon.Items.Add("Configurações");
                 cmsNIcon.Items[5].Image = Properties.Resources.config.ToBitmap();
-                cmsNIcon.Items[5].Click += (ss, ee) => { SwitchToThisWindow(this.Handle); clickConfiguracoes(true); };
+                cmsNIcon.Items[5].Click += (ss, ee) => { SwitchToThisWindow(this.Handle); clickBotao(true, pConfig, btnConfig); };
                 cmsNIcon.Items.Add("Atualizador");
                 cmsNIcon.Items[6].Image = Properties.Resources.update.ToBitmap();
-                cmsNIcon.Items[6].Click += (ss, ee) => { SwitchToThisWindow(this.Handle); clickAtualizador(true); };
+                cmsNIcon.Items[6].Click += (ss, ee) => { SwitchToThisWindow(this.Handle); clickBotao(true, pAtualizador, btnAtualizador); };
                 cmsNIcon.Items.Add("Sobre");
                 cmsNIcon.Items[7].Image = Properties.Resources.info.ToBitmap();
-                cmsNIcon.Items[7].Click += (ss, ee) => { SwitchToThisWindow(this.Handle); clickSobre(true); };
+                cmsNIcon.Items[7].Click += (ss, ee) => { SwitchToThisWindow(this.Handle); clickBotao(true, pSobre, btnSobre); };
                 cmsNIcon.Items.Add("-");
                 cmsNIcon.Items.Add("Sair");
                 cmsNIcon.Items[9].Image = Properties.Resources.apagar.ToBitmap();
@@ -3581,8 +3626,7 @@
             // Variáveis de controles e Métodos
             System.Windows.Forms.PictureBox[]
             Icons = { picYouTube, picDica, picBau, picBau2, picYouTube2, picDica2, picGitHub, picAtalho };
-            Cartas = new System.Windows.Forms.PictureBox[8] { Carta1, Carta2, Carta3, Carta4, Carta5, Carta6, Carta7, Carta8
-};
+            Cartas = new System.Windows.Forms.PictureBox[8] { Carta1, Carta2, Carta3, Carta4, Carta5, Carta6, Carta7, Carta8 };
             System.Windows.Forms.ContextMenuStrip[] CMS = new System.Windows.Forms.ContextMenuStrip[8];
             posInicialGD = new System.Drawing.Point[8];
             tamInicialGD = new System.Drawing.Size[8];
@@ -3700,7 +3744,7 @@
         System.Drawing.Point[] posInicialGD;
         System.Drawing.Size[] tamInicialGD;
 
-        private byte bAtual = 34;
+        private byte bAtual = 35;
         private float media = 0.0f;
         private System.Random _Random = new System.Random();
         private System.Windows.Forms.AutoCompleteStringCollection dados = new System.Windows.Forms.AutoCompleteStringCollection();
@@ -3903,7 +3947,7 @@
                     point2 = MousePosition;
                     point2.X -= x2;
                     point2.Y -= y2;
-                    if (Size != new System.Drawing.Size(System.Windows.Forms.Screen.PrimaryScreen.WorkingArea.Width,
+                    if (this.Size != new System.Drawing.Size(System.Windows.Forms.Screen.PrimaryScreen.WorkingArea.Width,
                         System.Windows.Forms.Screen.PrimaryScreen.WorkingArea.Height))
                         Location = point2;
                 }
@@ -3949,7 +3993,8 @@
                 Font = new System.Drawing.Font("Marlett", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0x72),
                 Text = "r",
                 Cursor = System.Windows.Forms.Cursors.Hand,
-                Dock = System.Windows.Forms.DockStyle.Right
+                Dock = System.Windows.Forms.DockStyle.Right,
+                TabStop = false
             };
             btnFecharDialogo.Click += (s, e) => frmDialog.Close();
             btnFecharDialogo.FlatAppearance.BorderSize = 0;
@@ -4547,6 +4592,13 @@
 
         private void AtualizaRaridade()
         {
+            if (cbRaridade.SelectedIndex == 0)
+                cbRaridade.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            else cbRaridade.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+
+            btnDiminuirRaridade.Size = new System.Drawing.Size(btnDiminuirRaridade.Size.Width, cbRaridade.Size.Height);
+            btnAumentarRaridade.Size = new System.Drawing.Size(btnAumentarRaridade.Size.Width, cbRaridade.Size.Height);
+
             if (cbRaridade.SelectedIndex == 0) { btnAumentarRaridade.Enabled = false; btnDiminuirRaridade.Enabled = true; }
             else if (cbRaridade.SelectedIndex == 4) { btnDiminuirRaridade.Enabled = false; btnAumentarRaridade.Enabled = true; }
             else { btnAumentarRaridade.Enabled = true; btnDiminuirRaridade.Enabled = true; }
@@ -4557,6 +4609,13 @@
 
         private void AtualizaTipo()
         {
+            if (cbTipo.SelectedIndex == 0)
+                cbTipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            else cbTipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+
+            btnDiminuirTipo.Size = new System.Drawing.Size(btnDiminuirTipo.Size.Width, cbTipo.Size.Height);
+            btnAumentarTipo.Size = new System.Drawing.Size(btnAumentarTipo.Size.Width, cbTipo.Size.Height);
+
             if (cbTipo.SelectedIndex == 0) { btnAumentarTipo.Enabled = false; btnDiminuirTipo.Enabled = true; }
             else if (cbTipo.SelectedIndex == 3) { btnDiminuirTipo.Enabled = false; btnAumentarTipo.Enabled = true; }
             else { btnAumentarTipo.Enabled = true; btnDiminuirTipo.Enabled = true; }
@@ -4623,118 +4682,39 @@
             rbMinimalistico.Checked = true;
         }
 
-        private void clickGeradorDeDeck(bool atualiza)
+        private void clickBotao(bool atualiza, System.Windows.Forms.Panel painel, System.Windows.Forms.Button botao)
         {
-            Mostrar(pGerador);
-            AttNome("Gerador de Deck");
+            Mostrar(painel);
+            AttNome(botao.Text);
             if (atualiza)
             {
-                pSelected.Height = btnGeradorDeck.Height;
-                pSelected.Top = btnGeradorDeck.Top;
-            }
-        }
-
-        private void clickSelecaoDeCartas(bool atualiza)
-        {
-            Mostrar(pSelecaoDeCartas);
-            AttNome("Seleção de Cartas");
-            if (atualiza)
-            {
-                pSelected.Height = btnSelecaoDeCartas.Height;
-                pSelected.Top = btnSelecaoDeCartas.Top;
-            }
-
-        }
-
-        private void clickDecksSalvos(bool atualiza)
-        {
-            Mostrar(pDecksSalvos);
-            AttNome("Decks salvos");
-            if (atualiza)
-            {
-                pSelected.Height = btnDecksSalvos.Height;
-                pSelected.Top = btnDecksSalvos.Top;
-            }
-
-        }
-
-        private void clickMelhoresDecks(bool atualiza)
-        {
-            Mostrar(pMelhoresDecks);
-            AttNome("Melhores Decks");
-            if (atualiza)
-            {
-                pSelected.Height = btnMelhoresDecks.Height;
-                pSelected.Top = btnMelhoresDecks.Top;
-            }
-        }
-
-        private void clickBalanceamento(bool atualiza)
-        {
-            Mostrar(pBalanceamento);
-            AttNome("Balanceamento");
-            if (atualiza)
-            {
-                pSelected.Height = btnBalanceamento.Height;
-                pSelected.Top = btnBalanceamento.Top;
-            }
-        }
-
-        private void clickConfiguracoes(bool atualiza)
-        {
-            Mostrar(pConfig);
-            AttNome("Configurações");
-            if (atualiza)
-            {
-                pSelected.Height = btnConfig.Height;
-                pSelected.Top = btnConfig.Top;
-            }
-        }
-
-        private void clickAtualizador(bool atualiza)
-        {
-            Mostrar(pAtualizador);
-            AttNome("Atualizador");
-            if (atualiza)
-            {
-                pSelected.Height = btnAtualizador.Height;
-                pSelected.Top = btnAtualizador.Top;
-            }
-        }
-
-        private void clickSobre(bool atualiza)
-        {
-            Mostrar(pSobre);
-            AttNome("Sobre");
-            if (atualiza)
-            {
-                pSelected.Height = btnSobre.Height;
-                pSelected.Top = btnSobre.Top;
+                pSelected.Height = botao.Height;
+                pSelected.Top = botao.Top;
             }
         }
 
         private void Seleciona(bool atualiza)
         {
             if ((this.Location.Y + pBarra.Size.Height + btnGeradorDeck.Location.Y) <= MousePosition.Y && (this.Location.Y + pBarra.Size.Height + btnGeradorDeck.Location.Y + btnGeradorDeck.Size.Height) >= MousePosition.Y)
-                clickGeradorDeDeck(atualiza);
+                clickBotao(atualiza, pGerador, btnGeradorDeck);
             else if ((this.Location.Y + pBarra.Size.Height + btnSelecaoDeCartas.Location.Y) <= MousePosition.Y && (this.Location.Y + pBarra.Size.Height + btnSelecaoDeCartas.Location.Y + btnSelecaoDeCartas.Size.Height) >= MousePosition.Y)
-                clickSelecaoDeCartas(atualiza);
+                clickBotao(atualiza, pSelecaoDeCartas, btnSelecaoDeCartas);
             else if ((this.Location.Y + pBarra.Size.Height + btnDecksSalvos.Location.Y) <= MousePosition.Y && (this.Location.Y + pBarra.Size.Height + btnDecksSalvos.Location.Y + btnDecksSalvos.Size.Height) >= MousePosition.Y)
-                clickDecksSalvos(atualiza);
+                clickBotao(atualiza, pDecksSalvos, btnDecksSalvos);
             else if ((this.Location.Y + pBarra.Size.Height + btnMelhoresDecks.Location.Y) <= MousePosition.Y && (this.Location.Y + pBarra.Size.Height + btnMelhoresDecks.Location.Y + btnMelhoresDecks.Size.Height) >= MousePosition.Y)
-                clickMelhoresDecks(atualiza);
+                clickBotao(atualiza, pMelhoresDecks, btnMelhoresDecks);
             else if ((this.Location.Y + pBarra.Size.Height + btnBalanceamento.Location.Y) <= MousePosition.Y && (this.Location.Y + pBarra.Size.Height + btnBalanceamento.Location.Y + btnBalanceamento.Size.Height) >= MousePosition.Y)
-                clickBalanceamento(atualiza);
+                clickBotao(atualiza, pBalanceamento, btnBalanceamento);
             else if ((this.Location.Y + pBarra.Size.Height + btnConfig.Location.Y) <= MousePosition.Y && (this.Location.Y + pBarra.Size.Height + btnConfig.Location.Y + btnConfig.Size.Height) >= MousePosition.Y)
-                clickConfiguracoes(atualiza);
+                clickBotao(atualiza, pConfig, btnConfig);
             else if ((this.Location.Y + pBarra.Size.Height + btnAtualizador.Location.Y) <= MousePosition.Y && (this.Location.Y + pBarra.Size.Height + btnAtualizador.Location.Y + btnAtualizador.Size.Height) >= MousePosition.Y)
-                clickAtualizador(atualiza);
+                clickBotao(atualiza, pAtualizador, btnAtualizador);
             else if ((this.Location.Y + pBarra.Size.Height + btnSobre.Location.Y) <= MousePosition.Y && (this.Location.Y + pBarra.Size.Height + btnSobre.Location.Y + btnSobre.Size.Height) >= MousePosition.Y)
-                clickSobre(atualiza);
+                clickBotao(atualiza, pSobre, btnSobre);
             else if (pAtualizador.Visible && (this.Location.Y + pBarra.Size.Height + btnAtualizador.Location.Y + btnAtualizador.Size.Height) <= MousePosition.Y && (this.Location.Y + pBarra.Size.Height + btnSobre.Location.Y) + 1 >= MousePosition.Y)
-                clickAtualizador(atualiza);
+                clickBotao(atualiza, pAtualizador, btnAtualizador);
             else if (pSobre.Visible && (this.Location.Y + pBarra.Size.Height + btnAtualizador.Location.Y + btnAtualizador.Size.Height) <= MousePosition.Y && (this.Location.Y + pBarra.Size.Height + btnSobre.Location.Y) >= MousePosition.Y)
-                clickSobre(atualiza);
+                clickBotao(atualiza, pSobre, btnSobre);
         }
         #endregion
 
@@ -4764,11 +4744,7 @@
         {
             if (cbSort.SelectedIndex != 0)
                 cbSort.SelectedIndex = 0;
-
-            for (byte i = 0; i < grpBoxSCartas.Length; i++)
-                grpBoxSCartas[i].Anchor = System.Windows.Forms.AnchorStyles.Top;
-            gbProx.Anchor = System.Windows.Forms.AnchorStyles.Top;
-
+            
             for (byte i = 0; i < (decksSalvos != null ? (decksSalvos.Length > 50 ? 50 : decksSalvos.Length) : 0); i++)
             {
                 grpBoxDSalvos[i].Anchor = btnCopia[i].Anchor = btnCola[i].Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -4780,7 +4756,7 @@
 
             for (byte i = 0; i < (cartasBalanceadas == null ? 0 : cartasBalanceadas.Length); i++)
                 grpBoxBalanceamento[i].Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-
+            
             int valorAtual = pBalanceamento.Size.Width;
 
             if (this.Size != new System.Drawing.Size(System.Windows.Forms.Screen.PrimaryScreen.WorkingArea.Width,
@@ -4790,21 +4766,21 @@
                 this.btnMaximizar.Text = "2";
                 localInicialForm = this.Location;
                 this.Location = new System.Drawing.Point(0, 0);
-                this.ClientSize = new System.Drawing.Size(System.Windows.Forms.Screen.PrimaryScreen.WorkingArea.Width,
+                this.Size = new System.Drawing.Size(System.Windows.Forms.Screen.PrimaryScreen.WorkingArea.Width,
                     System.Windows.Forms.Screen.PrimaryScreen.WorkingArea.Height);
-
             }
             else
             {
                 this.btnMaximizar.Font = new System.Drawing.Font("Marlett", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0x31);
                 this.btnMaximizar.Text = "1";
                 this.Location = localInicialForm;
-                this.ClientSize = new System.Drawing.Size(933, 470);
+                this.Size = new System.Drawing.Size(933, 470);
             }
-            if (pSobre.Visible) clickSobre(true);
+            if (pSobre.Visible) clickBotao(true, pSobre, btnSobre);
 
             for (byte i = 0; i < Cartas.Length; i++)
                 AtualizaTamPos(i);
+
             for (byte i = 0; i < grpBoxSCartas.Length; i++)
                 localInicialGrpBox[i] = grpBoxSCartas[i].Location;
 
@@ -4815,7 +4791,6 @@
                 lblBalanceamento[i].Location = new System.Drawing.Point(137, 84);
                 System.Text.StringBuilder sb = new System.Text.StringBuilder();
                 for (int k = 0; k < cartasBalanceadas[i].Split('|')[1].Length; k++)
-                {
                     if (qtdMaxLetras > 69 + (valorAumentado < 0 ? 0 : valorAumentado / 5) && cartasBalanceadas[i].Split('|')[1][k] == ' ')
                     {
                         qtdMaxLetras = 0;
@@ -4823,7 +4798,7 @@
                         sb.Append(System.Environment.NewLine);
                     }
                     else { sb.Append(cartasBalanceadas[i].Split('|')[1][k]); qtdMaxLetras++; }
-                }
+
                 lblBalanceamento[i].Text = sb.ToString();
             }
         }
@@ -4832,10 +4807,8 @@
 
         protected override void Dispose(bool disposing)
         {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
+            if (disposing && (components != null)) components.Dispose();
+
             base.Dispose(disposing);
         }
 
@@ -4973,7 +4946,7 @@
             Anchor = System.Windows.Forms.AnchorStyles.Top,
             Text = "&Pesquisar",
             Size = new System.Drawing.Size(72, 26),
-            Location = new System.Drawing.Point(580, 30),
+            Location = new System.Drawing.Point(581, 30),
             Cursor = System.Windows.Forms.Cursors.Hand,
             TabIndex = 2,
             FlatStyle = System.Windows.Forms.FlatStyle.Flat,
@@ -4984,7 +4957,7 @@
         System.Windows.Forms.ComboBox cbSort = new System.Windows.Forms.ComboBox()
         {
             Anchor = System.Windows.Forms.AnchorStyles.Top,
-            Location = new System.Drawing.Point(118, 32),
+            Location = new System.Drawing.Point(117, 33),
             Size = new System.Drawing.Size(190, 10),
             DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList,
             TabIndex = 0,
@@ -4996,7 +4969,7 @@
         System.Windows.Forms.Label lblAjuda = new System.Windows.Forms.Label()
         {
             Anchor = System.Windows.Forms.AnchorStyles.Top,
-            Location = new System.Drawing.Point(115, 9),
+            Location = new System.Drawing.Point(114, 9),
             Font = new System.Drawing.Font(DefaultFont.FontFamily, 9.75f, System.Drawing.FontStyle.Bold),
             Text = "Depois de escolher suas Cartas, salve clicando com o botão direito do mouse.",
             AutoSize = true
