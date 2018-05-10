@@ -1704,13 +1704,13 @@
                     for (byte i = 0; i < (picImagem == null ? 0 : (picImagem.Length > 50 ? 50 : picImagem.Length)); i++)
                         for (byte j = 0; j < (picImagem[i] == null ? 0 : picImagem[i].Length); j++)
                             for (byte k = 1; k < _Deck.CartasInformacao.Length; k++)
-                                if (deck != null && deck[i].Split(';')[j] == _Deck.CodigoCartas[k].ToString())
+                                if (decksSalvos != null && decksSalvos[i].Split(';')[j] == _Deck.CodigoCartas[k].ToString())
                                 { tip.SetToolTip(picImagem[i][j], _Deck.CartasInformacao[k].Split('\n')[0]); break; }
 
                     for (byte i = 0; i < (picImagemMDecks == null ? 0 : (picImagemMDecks.Length > 11 ? 11 : picImagemMDecks.Length)); i++)
                         for (byte j = 0; j < (picImagemMDecks[i] == null ? 0 : picImagemMDecks[i].Length); j++)
                             for (byte k = 1; k < _Deck.CartasInformacao.Length; k++)
-                                if (decks != null && decks[i].Split('|')[0].Split(';')[j] == _Deck.CodigoCartas[k].ToString())
+                                if (melhoresDecks != null && melhoresDecks[i].Split('|')[0].Split(';')[j] == _Deck.CodigoCartas[k].ToString())
                                 { tip.SetToolTip(picImagemMDecks[i][j], _Deck.CartasInformacao[k].Split('\n')[0]); break; }
 
                     for (byte i = 0; i < (picImagemBalanceamento == null ? 0 : picImagemBalanceamento.Length); i++)
@@ -2091,7 +2091,7 @@
                 AutoScroll = true,
                 BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle,
                 Location = new System.Drawing.Point(167, 29),
-                Size = new System.Drawing.Size(766, 441),
+                ClientSize = new System.Drawing.Size(766, 441),
                 Visible = false
             };
             this.pSelecaoDeCartas.Click += (s, e) => pSelecaoDeCartas.Select();
@@ -2118,7 +2118,7 @@
                 // grpBox
                 grpBoxSCartas[i] = new System.Windows.Forms.GroupBox
                 {
-                    Size = new System.Drawing.Size(265, 170),
+                    ClientSize = new System.Drawing.Size(265, 170),
                     BackColor = System.Drawing.Color.Transparent,
                     Font = new System.Drawing.Font(Font.FontFamily, 8.25f, System.Drawing.FontStyle.Bold),
                     Text = string.Format("{0} ({1} - {2})", _Deck.CartasInformacao[i + 1].Split('\n')[0], _Deck.CartasInformacao[i + 1].Split('\n')[1].Split()[1], _Deck.CartasInformacao[i + 1].Split('\n')[2].Split()[1])
@@ -2128,7 +2128,7 @@
                 // picCarta
                 picCarta[i] = new System.Windows.Forms.PictureBox
                 {
-                    Size = new System.Drawing.Size(129, 151),
+                    ClientSize = new System.Drawing.Size(129, 151),
                     Location = new System.Drawing.Point(3, 13),
                     BackColor = System.Drawing.Color.Transparent,
                     SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage,
@@ -2159,7 +2159,7 @@
                     Text = "Descrição",
                     FlatStyle = System.Windows.Forms.FlatStyle.Flat,
                     Cursor = System.Windows.Forms.Cursors.Hand,
-                    Size = new System.Drawing.Size(80, 25),
+                    ClientSize = new System.Drawing.Size(80, 25),
                     Font = new System.Drawing.Font(Font.FontFamily, 8.25f, System.Drawing.FontStyle.Bold),
                     Location = new System.Drawing.Point(177, 136),
                     ForeColor = System.Drawing.Color.White
@@ -2671,7 +2671,7 @@
                 if (System.IO.File.Exists(Classes.ArquivoRegras.pathDSalvos) && System.IO.File.ReadAllLines(Classes.ArquivoRegras.pathDSalvos).Length > 0)
                 {
                     pDecksSalvos.Controls.Remove(lblInformacao);
-                    deck = System.IO.File.ReadAllLines(Classes.ArquivoRegras.pathDSalvos);
+                    decksSalvos = System.IO.File.ReadAllLines(Classes.ArquivoRegras.pathDSalvos);
                 }
                 else
                 {
@@ -2679,15 +2679,15 @@
                     return;
                 }
 
-                grpBoxDSalvos = new System.Windows.Forms.GroupBox[deck.Length > 50 ? 50 : deck.Length];
-                btnCola = new System.Windows.Forms.Button[deck.Length > 50 ? 50 : deck.Length];
-                btnCopia = new System.Windows.Forms.Button[deck.Length > 50 ? 50 : deck.Length];
-                btnApagar = new System.Windows.Forms.Button[deck.Length > 50 ? 50 : deck.Length];
-                lblDeck = new System.Windows.Forms.Label[deck.Length > 50 ? 50 : deck.Length];
-                conOpcoes = new System.Windows.Forms.ContextMenuStrip[deck.Length > 50 ? 50 : deck.Length];
-                picImagem = new System.Windows.Forms.PictureBox[deck.Length > 50 ? 50 : deck.Length][];
+                grpBoxDSalvos = new System.Windows.Forms.GroupBox[decksSalvos.Length > 50 ? 50 : decksSalvos.Length];
+                btnCola = new System.Windows.Forms.Button[decksSalvos.Length > 50 ? 50 : decksSalvos.Length];
+                btnCopia = new System.Windows.Forms.Button[decksSalvos.Length > 50 ? 50 : decksSalvos.Length];
+                btnApagar = new System.Windows.Forms.Button[decksSalvos.Length > 50 ? 50 : decksSalvos.Length];
+                lblDeck = new System.Windows.Forms.Label[decksSalvos.Length > 50 ? 50 : decksSalvos.Length];
+                conOpcoes = new System.Windows.Forms.ContextMenuStrip[decksSalvos.Length > 50 ? 50 : decksSalvos.Length];
+                picImagem = new System.Windows.Forms.PictureBox[decksSalvos.Length > 50 ? 50 : decksSalvos.Length][];
 
-                for (byte i = 0; i < (deck.Length > 50 ? 50 : deck.Length); i++)
+                for (byte i = 0; i < (decksSalvos.Length > 50 ? 50 : decksSalvos.Length); i++)
                 {
                     byte copiaI = i;
 
@@ -2705,18 +2705,18 @@
                     // gpBox
                     grpBoxDSalvos[i] = new System.Windows.Forms.GroupBox
                     {
-                        Size = new System.Drawing.Size(536, 0),
+                        ClientSize = new System.Drawing.Size(536, 0),
                         ContextMenuStrip = conOpcoes[i],
                         BackColor = System.Drawing.Color.Transparent,
                         ForeColor = corLetra,
                         Font = new System.Drawing.Font(Font.FontFamily, 8.25f, System.Drawing.FontStyle.Bold),
                         TabStop = false
                     };
-                    grpBoxDSalvos[i].Location = new System.Drawing.Point((pDecksSalvos.Size.Width - grpBoxDSalvos[i].ClientSize.Width) / 2 - 30, yG);
+                    grpBoxDSalvos[i].Location = new System.Drawing.Point((pDecksSalvos.ClientSize.Width - grpBoxDSalvos[i].ClientSize.Width) / 2 - 30, yG);
 
                     float m = 0.0f;
-                    for (byte b = 0; b < deck[i].Split(';').Length; b++)
-                        for (byte j = 0; j < _Deck.CustoElixir.Length; j++) if (deck[i].Split(';')[b] == _Deck.CodigoCartas[j].ToString()) m += _Deck.CustoElixir[j] / 8;
+                    for (byte b = 0; b < decksSalvos[i].Split(';').Length; b++)
+                        for (byte j = 0; j < _Deck.CustoElixir.Length; j++) if (decksSalvos[i].Split(';')[b] == _Deck.CodigoCartas[j].ToString()) m += _Deck.CustoElixir[j] / 8;
                     grpBoxDSalvos[i].Text = string.Format("Deck {0} - Elixir Médio: {1:f1}", i + 1, m).Replace(',', '.');
 
                     // btnCopia
@@ -2729,7 +2729,7 @@
                         BackColor = corFundo2,
                         ForeColor = System.Drawing.Color.White,
                         Cursor = System.Windows.Forms.Cursors.Hand,
-                        Size = new System.Drawing.Size(98, 27),
+                        ClientSize = new System.Drawing.Size(98, 27),
                         Location = new System.Drawing.Point(grpBoxDSalvos[i].Location.X + grpBoxDSalvos[i].ClientSize.Width + 10, yB1)
                     };
                     btnCopia[i].FlatAppearance.MouseDownBackColor = corFundoClick;
@@ -2744,7 +2744,7 @@
                         BackColor = corFundo2,
                         ForeColor = System.Drawing.Color.White,
                         Cursor = System.Windows.Forms.Cursors.Hand,
-                        Size = new System.Drawing.Size(98, 27),
+                        ClientSize = new System.Drawing.Size(98, 27),
                         Location = new System.Drawing.Point(grpBoxDSalvos[i].Location.X + grpBoxDSalvos[i].ClientSize.Width + 10, yB2)
                     };
                     btnCola[i].FlatAppearance.MouseDownBackColor = corFundoClick;
@@ -2759,7 +2759,7 @@
                     {
                         grpBoxDSalvos[copiaI].Select();
                         System.Text.StringBuilder sb = new System.Text.StringBuilder();
-                        sb.AppendFormat("https://link.clashroyale.com/deck/pt?deck={0}", deck[copiaI]);
+                        sb.AppendFormat("https://link.clashroyale.com/deck/pt?deck={0}", decksSalvos[copiaI]);
                         System.Windows.Forms.Clipboard.SetText(sb.ToString());
                     }
                     void Colar()
@@ -2767,7 +2767,7 @@
                         grpBoxDSalvos[copiaI].Select();
                         for (byte j = 0; j < _Deck.deckAtual.Length; j++)
                             _Deck.deckAnterior[j] = _Deck.deckAtual[j];
-                        string[] cDeck = deck[copiaI].Split(';');
+                        string[] cDeck = decksSalvos[copiaI].Split(';');
                         media = 0.0f;
                         for (byte j = 0; j < cDeck.Length; j++)
                             for (byte b = 0; b < _Deck.CodigoCartas.Length; b++)
@@ -2787,10 +2787,10 @@
                         System.IO.File.SetAttributes(Classes.ArquivoRegras.pathDSalvos, System.IO.FileAttributes.Normal);
                         System.IO.StreamWriter sw = new System.IO.StreamWriter(Classes.ArquivoRegras.pathDSalvos);
                         System.Text.StringBuilder sb = new System.Text.StringBuilder();
-                        for (byte j = 0; j < deck.Length; j++)
+                        for (byte j = 0; j < decksSalvos.Length; j++)
                         {
-                            if (deck[copiaI] != deck[j])
-                                sb.AppendFormat("{0}{1}", deck[j], j == deck.Length - 1 ? string.Empty : System.Environment.NewLine);
+                            if (decksSalvos[copiaI] != decksSalvos[j])
+                                sb.AppendFormat("{0}{1}", decksSalvos[j], j == decksSalvos.Length - 1 ? string.Empty : System.Environment.NewLine);
                         }
                         sw.Write(sb.ToString());
                         sw.Close();
@@ -2833,7 +2833,7 @@
                                 picImagem[copiaI][copiaJ].Size = new System.Drawing.Size(tamInicialWidth, tamInicialHeigth);
                             };
                             for (byte b = 0; b < _Deck.CartasImagem.Length; b++)
-                                if (deck[copiaI].Split(';')[j] == _Deck.CodigoCartas[b].ToString())
+                                if (decksSalvos[copiaI].Split(';')[j] == _Deck.CodigoCartas[b].ToString())
                                 {
                                     picImagem[copiaI][j].Image = _Deck.CartasImagem[b];
                                     if (ckNome.Checked)
@@ -2844,7 +2844,7 @@
                                 grpBoxDSalvos[copiaI].Select();
 
                                 for (byte b = 1; b < _Deck.CartasInformacao.Length; b++)
-                                    if (deck[copiaI].Split(';')[copiaJ] == _Deck.CodigoCartas[b].ToString())
+                                    if (decksSalvos[copiaI].Split(';')[copiaJ] == _Deck.CodigoCartas[b].ToString())
                                     {
                                         string infoAdicional = string.Empty;
                                         byte v = 0;
@@ -2869,7 +2869,7 @@
                         {
                             Text = "Apagar Deck",
                             TabIndex = copiaI + 1,
-                            Size = new System.Drawing.Size(98, 27),
+                            ClientSize = new System.Drawing.Size(98, 27),
                             FlatStyle = System.Windows.Forms.FlatStyle.Flat,
                             BackColor = corFundo2,
                             Cursor = System.Windows.Forms.Cursors.Hand,
@@ -2892,10 +2892,10 @@
                             Location = new System.Drawing.Point(15, 21),
                             Font = new System.Drawing.Font(Font.FontFamily, 9f, System.Drawing.FontStyle.Bold)
                         };
-                        for (byte k = 0; k < deck[copiaI].Split(';').Length; k++)
+                        for (byte k = 0; k < decksSalvos[copiaI].Split(';').Length; k++)
                             for (byte j = 0; j < _Deck.CodigoCartas.Length; j++)
-                                if (deck[copiaI].Split(';')[k] == _Deck.CodigoCartas[j].ToString())
-                                    lblDeck[copiaI].Text += string.Format("{0}{1}{2}", _Deck.CartasInformacao[j].Split('\n')[0], k == deck[copiaI].Length - 1 ? "." : ", ", k == 3 ? System.Environment.NewLine : string.Empty);
+                                if (decksSalvos[copiaI].Split(';')[k] == _Deck.CodigoCartas[j].ToString())
+                                    lblDeck[copiaI].Text += string.Format("{0}{1}{2}", _Deck.CartasInformacao[j].Split('\n')[0], k == decksSalvos[copiaI].Length - 1 ? "." : ", ", k == 3 ? System.Environment.NewLine : string.Empty);
 
                         grpBoxDSalvos[copiaI].Controls.Add(lblDeck[copiaI]);
                     }
@@ -2913,7 +2913,7 @@
                             grpBoxDSalvos[copiaI].Controls.Remove(lblDeck[copiaI]);
                             CriaCartas();
 
-                            for (byte j = System.Convert.ToByte(copiaI + 1); j < deck.Length; j++)
+                            for (byte j = System.Convert.ToByte(copiaI + 1); j < decksSalvos.Length; j++)
                             {
                                 grpBoxDSalvos[j].Location = new System.Drawing.Point(grpBoxDSalvos[j].Location.X, grpBoxDSalvos[j].Location.Y + 269);
                                 btnCopia[j].Location = new System.Drawing.Point(btnCopia[j].Location.X, btnCopia[j].Location.Y + 269);
@@ -2932,7 +2932,7 @@
 
                             btnApagar[copiaI].Dispose();
 
-                            for (byte j = System.Convert.ToByte(copiaI + 1); j < deck.Length; j++)
+                            for (byte j = System.Convert.ToByte(copiaI + 1); j < decksSalvos.Length; j++)
                             {
                                 grpBoxDSalvos[j].Location = new System.Drawing.Point(grpBoxDSalvos[j].Location.X, grpBoxDSalvos[j].Location.Y - 269);
                                 btnCopia[j].Location = new System.Drawing.Point(btnCopia[j].Location.X, btnCopia[j].Location.Y - 269);
@@ -2947,7 +2947,7 @@
                         }
 
                         byte num = 0;
-                        for (byte j = 0; j < deck.Length; j++)
+                        for (byte j = 0; j < decksSalvos.Length; j++)
                         {
                             if (btnCopia[j] != null) btnCopia[j].TabIndex = num++;
                             if (btnCola[j] != null) btnCola[j].TabIndex = num++;
@@ -2976,7 +2976,7 @@
                 AutoScroll = true,
                 BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle,
                 Location = new System.Drawing.Point(167, 29),
-                Size = new System.Drawing.Size(766, 441),
+                ClientSize = new System.Drawing.Size(766, 441),
                 Visible = false
             };
             this.pMelhoresDecks.Click += (s, e) => pMelhoresDecks.Select();
@@ -3014,16 +3014,16 @@
                     for (byte j = 0; j < (picImagemMDecks[i] == null ? 0 : picImagemMDecks[i].Length); j++) picImagemMDecks[i][j].Dispose();
 
                 int yG = 10, yB1 = 17, yB2 = 50, yB3 = 83;
-                decks = System.IO.File.ReadAllLines(Classes.ArquivoRegras.pathMDecks);
+                melhoresDecks = System.IO.File.ReadAllLines(Classes.ArquivoRegras.pathMDecks);
 
-                System.Windows.Forms.ContextMenuStrip[] cmsGBMDecks = new System.Windows.Forms.ContextMenuStrip[decks.Length > 11 ? 11 : decks.Length];
-                grpBoxMDecks = new System.Windows.Forms.GroupBox[decks.Length > 11 ? 11 : decks.Length];
-                btnCopiaMDecks = new System.Windows.Forms.Button[decks.Length > 11 ? 11 : decks.Length];
-                btnColaMDecks = new System.Windows.Forms.Button[decks.Length > 11 ? 11 : decks.Length];
-                btnSalvaMDecks = new System.Windows.Forms.Button[decks.Length > 11 ? 11 : decks.Length];
-                picImagemMDecks = new System.Windows.Forms.PictureBox[decks.Length > 11 ? 11 : decks.Length][];
+                System.Windows.Forms.ContextMenuStrip[] cmsGBMDecks = new System.Windows.Forms.ContextMenuStrip[melhoresDecks.Length > 11 ? 11 : melhoresDecks.Length];
+                grpBoxMDecks = new System.Windows.Forms.GroupBox[melhoresDecks.Length > 11 ? 11 : melhoresDecks.Length];
+                btnCopiaMDecks = new System.Windows.Forms.Button[melhoresDecks.Length > 11 ? 11 : melhoresDecks.Length];
+                btnColaMDecks = new System.Windows.Forms.Button[melhoresDecks.Length > 11 ? 11 : melhoresDecks.Length];
+                btnSalvaMDecks = new System.Windows.Forms.Button[melhoresDecks.Length > 11 ? 11 : melhoresDecks.Length];
+                picImagemMDecks = new System.Windows.Forms.PictureBox[melhoresDecks.Length > 11 ? 11 : melhoresDecks.Length][];
 
-                for (byte i = 0; i < (decks.Length > 11 ? 11 : decks.Length); i++)
+                for (byte i = 0; i < (melhoresDecks.Length > 11 ? 11 : melhoresDecks.Length); i++)
                 {
                     byte copiaI = i;
 
@@ -3031,8 +3031,8 @@
                     {
                         grpBoxMDecks[copiaI].Select();
                         string deck = "https://link.clashroyale.com/deck/pt?deck=";
-                        for (byte j = 0; j < decks[copiaI].Split('|')[0].Split(';').Length; j++)
-                            deck += decks[copiaI].Split('|')[0].Split(';')[j] + (j == decks[copiaI].Split('|')[0].Split(';').Length - 1 ? string.Empty : ";");
+                        for (byte j = 0; j < melhoresDecks[copiaI].Split('|')[0].Split(';').Length; j++)
+                            deck += melhoresDecks[copiaI].Split('|')[0].Split(';')[j] + (j == melhoresDecks[copiaI].Split('|')[0].Split(';').Length - 1 ? string.Empty : ";");
                         System.Windows.Forms.Clipboard.SetText(deck);
                     }
 
@@ -3047,7 +3047,7 @@
                         for (byte j = 0; j < _Deck.deckAtual.Length; j++)
                         {
                             for (byte k = 1; k < _Deck.CartasInformacao.Length; k++)
-                                if (decks[copiaI].Split('|')[0].Split(';')[j] == _Deck.CodigoCartas[k].ToString())
+                                if (melhoresDecks[copiaI].Split('|')[0].Split(';')[j] == _Deck.CodigoCartas[k].ToString())
                                 {
                                     _Deck.deckAtual[j] = k;
                                     Cartas[j].Image = _Deck.CartasImagem[k];
@@ -3076,8 +3076,8 @@
                             {
                                 byte soma = 0;
                                 for (byte j = 0; j < deck[k].Split(';').Length; j++)
-                                    for (byte b = 0; b < decks[copiaI].Split('|')[0].Split(';').Length; b++)
-                                        if (decks[copiaI].Split('|')[0].Split(';')[j] == deck[k].Split(';')[b])
+                                    for (byte b = 0; b < melhoresDecks[copiaI].Split('|')[0].Split(';').Length; b++)
+                                        if (melhoresDecks[copiaI].Split('|')[0].Split(';')[j] == deck[k].Split(';')[b])
                                         { soma++; break; }
                                 if (soma == 8)
                                 {
@@ -3090,8 +3090,8 @@
                         if (System.IO.File.Exists(Classes.ArquivoRegras.pathDSalvos))
                             System.IO.File.SetAttributes(Classes.ArquivoRegras.pathDSalvos, System.IO.FileAttributes.Normal);
                         System.IO.StreamWriter sw = new System.IO.StreamWriter(Classes.ArquivoRegras.pathDSalvos);
-                        for (byte j = 0; j < decks[copiaI].Split('|')[0].Split(';').Length; j++)
-                            sb.AppendFormat("{0}{1}", decks[copiaI].Split('|')[0].Split(';')[j], j == decks[copiaI].Split('|')[0].Split(';').Length - 1 ? string.Empty : ";");
+                        for (byte j = 0; j < melhoresDecks[copiaI].Split('|')[0].Split(';').Length; j++)
+                            sb.AppendFormat("{0}{1}", melhoresDecks[copiaI].Split('|')[0].Split(';')[j], j == melhoresDecks[copiaI].Split('|')[0].Split(';').Length - 1 ? string.Empty : ";");
                         sw.Write(sb.ToString());
                         sw.Close();
                         System.IO.File.SetAttributes(Classes.ArquivoRegras.pathDSalvos, System.IO.FileAttributes.Hidden | System.IO.FileAttributes.ReadOnly);
@@ -3109,9 +3109,9 @@
                     cmsGBMDecks[i].Items[2].Click += (s, e) => SalvarMD();
 
                     float elixirMedio = 0.0f;
-                    for (byte j = 0; j < decks[i].Split('|')[0].Split(';').Length; j++)
+                    for (byte j = 0; j < melhoresDecks[i].Split('|')[0].Split(';').Length; j++)
                         for (byte k = 1; k < _Deck.CodigoCartas.Length; k++)
-                            if (decks[i].Split('|')[0].Split(';')[j] == _Deck.CodigoCartas[k].ToString())
+                            if (melhoresDecks[i].Split('|')[0].Split(';')[j] == _Deck.CodigoCartas[k].ToString())
                                 elixirMedio += _Deck.CustoElixir[k] / 8;
 
                     grpBoxMDecks[i] = new System.Windows.Forms.GroupBox()
@@ -3120,7 +3120,7 @@
                         BackColor = System.Drawing.Color.Transparent,
                         ForeColor = corLetra,
                         Font = new System.Drawing.Font(Font.FontFamily, 8.25f, System.Drawing.FontStyle.Bold),
-                        Text = string.Format("Elixir Médio: {0:f1} - Arena {1} +", elixirMedio, decks[i].Split('|')[1]).Replace(',', '.'),
+                        Text = string.Format("Elixir Médio: {0:f1} - Arena {1} +", elixirMedio, melhoresDecks[i].Split('|')[1]).Replace(',', '.'),
                     };
                     grpBoxMDecks[i].Location = new System.Drawing.Point((pMelhoresDecks.Size.Width - grpBoxMDecks[i].ClientSize.Width) / 2 - 30, yG);
                     grpBoxMDecks[i].Click += (s, e) => grpBoxMDecks[copiaI].Select();
@@ -3141,7 +3141,7 @@
                         };
 
                         for (byte k = 0; k < _Deck.CartasInformacao.Length; k++)
-                            if (decks[copiaI].Split('|')[0].Split(';')[j] == _Deck.CodigoCartas[k].ToString())
+                            if (melhoresDecks[copiaI].Split('|')[0].Split(';')[j] == _Deck.CodigoCartas[k].ToString())
                             {
                                 picImagemMDecks[i][j].Image = _Deck.CartasImagem[k];
                                 if (ckNome.Checked) tip.SetToolTip(picImagemMDecks[i][j], _Deck.CartasInformacao[k].Split('\n')[0]);
@@ -3170,7 +3170,7 @@
                             grpBoxMDecks[copiaI].Select();
 
                             for (byte k = 1; k < _Deck.CartasInformacao.Length; k++)
-                                if (decks[copiaI].Split(';')[copiaJ] == _Deck.CodigoCartas[k].ToString())
+                                if (melhoresDecks[copiaI].Split(';')[copiaJ] == _Deck.CodigoCartas[k].ToString())
                                 {
                                     string infoAdicional = string.Empty;
                                     byte v = 0;
@@ -3339,7 +3339,7 @@
                     grpBoxBalanceamento[i] = new System.Windows.Forms.GroupBox()
                     {
                         Location = new System.Drawing.Point(11, yG),
-                        Size = new System.Drawing.Size(pBalanceamento.Size.Width - 43, 173),
+                        ClientSize = new System.Drawing.Size(pBalanceamento.Size.Width - 43, 173),
                         BackColor = System.Drawing.Color.Transparent,
                         ForeColor = corLetra,
                         Font = new System.Drawing.Font(Font.FontFamily, 8.25f, System.Drawing.FontStyle.Bold)
@@ -3581,7 +3581,8 @@
             // Variáveis de controles e Métodos
             System.Windows.Forms.PictureBox[]
             Icons = { picYouTube, picDica, picBau, picBau2, picYouTube2, picDica2, picGitHub, picAtalho };
-            Cartas = new System.Windows.Forms.PictureBox[8] { Carta1, Carta2, Carta3, Carta4, Carta5, Carta6, Carta7, Carta8 };
+            Cartas = new System.Windows.Forms.PictureBox[8] { Carta1, Carta2, Carta3, Carta4, Carta5, Carta6, Carta7, Carta8
+};
             System.Windows.Forms.ContextMenuStrip[] CMS = new System.Windows.Forms.ContextMenuStrip[8];
             posInicialGD = new System.Drawing.Point[8];
             tamInicialGD = new System.Drawing.Size[8];
@@ -4768,13 +4769,13 @@
                 grpBoxSCartas[i].Anchor = System.Windows.Forms.AnchorStyles.Top;
             gbProx.Anchor = System.Windows.Forms.AnchorStyles.Top;
 
-            for (byte i = 0; i < (deck.Length > 50 ? 50 : deck.Length); i++)
+            for (byte i = 0; i < (decksSalvos != null ? (decksSalvos.Length > 50 ? 50 : decksSalvos.Length) : 0); i++)
             {
                 grpBoxDSalvos[i].Anchor = btnCopia[i].Anchor = btnCola[i].Anchor = System.Windows.Forms.AnchorStyles.Top;
                 if (btnApagar[i] != null) btnApagar[i].Anchor = System.Windows.Forms.AnchorStyles.Top;
             }
 
-            for (byte i = 0; i < (decks.Length > 11 ? 11 : decks.Length); i++)
+            for (byte i = 0; i < (melhoresDecks != null ? (melhoresDecks.Length > 11 ? 11 : melhoresDecks.Length) : 0); i++)
                 grpBoxMDecks[i].Anchor = btnCopiaMDecks[i].Anchor = btnColaMDecks[i].Anchor = btnSalvaMDecks[i].Anchor = System.Windows.Forms.AnchorStyles.Top;
 
             for (byte i = 0; i < (cartasBalanceadas == null ? 0 : cartasBalanceadas.Length); i++)
@@ -5028,7 +5029,7 @@
             Location = new System.Drawing.Point(0, 0)
         };
         System.Windows.Forms.ToolStripMenuItem TSMIDS = new System.Windows.Forms.ToolStripMenuItem() { Text = "Menu" };
-        string[] deck;
+        string[] decksSalvos;
         // Melhores Decks
         private System.Windows.Forms.Panel pMelhoresDecks;
         System.Windows.Forms.ToolStripMenuItem tsmiMDecks;
@@ -5054,7 +5055,7 @@
         System.Windows.Forms.Button[] btnColaMDecks;
         System.Windows.Forms.Button[] btnSalvaMDecks;
         System.Windows.Forms.PictureBox[][] picImagemMDecks;
-        string[] decks;
+        string[] melhoresDecks;
         // Balanceamento
         private System.Windows.Forms.Panel pBalanceamento;
         System.Windows.Forms.MenuStrip menuStripBalanceamento = new System.Windows.Forms.MenuStrip()
