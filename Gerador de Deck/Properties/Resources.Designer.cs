@@ -61,6 +61,16 @@ namespace Gerador_de_Deck.Properties {
         }
         
         /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap angry_barbarian {
+            get {
+                object obj = ResourceManager.GetObject("angry_barbarian", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Icon semelhante a (Ícone).
         /// </summary>
         internal static System.Drawing.Icon apagar {
@@ -76,16 +86,6 @@ namespace Gerador_de_Deck.Properties {
         internal static System.Drawing.Bitmap archers {
             get {
                 object obj = ResourceManager.GetObject("archers", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap arrows {
-            get {
-                object obj = ResourceManager.GetObject("arrows", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -133,16 +133,6 @@ namespace Gerador_de_Deck.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap balloon {
-            get {
-                object obj = ResourceManager.GetObject("balloon", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap bandit {
             get {
                 object obj = ResourceManager.GetObject("bandit", resourceCulture);
@@ -153,9 +143,9 @@ namespace Gerador_de_Deck.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap barbarian_barrel {
+        internal static System.Drawing.Bitmap barb_barrel {
             get {
-                object obj = ResourceManager.GetObject("barbarian_barrel", resourceCulture);
+                object obj = ResourceManager.GetObject("barb_barrel", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -213,6 +203,16 @@ namespace Gerador_de_Deck.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap blowdart_goblin {
+            get {
+                object obj = ResourceManager.GetObject("blowdart_goblin", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap bomb_tower {
             get {
                 object obj = ResourceManager.GetObject("bomb_tower", resourceCulture);
@@ -243,9 +243,49 @@ namespace Gerador_de_Deck.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap cannon {
+        internal static System.Drawing.Bitmap building_elixir_collector {
             get {
-                object obj = ResourceManager.GetObject("cannon", resourceCulture);
+                object obj = ResourceManager.GetObject("building_elixir_collector", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap building_inferno {
+            get {
+                object obj = ResourceManager.GetObject("building_inferno", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap building_mortar {
+            get {
+                object obj = ResourceManager.GetObject("building_mortar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap building_tesla {
+            get {
+                object obj = ResourceManager.GetObject("building_tesla", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap building_xbow {
+            get {
+                object obj = ResourceManager.GetObject("building_xbow", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -263,9 +303,39 @@ namespace Gerador_de_Deck.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap clone {
+        internal static System.Drawing.Bitmap chaos_cannon {
             get {
-                object obj = ResourceManager.GetObject("clone", resourceCulture);
+                object obj = ResourceManager.GetObject("chaos_cannon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap chr_balloon {
+            get {
+                object obj = ResourceManager.GetObject("chr_balloon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap chr_golem {
+            get {
+                object obj = ResourceManager.GetObject("chr_golem", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap chr_witch {
+            get {
+                object obj = ResourceManager.GetObject("chr_witch", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -303,6 +373,16 @@ namespace Gerador_de_Deck.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap copy {
+            get {
+                object obj = ResourceManager.GetObject("copy", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap dark_prince {
             get {
                 object obj = ResourceManager.GetObject("dark_prince", resourceCulture);
@@ -313,9 +393,9 @@ namespace Gerador_de_Deck.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap dart_goblin {
+        internal static System.Drawing.Bitmap dark_witch {
             get {
-                object obj = ResourceManager.GetObject("dart_goblin", resourceCulture);
+                object obj = ResourceManager.GetObject("dark_witch", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -343,29 +423,29 @@ namespace Gerador_de_Deck.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap elite_barbarians {
-            get {
-                object obj = ResourceManager.GetObject("elite_barbarians", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap elixir_collector {
-            get {
-                object obj = ResourceManager.GetObject("elixir_collector", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap executioner {
             get {
                 object obj = ResourceManager.GetObject("executioner", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fire_fireball {
+            get {
+                object obj = ResourceManager.GetObject("fire_fireball", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fire_furnace {
+            get {
+                object obj = ResourceManager.GetObject("fire_furnace", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -383,9 +463,9 @@ namespace Gerador_de_Deck.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap fireball {
+        internal static System.Drawing.Bitmap firespirit_hut {
             get {
-                object obj = ResourceManager.GetObject("fireball", resourceCulture);
+                object obj = ResourceManager.GetObject("firespirit_hut", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -413,9 +493,9 @@ namespace Gerador_de_Deck.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap furnace {
+        internal static System.Drawing.Bitmap ghost {
             get {
-                object obj = ResourceManager.GetObject("furnace", resourceCulture);
+                object obj = ResourceManager.GetObject("ghost", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -483,6 +563,16 @@ namespace Gerador_de_Deck.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap goblin_archer {
+            get {
+                object obj = ResourceManager.GetObject("goblin_archer", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap goblin_barrel {
             get {
                 object obj = ResourceManager.GetObject("goblin_barrel", resourceCulture);
@@ -503,16 +593,6 @@ namespace Gerador_de_Deck.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap goblin_hut {
-            get {
-                object obj = ResourceManager.GetObject("goblin_hut", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap goblins {
             get {
                 object obj = ResourceManager.GetObject("goblins", resourceCulture);
@@ -523,29 +603,9 @@ namespace Gerador_de_Deck.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap golem {
-            get {
-                object obj = ResourceManager.GetObject("golem", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap graveyard {
             get {
                 object obj = ResourceManager.GetObject("graveyard", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap guards {
-            get {
-                object obj = ResourceManager.GetObject("guards", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -593,16 +653,6 @@ namespace Gerador_de_Deck.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap ice_spirit {
-            get {
-                object obj = ResourceManager.GetObject("ice_spirit", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap ice_wizard {
             get {
                 object obj = ResourceManager.GetObject("ice_wizard", resourceCulture);
@@ -626,16 +676,6 @@ namespace Gerador_de_Deck.Properties {
         internal static System.Drawing.Bitmap inferno_dragon {
             get {
                 object obj = ResourceManager.GetObject("inferno_dragon", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap inferno_tower {
-            get {
-                object obj = ResourceManager.GetObject("inferno_tower", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -686,16 +726,6 @@ namespace Gerador_de_Deck.Properties {
         internal static System.Drawing.Bitmap Logo {
             get {
                 object obj = ResourceManager.GetObject("Logo", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap lumberjack {
-            get {
-                object obj = ResourceManager.GetObject("lumberjack", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -763,6 +793,16 @@ namespace Gerador_de_Deck.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap minion {
+            get {
+                object obj = ResourceManager.GetObject("minion", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap minion_horde {
             get {
                 object obj = ResourceManager.GetObject("minion_horde", resourceCulture);
@@ -773,29 +813,9 @@ namespace Gerador_de_Deck.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap minions {
-            get {
-                object obj = ResourceManager.GetObject("minions", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap mirror {
             get {
                 object obj = ResourceManager.GetObject("mirror", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap mortar {
-            get {
-                object obj = ResourceManager.GetObject("mortar", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -823,9 +843,9 @@ namespace Gerador_de_Deck.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap night_witch {
+        internal static System.Drawing.Bitmap nova_carta_clash_royale {
             get {
-                object obj = ResourceManager.GetObject("night_witch", resourceCulture);
+                object obj = ResourceManager.GetObject("nova_carta_clash_royale", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -833,9 +853,9 @@ namespace Gerador_de_Deck.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap nova_carta_clash_royale {
+        internal static System.Drawing.Bitmap order_volley {
             get {
-                object obj = ResourceManager.GetObject("nova_carta_clash_royale", resourceCulture);
+                object obj = ResourceManager.GetObject("order_volley", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -893,9 +913,9 @@ namespace Gerador_de_Deck.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap rocket {
+        internal static System.Drawing.Bitmap rage_barbarian {
             get {
-                object obj = ResourceManager.GetObject("rocket", resourceCulture);
+                object obj = ResourceManager.GetObject("rage_barbarian", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -903,9 +923,19 @@ namespace Gerador_de_Deck.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap royal_ghost {
+        internal static System.Drawing.Bitmap rascals {
             get {
-                object obj = ResourceManager.GetObject("royal_ghost", resourceCulture);
+                object obj = ResourceManager.GetObject("rascals", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap rocket {
+            get {
+                object obj = ResourceManager.GetObject("rocket", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -943,9 +973,9 @@ namespace Gerador_de_Deck.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap skeleton_army {
+        internal static System.Drawing.Bitmap skeleton_balloon {
             get {
-                object obj = ResourceManager.GetObject("skeleton_army", resourceCulture);
+                object obj = ResourceManager.GetObject("skeleton_balloon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -953,9 +983,19 @@ namespace Gerador_de_Deck.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap skeleton_barrel {
+        internal static System.Drawing.Bitmap skeleton_horde {
             get {
-                object obj = ResourceManager.GetObject("skeleton_barrel", resourceCulture);
+                object obj = ResourceManager.GetObject("skeleton_horde", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap skeleton_warriors {
+            get {
+                object obj = ResourceManager.GetObject("skeleton_warriors", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -973,29 +1013,9 @@ namespace Gerador_de_Deck.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap sparky {
+        internal static System.Drawing.Bitmap snow_spirits {
             get {
-                object obj = ResourceManager.GetObject("sparky", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap spear_goblins {
-            get {
-                object obj = ResourceManager.GetObject("spear_goblins", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap tesla {
-            get {
-                object obj = ResourceManager.GetObject("tesla", resourceCulture);
+                object obj = ResourceManager.GetObject("snow_spirits", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1063,29 +1083,9 @@ namespace Gerador_de_Deck.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap witch {
-            get {
-                object obj = ResourceManager.GetObject("witch", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap wizard {
             get {
                 object obj = ResourceManager.GetObject("wizard", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap x_bow {
-            get {
-                object obj = ResourceManager.GetObject("x_bow", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1106,6 +1106,16 @@ namespace Gerador_de_Deck.Properties {
         internal static System.Drawing.Bitmap zap {
             get {
                 object obj = ResourceManager.GetObject("zap", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap zapMachine {
+            get {
+                object obj = ResourceManager.GetObject("zapMachine", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

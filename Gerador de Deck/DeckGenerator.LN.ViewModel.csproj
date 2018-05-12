@@ -64,7 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\ArquivoRegras.cs" />
-    <Compile Include="Classes\CartasDescricao.cs" />
+    <Compile Include="Classes\CartasDescInfo.cs" />
     <Compile Include="Classes\CartasInformacoes.cs" />
     <Compile Include="GeradorDeDeck.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -90,259 +90,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\archers.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\arrows.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\baby-dragon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\balloon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\bandit.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\barbarian-hut.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\barbarians.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\bats.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\battle-ram.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\bomber.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\bomb-tower.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\bowler.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\cannon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\cannon-cart.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\clone.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\dark-prince.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\dart-goblin.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\electro-wizard.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\elite-barbarians.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\elixir-collector.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\executioner.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\fireball.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\fire-spirits.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\flying-machine.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\freeze.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\furnace.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\giant.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\giant-skeleton.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\goblin-barrel.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\goblin-gang.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\goblin-hut.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\goblins.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\golem.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\graveyard.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\guards.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\heal.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\hog-rider.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\hunter.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\ice-golem.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\ice-spirit.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\ice-wizard.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\inferno-dragon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\inferno-tower.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\knight.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\lava-hound.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\lightning.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\lumberjack.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\mega-knight.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\mega-minion.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\miner.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\minion-horde.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\minions.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\mini-pekka.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\mirror.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\mortar.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\musketeer.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\night-witch.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\nova-carta-clash-royale.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\pekka.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\poison.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\prince.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\princess.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\rage.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\rocket.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\royal-ghost.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\royal-giant.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\skeleton-army.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\skeleton-barrel.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\skeletons.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\sparky.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\spear-goblins.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\tesla.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\the-log.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\three-musketeers.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\tornado.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\valkyrie.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\witch.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\wizard.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\x-bow.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\zap.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\zappies.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\tombstone.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\magic-archer.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\apagar.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\barbarian-barrel.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\atualizar.ico" />
@@ -360,10 +111,91 @@
     <None Include="Resources\copiar.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\mostrar.ico" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="icon.ico" />
+    <None Include="Resources\angry_barbarian.png" />
+    <None Include="Resources\zappies.png" />
+    <None Include="Resources\zapMachine.png" />
+    <None Include="Resources\zap.png" />
+    <None Include="Resources\wizard.png" />
+    <None Include="Resources\valkyrie.png" />
+    <None Include="Resources\tornado.png" />
+    <None Include="Resources\tombstone.png" />
+    <None Include="Resources\three_musketeers.png" />
+    <None Include="Resources\the_log.png" />
+    <None Include="Resources\snow_spirits.png" />
+    <None Include="Resources\skeletons.png" />
+    <None Include="Resources\skeleton_warriors.png" />
+    <None Include="Resources\skeleton_horde.png" />
+    <None Include="Resources\skeleton_balloon.png" />
+    <None Include="Resources\royal_giant.png" />
+    <None Include="Resources\rocket.png" />
+    <None Include="Resources\rascals.png" />
+    <None Include="Resources\rage_barbarian.png" />
+    <None Include="Resources\rage.png" />
+    <None Include="Resources\princess.png" />
+    <None Include="Resources\prince.png" />
+    <None Include="Resources\poison.png" />
+    <None Include="Resources\pekka.png" />
+    <None Include="Resources\order_volley.png" />
+    <None Include="Resources\musketeer.png" />
+    <None Include="Resources\mirror.png" />
+    <None Include="Resources\minion_horde.png" />
+    <None Include="Resources\minion.png" />
+    <None Include="Resources\mini_pekka.png" />
+    <None Include="Resources\miner.png" />
+    <None Include="Resources\mega_minion.png" />
+    <None Include="Resources\mega_knight.png" />
+    <None Include="Resources\magic_archer.png" />
+    <None Include="Resources\lightning.png" />
+    <None Include="Resources\lava_hound.png" />
+    <None Include="Resources\knight.png" />
+    <None Include="Resources\inferno_dragon.png" />
+    <None Include="Resources\ice_wizard.png" />
+    <None Include="Resources\ice_golem.png" />
+    <None Include="Resources\hunter.png" />
+    <None Include="Resources\hog_rider.png" />
+    <None Include="Resources\heal.png" />
+    <None Include="Resources\graveyard.png" />
+    <None Include="Resources\goblins.png" />
+    <None Include="Resources\goblin_gang.png" />
+    <None Include="Resources\goblin_barrel.png" />
+    <None Include="Resources\goblin_archer.png" />
+    <None Include="Resources\giant_skeleton.png" />
+    <None Include="Resources\giant.png" />
+    <None Include="Resources\ghost.png" />
+    <None Include="Resources\freeze.png" />
+    <None Include="Resources\flying_machine.png" />
+    <None Include="Resources\firespirit_hut.png" />
+    <None Include="Resources\fire_spirits.png" />
+    <None Include="Resources\fire_furnace.png" />
+    <None Include="Resources\fire_fireball.png" />
+    <None Include="Resources\executioner.png" />
+    <None Include="Resources\electro_wizard.png" />
+    <None Include="Resources\dark_witch.png" />
+    <None Include="Resources\dark_prince.png" />
+    <None Include="Resources\copy.png" />
+    <None Include="Resources\chr_witch.png" />
+    <None Include="Resources\chr_golem.png" />
+    <None Include="Resources\chr_balloon.png" />
+    <None Include="Resources\chaos_cannon.png" />
+    <None Include="Resources\cannon_cart.png" />
+    <None Include="Resources\building_xbow.png" />
+    <None Include="Resources\building_tesla.png" />
+    <None Include="Resources\building_mortar.png" />
+    <None Include="Resources\building_inferno.png" />
+    <None Include="Resources\building_elixir_collector.png" />
+    <None Include="Resources\bowler.png" />
+    <None Include="Resources\bomber.png" />
+    <None Include="Resources\bomb_tower.png" />
+    <None Include="Resources\blowdart_goblin.png" />
+    <None Include="Resources\battle_ram.png" />
+    <None Include="Resources\bats.png" />
+    <None Include="Resources\barbarians.png" />
+    <None Include="Resources\barbarian_hut.png" />
+    <None Include="Resources\barb_barrel.png" />
+    <None Include="Resources\bandit.png" />
+    <None Include="Resources\baby_dragon.png" />
+    <None Include="Resources\archers.png" />
     <None Include="Resources\atalho.ico" />
     <None Include="Resources\balancear.ico" />
     <None Include="Resources\melhoresdecks.png" />

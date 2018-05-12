@@ -23,8 +23,7 @@
                 System.Diagnostics.Process p = System.Diagnostics.Process.GetCurrentProcess();
                 System.Diagnostics.Process[] ps = System.Diagnostics.Process.GetProcessesByName(p.ProcessName);
                 foreach (System.Diagnostics.Process pp in ps)
-                    if (pp.Id != p.Id)
-                        SwitchToThisWindow(pp.MainWindowHandle);
+                    if (pp.Id != p.Id) SwitchToThisWindow(pp.MainWindowHandle);
             }
         }
     }
@@ -281,7 +280,7 @@
             this.tip.SetToolTip(this.btnGeradorDeck, "Gerador de Deck");
             this.btnGeradorDeck.FlatAppearance.BorderSize = 0;
             this.btnGeradorDeck.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGeradorDeck.Click += (s, e) => clickBotao(true, pGerador, btnGeradorDeck);
+            this.btnGeradorDeck.Click += (s, e) => ClickBotao(true, pGerador, btnGeradorDeck);
 
             this.btnSelecaoDeCartas = new System.Windows.Forms.Button
             {
@@ -296,7 +295,7 @@
             this.tip.SetToolTip(this.btnSelecaoDeCartas, "Seleção de Cartas");
             this.btnSelecaoDeCartas.FlatAppearance.BorderSize = 0;
             this.btnSelecaoDeCartas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSelecaoDeCartas.Click += (s, e) => clickBotao(true, pSelecaoDeCartas, btnSelecaoDeCartas);
+            this.btnSelecaoDeCartas.Click += (s, e) => ClickBotao(true, pSelecaoDeCartas, btnSelecaoDeCartas);
 
             this.btnDecksSalvos = new System.Windows.Forms.Button
             {
@@ -311,7 +310,7 @@
             this.tip.SetToolTip(this.btnDecksSalvos, "Decks salvos");
             this.btnDecksSalvos.FlatAppearance.BorderSize = 0;
             this.btnDecksSalvos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDecksSalvos.Click += (s, e) => clickBotao(true, pDecksSalvos, btnDecksSalvos);
+            this.btnDecksSalvos.Click += (s, e) => ClickBotao(true, pDecksSalvos, btnDecksSalvos);
 
             this.btnMelhoresDecks = new System.Windows.Forms.Button()
             {
@@ -326,7 +325,7 @@
             };
             this.tip.SetToolTip(this.btnMelhoresDecks, "Melhores Decks");
             this.btnMelhoresDecks.FlatAppearance.BorderSize = 0;
-            this.btnMelhoresDecks.Click += (s, e) => clickBotao(true, pMelhoresDecks, btnMelhoresDecks);
+            this.btnMelhoresDecks.Click += (s, e) => ClickBotao(true, pMelhoresDecks, btnMelhoresDecks);
 
             this.btnBalanceamento = new System.Windows.Forms.Button()
             {
@@ -342,7 +341,7 @@
             };
             this.tip.SetToolTip(this.btnBalanceamento, "Balanceamento");
             this.btnBalanceamento.FlatAppearance.BorderSize = 0;
-            this.btnBalanceamento.Click += (s, e) => clickBotao(true, pBalanceamento, btnBalanceamento);
+            this.btnBalanceamento.Click += (s, e) => ClickBotao(true, pBalanceamento, btnBalanceamento);
 
             this.btnConfig = new System.Windows.Forms.Button
             {
@@ -357,7 +356,7 @@
             this.tip.SetToolTip(this.btnConfig, "Configurações");
             this.btnConfig.FlatAppearance.BorderSize = 0;
             this.btnConfig.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConfig.Click += (s, e) => clickBotao(true, pConfig, btnConfig);
+            this.btnConfig.Click += (s, e) => ClickBotao(true, pConfig, btnConfig);
 
             this.btnAtualizador = new System.Windows.Forms.Button
             {
@@ -372,7 +371,7 @@
             this.tip.SetToolTip(this.btnAtualizador, "Atualizador");
             this.btnAtualizador.FlatAppearance.BorderSize = 0;
             this.btnAtualizador.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAtualizador.Click += (s, e) => clickBotao(true, pAtualizador, btnAtualizador);
+            this.btnAtualizador.Click += (s, e) => ClickBotao(true, pAtualizador, btnAtualizador);
 
             this.btnSobre = new System.Windows.Forms.Button
             {
@@ -391,7 +390,7 @@
             this.tip.SetToolTip(this.btnSobre, "Sobre");
             this.btnSobre.FlatAppearance.BorderSize = 0;
             this.btnSobre.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSobre.Click += (s, e) => clickBotao(true, pSobre, btnSobre);
+            this.btnSobre.Click += (s, e) => ClickBotao(true, pSobre, btnSobre);
 
             this.pSelected = new System.Windows.Forms.Panel
             {
@@ -402,7 +401,12 @@
                 Cursor = System.Windows.Forms.Cursors.Hand
             };
             int y = 0; System.Drawing.Point point = new System.Drawing.Point(); bool f = false;
-            this.pSelected.MouseDown += (s, e) => { f = true; y = MousePosition.Y - pSelected.Location.Y; };
+            this.pSelected.MouseDown += (s, e) =>
+            {
+                pSelected.Location = new System.Drawing.Point(pSelected.Location.X, pSelected.Location.Y + 1);
+                pSelected.Size = new System.Drawing.Size(pSelected.Size.Width - 1, pSelected.Size.Height - 2);
+                f = true; y = MousePosition.Y - pSelected.Location.Y;
+            };
             this.pSelected.MouseMove += (s, e) =>
             {
                 if (f)
@@ -411,8 +415,8 @@
                     point.X = pSelected.Location.X;
                     point.Y -= y;
                     if (point.Y >= 7 && point.Y <= btnSobre.Location.Y) { pSelected.Location = point; Seleciona(false); }
-                    else if (point.Y < 7) clickBotao(true, pGerador, btnGeradorDeck);
-                    else if (point.Y > btnSobre.Location.Y) clickBotao(true, pSobre, btnSobre);
+                    else if (point.Y < 7) ClickBotao(true, pGerador, btnGeradorDeck);
+                    else if (point.Y > btnSobre.Location.Y) ClickBotao(true, pSobre, btnSobre);
                     System.Windows.Forms.Application.DoEvents();
                 }
             };
@@ -420,6 +424,18 @@
             {
                 f = false;
                 Seleciona(true);
+                pSelected.Location = new System.Drawing.Point(pSelected.Location.X, pSelected.Location.Y - 1);
+                pSelected.Size = new System.Drawing.Size(pSelected.Size.Width + 1, pSelected.Size.Height + 2);
+            };
+            this.pSelected.MouseEnter += (s, e) =>
+            {
+                pSelected.Location = new System.Drawing.Point(pSelected.Location.X, pSelected.Location.Y - 1);
+                pSelected.Size = new System.Drawing.Size(pSelected.Size.Width + 1, pSelected.Size.Height + 2);
+            };
+            this.pSelected.MouseLeave += (s, e) =>
+            {
+                pSelected.Location = new System.Drawing.Point(pSelected.Location.X, pSelected.Location.Y + 1);
+                pSelected.Size = new System.Drawing.Size(pSelected.Size.Width - 1, pSelected.Size.Height - 2);
             };
 
             this.pOpcoes = new System.Windows.Forms.Panel
@@ -559,8 +575,8 @@
             this.tip.SetToolTip(this.picDica, "Dicas");
             this.picDica.Click += (s, e) =>
             {
-                byte i = System.Convert.ToByte(_Random.Next(0, Classes.CartasDescricao.Dica.Length));
-                System.Windows.Forms.MessageBox.Show(Classes.CartasDescricao.Dica[i] + '.', string.Format("Dica {0} de {1}", (i + 1).ToString().Length == 1 ? "0" + (i + 1) : (i + 1).ToString(), Classes.CartasDescricao.Dica.Length), System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Information);
+                byte i = System.Convert.ToByte(_Random.Next(0, Classes.CartasDescInfo.Dica.Length));
+                System.Windows.Forms.MessageBox.Show(Classes.CartasDescInfo.Dica[i] + '.', string.Format("Dica {0} de {1}", (i + 1).ToString().Length == 1 ? "0" + (i + 1) : (i + 1).ToString(), Classes.CartasDescInfo.Dica.Length), System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Information);
             };
             ((System.ComponentModel.ISupportInitialize)(this.picDica)).EndInit();
 
@@ -629,6 +645,7 @@
             {
                 pGerador.Select();
                 AtualizaArena();
+                AtualizaListaCartas();
                 CalcularMedia();
             };
 
@@ -685,6 +702,7 @@
             {
                 pGerador.Select();
                 AtualizaRaridade();
+                AtualizaListaCartas();
                 CalcularMedia();
             };
 
@@ -741,6 +759,7 @@
             {
                 pGerador.Select();
                 AtualizaTipo();
+                AtualizaListaCartas();
                 CalcularMedia();
             };
 
@@ -810,8 +829,8 @@
                 BackColor = System.Drawing.Color.Transparent,
                 Cursor = System.Windows.Forms.Cursors.Hand,
                 Image = Properties.Resources.nova_carta_clash_royale,
-                Location = new System.Drawing.Point(225, 7),
-                Size = new System.Drawing.Size(131, 157),
+                Location = new System.Drawing.Point(227, 7),
+                Size = new System.Drawing.Size(129, 156),
                 SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage,
                 TabStop = false
             };
@@ -824,8 +843,8 @@
                 BackColor = System.Drawing.Color.Transparent,
                 Cursor = System.Windows.Forms.Cursors.Hand,
                 Image = Properties.Resources.nova_carta_clash_royale,
-                Location = new System.Drawing.Point(358, 7),
-                Size = new System.Drawing.Size(131, 157),
+                Location = new System.Drawing.Point(360, 7),
+                Size = new System.Drawing.Size(129, 156),
                 SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage,
                 TabStop = false
             };
@@ -838,8 +857,8 @@
                 BackColor = System.Drawing.Color.Transparent,
                 Cursor = System.Windows.Forms.Cursors.Hand,
                 Image = Properties.Resources.nova_carta_clash_royale,
-                Location = new System.Drawing.Point(491, 7),
-                Size = new System.Drawing.Size(131, 157),
+                Location = new System.Drawing.Point(493, 7),
+                Size = new System.Drawing.Size(129, 156),
                 SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage,
                 TabStop = false
             };
@@ -852,8 +871,8 @@
                 BackColor = System.Drawing.Color.Transparent,
                 Cursor = System.Windows.Forms.Cursors.Hand,
                 Image = Properties.Resources.nova_carta_clash_royale,
-                Location = new System.Drawing.Point(624, 7),
-                Size = new System.Drawing.Size(131, 157),
+                Location = new System.Drawing.Point(626, 7),
+                Size = new System.Drawing.Size(129, 156),
                 SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage,
                 TabStop = false
             };
@@ -866,8 +885,8 @@
                 BackColor = System.Drawing.Color.Transparent,
                 Cursor = System.Windows.Forms.Cursors.Hand,
                 Image = Properties.Resources.nova_carta_clash_royale,
-                Location = new System.Drawing.Point(225, 168),
-                Size = new System.Drawing.Size(131, 157),
+                Location = new System.Drawing.Point(227, 170),
+                Size = new System.Drawing.Size(129, 156),
                 SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage,
                 TabStop = false
             };
@@ -880,8 +899,8 @@
                 BackColor = System.Drawing.Color.Transparent,
                 Cursor = System.Windows.Forms.Cursors.Hand,
                 Image = Properties.Resources.nova_carta_clash_royale,
-                Location = new System.Drawing.Point(358, 168),
-                Size = new System.Drawing.Size(131, 157),
+                Location = new System.Drawing.Point(360, 170),
+                Size = new System.Drawing.Size(129, 156),
                 SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage,
                 TabStop = false
             };
@@ -894,8 +913,8 @@
                 BackColor = System.Drawing.Color.Transparent,
                 Cursor = System.Windows.Forms.Cursors.Hand,
                 Image = Properties.Resources.nova_carta_clash_royale,
-                Location = new System.Drawing.Point(491, 168),
-                Size = new System.Drawing.Size(131, 157),
+                Location = new System.Drawing.Point(493, 170),
+                Size = new System.Drawing.Size(129, 156),
                 SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage,
                 TabStop = false
             };
@@ -908,8 +927,8 @@
                 BackColor = System.Drawing.Color.Transparent,
                 Cursor = System.Windows.Forms.Cursors.Hand,
                 Image = Properties.Resources.nova_carta_clash_royale,
-                Location = new System.Drawing.Point(624, 168),
-                Size = new System.Drawing.Size(131, 157),
+                Location = new System.Drawing.Point(626, 170),
+                Size = new System.Drawing.Size(129, 156),
                 SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage,
                 TabStop = false
             };
@@ -1187,7 +1206,7 @@
                                 if (bAtual < bAtualizada)
                                 {
                                     SwitchToThisWindow(this.Handle);
-                                    nIcon.BalloonTipClicked += (sss, eee) => { SwitchToThisWindow(this.Handle); clickBotao(true, pAtualizador, btnAtualizador); };
+                                    nIcon.BalloonTipClicked += (sss, eee) => { SwitchToThisWindow(this.Handle); ClickBotao(true, pAtualizador, btnAtualizador); };
                                     nIcon.BalloonTipText = "Existe uma nova Build disponível para download.";
                                     nIcon.ShowBalloonTip(200);
                                     lblStatus.Text = "Status: Existe uma nova Build disponível para download.";
@@ -1226,7 +1245,7 @@
                             picGIF.Hide();
                             lblStatus.Cursor = System.Windows.Forms.Cursors.Hand;
                             SwitchToThisWindow(this.Handle);
-                            clickBotao(true, pAtualizador, btnAtualizador);
+                            ClickBotao(true, pAtualizador, btnAtualizador);
                             lblStatus.Text = "Status: Download concluído. Extraia a nova versão do Gerador na pasta do\nexecutável. Clique aqui!";
                             lblStatus.Click += (sss, eee) =>
                             {
@@ -1458,7 +1477,7 @@
                 Size = new System.Drawing.Size(248, 25),
                 Text = "• &Sistema de atualização"
             };
-            this.lbl10.Click += (s, e) => clickBotao(true, pAtualizador, btnAtualizador);
+            this.lbl10.Click += (s, e) => ClickBotao(true, pAtualizador, btnAtualizador);
 
             this.lbl11 = new System.Windows.Forms.Label
             {
@@ -1492,7 +1511,7 @@
                 Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0),
                 Location = new System.Drawing.Point(11, 405),
                 Size = new System.Drawing.Size(357, 25),
-                Text = "Versão atual do Clash Royale: 2.2.2"
+                Text = "Versão atual do Clash Royale: 2.2.3"
             };
             this.lbl5.Click += (s, e) => pSobre.Select();
 
@@ -1513,9 +1532,9 @@
             {
                 pSobre.Select();
                 byte i = 0; System.Windows.Forms.DialogResult dialog;
-                do dialog = System.Windows.Forms.MessageBox.Show(Classes.CartasDescricao.Atalhos[i] + '.' + System.Environment.NewLine + "Deseja ir para o próximo atalho?", string.Format("Atalho {0} de 0{1}", (i + 1).ToString().Length == 1 ? "0" + (++i) : (++i).ToString(), Classes.CartasDescricao.Atalhos.Length), System.Windows.Forms.MessageBoxButtons.YesNo, System.Windows.Forms.MessageBoxIcon.Information);
-                while (dialog == System.Windows.Forms.DialogResult.Yes && i < Classes.CartasDescricao.Atalhos.Length - 1);
-                if (dialog == System.Windows.Forms.DialogResult.Yes) System.Windows.Forms.MessageBox.Show(Classes.CartasDescricao.Atalhos[Classes.CartasDescricao.Atalhos.Length - 1] + '.', "Atalho 0" + Classes.CartasDescricao.Atalhos.Length + " de 0" + Classes.CartasDescricao.Atalhos.Length, System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Information);
+                do dialog = System.Windows.Forms.MessageBox.Show(Classes.CartasDescInfo.Atalhos[i] + '.' + System.Environment.NewLine + "Deseja ir para o próximo atalho?", string.Format("Atalho {0} de 0{1}", (i + 1).ToString().Length == 1 ? "0" + (++i) : (++i).ToString(), Classes.CartasDescInfo.Atalhos.Length), System.Windows.Forms.MessageBoxButtons.YesNo, System.Windows.Forms.MessageBoxIcon.Information);
+                while (dialog == System.Windows.Forms.DialogResult.Yes && i < Classes.CartasDescInfo.Atalhos.Length - 1);
+                if (dialog == System.Windows.Forms.DialogResult.Yes) System.Windows.Forms.MessageBox.Show(Classes.CartasDescInfo.Atalhos[Classes.CartasDescInfo.Atalhos.Length - 1] + '.', "Atalho 0" + Classes.CartasDescInfo.Atalhos.Length + " de 0" + Classes.CartasDescInfo.Atalhos.Length, System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Information);
             };
             ((System.ComponentModel.ISupportInitialize)(this.picAtalho)).EndInit();
 
@@ -1572,9 +1591,9 @@
             {
                 pSobre.Select();
                 byte i = 0; System.Windows.Forms.DialogResult dialog;
-                do dialog = System.Windows.Forms.MessageBox.Show(Classes.CartasDescricao.Dica[i] + '.' + System.Environment.NewLine + "Deseja ir para a próxima dica?", string.Format("Dica {0} de {1}", (i + 1).ToString().Length == 1 ? "0" + (++i) : (++i).ToString(), Classes.CartasDescricao.Dica.Length), System.Windows.Forms.MessageBoxButtons.YesNo, System.Windows.Forms.MessageBoxIcon.Information);
-                while (dialog == System.Windows.Forms.DialogResult.Yes && i < Classes.CartasDescricao.Dica.Length - 1);
-                if (dialog == System.Windows.Forms.DialogResult.Yes) System.Windows.Forms.MessageBox.Show(Classes.CartasDescricao.Dica[Classes.CartasDescricao.Dica.Length - 1] + '.', "Dica " + Classes.CartasDescricao.Dica.Length + " de " + Classes.CartasDescricao.Dica.Length, System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Information);
+                do dialog = System.Windows.Forms.MessageBox.Show(Classes.CartasDescInfo.Dica[i] + '.' + System.Environment.NewLine + "Deseja ir para a próxima dica?", string.Format("Dica {0} de {1}", (i + 1).ToString().Length == 1 ? "0" + (++i) : (++i).ToString(), Classes.CartasDescInfo.Dica.Length), System.Windows.Forms.MessageBoxButtons.YesNo, System.Windows.Forms.MessageBoxIcon.Information);
+                while (dialog == System.Windows.Forms.DialogResult.Yes && i < Classes.CartasDescInfo.Dica.Length - 1);
+                if (dialog == System.Windows.Forms.DialogResult.Yes) System.Windows.Forms.MessageBox.Show(Classes.CartasDescInfo.Dica[Classes.CartasDescInfo.Dica.Length - 1] + '.', "Dica " + Classes.CartasDescInfo.Dica.Length + " de " + Classes.CartasDescInfo.Dica.Length, System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Information);
             };
             ((System.ComponentModel.ISupportInitialize)(this.picDica2)).EndInit();
 
@@ -1746,7 +1765,7 @@
                 ForeColor = System.Drawing.Color.White,
                 Location = new System.Drawing.Point(221, 32),
                 Size = new System.Drawing.Size(295, 24),
-                Text = "Efeito de crescimento das Cartas",
+                Text = "Efeito de Crescimento e Clique das Cartas",
                 UseVisualStyleBackColor = false,
                 TabIndex = 1
             };
@@ -1775,7 +1794,7 @@
                 Cursor = System.Windows.Forms.Cursors.Hand,
                 Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0),
                 ForeColor = System.Drawing.Color.White,
-                Location = new System.Drawing.Point(221, 62),
+                Location = new System.Drawing.Point(221, 61),
                 Maximum = 2M,
                 Minimum = 1M,
                 Size = new System.Drawing.Size(33, 21),
@@ -1794,7 +1813,7 @@
                 Cursor = System.Windows.Forms.Cursors.Hand,
                 Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0),
                 ForeColor = System.Drawing.Color.White,
-                Location = new System.Drawing.Point(258, 62),
+                Location = new System.Drawing.Point(258, 61),
                 Size = new System.Drawing.Size(293, 20),
                 Text = "Tamanho do crescimento de Cartas"
             };
@@ -2121,8 +2140,8 @@
                 // picCarta
                 picCarta[i] = new System.Windows.Forms.PictureBox
                 {
-                    Size = new System.Drawing.Size(129, 151),
-                    Location = new System.Drawing.Point(3, 13),
+                    Size = new System.Drawing.Size(126, 147),
+                    Location = new System.Drawing.Point(5, 15),
                     BackColor = System.Drawing.Color.Transparent,
                     SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage,
                     Image = _Deck.CartasImagem[i + 1],
@@ -2137,7 +2156,7 @@
                 lblInfo[i] = new System.Windows.Forms.Label
                 {
                     AutoSize = true,
-                    Location = new System.Drawing.Point(131, 25),
+                    Location = new System.Drawing.Point(133, 25),
                     Font = new System.Drawing.Font(Font.FontFamily, 8.25f, System.Drawing.FontStyle.Regular),
                     Text = _Deck.CartasInformacao[i + 1].Split('\n')[0] + System.Environment.NewLine +
                     _Deck.CartasInformacao[i + 1].Split('\n')[1] + System.Environment.NewLine +
@@ -2188,6 +2207,16 @@
                     picCarta[valorI].Location = new System.Drawing.Point(localInicialX, localInicialY);
                     picCarta[valorI].Size = new System.Drawing.Size(tamInicialWidth, tamInicialHeigth);
                 };
+                picCarta[i].MouseDown += (s, e) =>
+                {
+                    picCarta[valorI].Location = new System.Drawing.Point(localInicialX, localInicialY);
+                    picCarta[valorI].Size = new System.Drawing.Size(tamInicialWidth, tamInicialHeigth);
+                };
+                picCarta[i].MouseUp += (s, e) =>
+                {
+                    picCarta[valorI].Location = new System.Drawing.Point(localInicialX - System.Convert.ToByte(nUpTCarta.Value), localInicialY - System.Convert.ToByte(nUpTCarta.Value));
+                    picCarta[valorI].Size = new System.Drawing.Size(tamInicialWidth + System.Convert.ToByte(nUpTCarta.Value) * 2, tamInicialHeigth + System.Convert.ToByte(nUpTCarta.Value) * 2);
+                };
                 picCarta[i].Click += (s, e) =>
                 {
                     grpBoxSCartas[valorI].Select();
@@ -2204,14 +2233,18 @@
                     string.Format("Custo de Elixir: {0}", _Deck.CustoElixir[valorI + 1]).Replace(',', '.') + System.Environment.NewLine +
                     infoAdicional;
                 };
+
                 btnInfo[i].Click += (s, e) =>
                 {
                     grpBoxSCartas[valorI].Select();
-                    string descricao = Classes.CartasDescricao.Descricao[valorI + 1];
+                    string descricao = Classes.CartasDescInfo.Descricao[valorI + 1];
                     System.Windows.Forms.MessageBox.Show(descricao, "Descrição - " + _Deck.CartasInformacao[valorI + 1].Split('\n')[0], System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Information);
                 };
+
                 cbPermitir[i].CheckedChanged += (s, e) => { ChecarCB(); };
+
                 lblInfo[i].Click += (s, e) => { grpBoxSCartas[valorI].Select(); };
+
                 grpBoxSCartas[i].Click += (s, e) => { grpBoxSCartas[valorI].Select(); };
                 #endregion
 
@@ -2331,7 +2364,6 @@
             cbSort.SelectedIndexChanged += (s, e) =>
             {
                 pSelecaoDeCartas.VerticalScroll.Value = pSelecaoDeCartas.VerticalScroll.Minimum;
-                pSelecaoDeCartas.Select();
                 Properties.Settings.Default.index = System.Convert.ToByte(cbSort.SelectedIndex);
                 Properties.Settings.Default.Save();
                 if (cbSort.SelectedIndex == 0)
@@ -2430,6 +2462,7 @@
                         if (_Deck.CartasInformacao[i + 1].Split('\n')[2] == "Tipo: Tropa")
                         { grpBoxSCartas[i].Location = localInicialGrpBox[local]; grpBoxSCartas[i].TabIndex = local + 3; local++; }
                 }
+                pSelecaoDeCartas.Select();
             };
             tsItems[0].Click += (s, e) => Atualizar();
             tsItems[1].Click += (s, e) => Salvar();
@@ -2459,6 +2492,7 @@
 
             void Salvar()
             {
+                AtualizaListaCartas();
                 try
                 {
                     System.Text.StringBuilder sb = new System.Text.StringBuilder();
@@ -2798,7 +2832,7 @@
                         conOpcoes[copiaI].Items[0].Text = "Mostrar Deck - Minimalista";
                         grpBoxDSalvos[copiaI].Size = new System.Drawing.Size(536, 340);
                         picImagem[copiaI] = new System.Windows.Forms.PictureBox[8];
-                        int x1 = 3, x2 = 3;
+                        int x1 = 5, x2 = 5;
 
                         for (byte j = 0; j < picImagem[copiaI].Length; j++)
                         {
@@ -2806,16 +2840,19 @@
                             picImagem[copiaI][j] = new System.Windows.Forms.PictureBox
                             {
                                 BackColor = System.Drawing.Color.Transparent,
-                                Size = new System.Drawing.Size(131, 157),
+                                Size = new System.Drawing.Size(127, 150),
                                 SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage,
                                 Cursor = System.Windows.Forms.Cursors.Hand,
                             };
-                            if (j < 4) { picImagem[copiaI][j].Location = new System.Drawing.Point(x1, 15); x1 += 133; }
-                            else { picImagem[copiaI][j].Location = new System.Drawing.Point(x2, 174); x2 += 133; }
+
+                            if (j < 4) { picImagem[copiaI][j].Location = new System.Drawing.Point(x1, 19); x1 += 133; }
+                            else { picImagem[copiaI][j].Location = new System.Drawing.Point(x2, 178); x2 += 133; }
+
                             int posInicialXX = picImagem[copiaI][j].Location.X;
                             int posInicialYY = picImagem[copiaI][j].Location.Y;
                             int tamInicialHeigth = picImagem[copiaI][j].Size.Height;
                             int tamInicialWidth = picImagem[copiaI][j].Size.Width;
+
                             picImagem[copiaI][j].MouseEnter += (ss, ee) =>
                             {
                                 picImagem[copiaI][copiaJ].Location = new System.Drawing.Point(posInicialXX - System.Convert.ToByte(nUpTCarta.Value), posInicialYY - System.Convert.ToByte(nUpTCarta.Value));
@@ -2826,6 +2863,17 @@
                                 picImagem[copiaI][copiaJ].Location = new System.Drawing.Point(posInicialXX, posInicialYY);
                                 picImagem[copiaI][copiaJ].Size = new System.Drawing.Size(tamInicialWidth, tamInicialHeigth);
                             };
+                            picImagem[copiaI][j].MouseUp += (ss, ee) =>
+                            {
+                                picImagem[copiaI][copiaJ].Location = new System.Drawing.Point(posInicialXX - System.Convert.ToByte(nUpTCarta.Value), posInicialYY - System.Convert.ToByte(nUpTCarta.Value));
+                                picImagem[copiaI][copiaJ].Size = new System.Drawing.Size(tamInicialWidth + System.Convert.ToByte(nUpTCarta.Value) * 2, tamInicialHeigth + System.Convert.ToByte(nUpTCarta.Value) * 2);
+                            };
+                            picImagem[copiaI][j].MouseDown += (ss, ee) =>
+                            {
+                                picImagem[copiaI][copiaJ].Location = new System.Drawing.Point(posInicialXX, posInicialYY);
+                                picImagem[copiaI][copiaJ].Size = new System.Drawing.Size(tamInicialWidth, tamInicialHeigth);
+                            };
+
                             for (byte b = 0; b < _Deck.CartasImagem.Length; b++)
                                 if (decksSalvos[copiaI].Split(';')[j] == _Deck.CodigoCartas[b].ToString())
                                 {
@@ -2833,6 +2881,7 @@
                                     if (ckNome.Checked)
                                         tip.SetToolTip(picImagem[copiaI][j], _Deck.CartasInformacao[b].Split('\n')[0]);
                                 }
+
                             picImagem[copiaI][j].Click += (ss, ee) =>
                             {
                                 grpBoxDSalvos[copiaI].Select();
@@ -3126,14 +3175,14 @@
                     grpBoxMDecks[i].ContextMenuStrip = cmsGBMDecks[i];
 
                     picImagemMDecks[i] = new System.Windows.Forms.PictureBox[8];
-                    int x1 = 3, x2 = 3;
+                    int x1 = 5, x2 = 5;
 
                     for (byte j = 0; j < picImagemMDecks[i].Length; j++)
                     {
                         byte copiaJ = j;
                         picImagemMDecks[i][j] = new System.Windows.Forms.PictureBox()
                         {
-                            Size = new System.Drawing.Size(131, 157),
+                            Size = new System.Drawing.Size(127, 150),
                             SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage,
                             BackColor = System.Drawing.Color.Transparent,
                             Cursor = System.Windows.Forms.Cursors.Hand
@@ -3147,19 +3196,30 @@
                                 break;
                             }
 
-                        if (j < 4) { picImagemMDecks[i][j].Location = new System.Drawing.Point(x1, 15); x1 += 133; }
-                        else { picImagemMDecks[i][j].Location = new System.Drawing.Point(x2, 174); x2 += 133; }
+                        if (j < 4) { picImagemMDecks[i][j].Location = new System.Drawing.Point(x1, 19); x1 += 133; }
+                        else { picImagemMDecks[i][j].Location = new System.Drawing.Point(x2, 178); x2 += 133; }
 
                         int posInicialXX = picImagemMDecks[i][j].Location.X;
                         int posInicialYY = picImagemMDecks[i][j].Location.Y;
                         int tamInicialHeigth = picImagemMDecks[i][j].Size.Height;
                         int tamInicialWidth = picImagemMDecks[i][j].Size.Width;
+
                         picImagemMDecks[i][j].MouseEnter += (s, e) =>
                         {
                             picImagemMDecks[copiaI][copiaJ].Location = new System.Drawing.Point(posInicialXX - System.Convert.ToByte(nUpTCarta.Value), posInicialYY - System.Convert.ToByte(nUpTCarta.Value));
                             picImagemMDecks[copiaI][copiaJ].Size = new System.Drawing.Size(tamInicialWidth + System.Convert.ToByte(nUpTCarta.Value) * 2, tamInicialHeigth + System.Convert.ToByte(nUpTCarta.Value) * 2);
                         };
                         picImagemMDecks[i][j].MouseLeave += (s, e) =>
+                        {
+                            picImagemMDecks[copiaI][copiaJ].Location = new System.Drawing.Point(posInicialXX, posInicialYY);
+                            picImagemMDecks[copiaI][copiaJ].Size = new System.Drawing.Size(tamInicialWidth, tamInicialHeigth);
+                        };
+                        picImagemMDecks[i][j].MouseUp += (s, e) =>
+                        {
+                            picImagemMDecks[copiaI][copiaJ].Location = new System.Drawing.Point(posInicialXX - System.Convert.ToByte(nUpTCarta.Value), posInicialYY - System.Convert.ToByte(nUpTCarta.Value));
+                            picImagemMDecks[copiaI][copiaJ].Size = new System.Drawing.Size(tamInicialWidth + System.Convert.ToByte(nUpTCarta.Value) * 2, tamInicialHeigth + System.Convert.ToByte(nUpTCarta.Value) * 2);
+                        };
+                        picImagemMDecks[i][j].MouseDown += (s, e) =>
                         {
                             picImagemMDecks[copiaI][copiaJ].Location = new System.Drawing.Point(posInicialXX, posInicialYY);
                             picImagemMDecks[copiaI][copiaJ].Size = new System.Drawing.Size(tamInicialWidth, tamInicialHeigth);
@@ -3417,6 +3477,16 @@
                         picImagemBalanceamento[copiaI].Location = new System.Drawing.Point(posInicialXX, posInicialYY);
                         picImagemBalanceamento[copiaI].Size = new System.Drawing.Size(tamInicialWW, tamInicialHH);
                     };
+                    picImagemBalanceamento[i].MouseUp += (s, e) =>
+                    {
+                        picImagemBalanceamento[copiaI].Location = new System.Drawing.Point(posInicialXX - System.Convert.ToByte(nUpTCarta.Value), posInicialYY - System.Convert.ToByte(nUpTCarta.Value));
+                        picImagemBalanceamento[copiaI].Size = new System.Drawing.Size(tamInicialWW + System.Convert.ToByte(nUpTCarta.Value * 2), tamInicialHH + System.Convert.ToByte(nUpTCarta.Value * 2));
+                    };
+                    picImagemBalanceamento[i].MouseDown += (s, e) =>
+                    {
+                        picImagemBalanceamento[copiaI].Location = new System.Drawing.Point(posInicialXX, posInicialYY);
+                        picImagemBalanceamento[copiaI].Size = new System.Drawing.Size(tamInicialWW, tamInicialHH);
+                    };
 
                     cmsPicBalanceamento[i] = new System.Windows.Forms.ContextMenuStrip();
                     cmsPicBalanceamento[i].Items.Add("Descrição da Carta");
@@ -3426,7 +3496,7 @@
                         grpBoxBalanceamento[copiaI].Select();
                         for (byte j = 0; j < _Deck.CodigoCartas.Length; j++)
                             if (cartasBalanceadas[copiaI].Split('|')[0] == _Deck.CodigoCartas[j].ToString())
-                                System.Windows.Forms.MessageBox.Show(Classes.CartasDescricao.Descricao[j], "Descrição - " + _Deck.CartasInformacao[j].Split('\n')[0], System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Information);
+                                System.Windows.Forms.MessageBox.Show(Classes.CartasDescInfo.Descricao[j], "Descrição - " + _Deck.CartasInformacao[j].Split('\n')[0], System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Information);
                     };
 
                     picImagemBalanceamento[i].ContextMenuStrip = cmsPicBalanceamento[i];
@@ -3570,36 +3640,37 @@
                     grpBoxSCartas[i].Anchor = System.Windows.Forms.AnchorStyles.Top;
                 gbProx.Anchor = System.Windows.Forms.AnchorStyles.Top;
 
-                clickBotao(true, pGerador, btnGeradorDeck);
+                ClickBotao(true, pGerador, btnGeradorDeck);
                 AtualizaArena(); AtualizaRaridade(); AtualizaTipo();
+                AtualizaListaCartas();
                 if (Properties.Settings.Default.minmmax == 0) rbMin.Checked = true;
                 else if (Properties.Settings.Default.minmmax == 1) rbMed.Checked = true;
                 else rbMax.Checked = true;
                 System.Windows.Forms.ContextMenuStrip cmsNIcon = new System.Windows.Forms.ContextMenuStrip();
                 cmsNIcon.Items.Add("Gerador de Deck");
                 cmsNIcon.Items[0].Image = Properties.Resources.icon.ToBitmap();
-                cmsNIcon.Items[0].Click += (ss, ee) => { SwitchToThisWindow(this.Handle); clickBotao(true, pGerador, btnGeradorDeck); };
+                cmsNIcon.Items[0].Click += (ss, ee) => { SwitchToThisWindow(this.Handle); ClickBotao(true, pGerador, btnGeradorDeck); };
                 cmsNIcon.Items.Add("Seleção de Cartas");
                 cmsNIcon.Items[1].Image = Properties.Resources.select.ToBitmap();
-                cmsNIcon.Items[1].Click += (ss, ee) => { SwitchToThisWindow(this.Handle); clickBotao(true, pSelecaoDeCartas, btnSelecaoDeCartas); };
+                cmsNIcon.Items[1].Click += (ss, ee) => { SwitchToThisWindow(this.Handle); ClickBotao(true, pSelecaoDeCartas, btnSelecaoDeCartas); };
                 cmsNIcon.Items.Add("Decks salvos");
                 cmsNIcon.Items[2].Image = Properties.Resources.salvar.ToBitmap();
-                cmsNIcon.Items[2].Click += (ss, ee) => { SwitchToThisWindow(this.Handle); clickBotao(true, pDecksSalvos, btnDecksSalvos); };
+                cmsNIcon.Items[2].Click += (ss, ee) => { SwitchToThisWindow(this.Handle); ClickBotao(true, pDecksSalvos, btnDecksSalvos); };
                 cmsNIcon.Items.Add("Melhores Decks");
                 cmsNIcon.Items[3].Image = Properties.Resources.melhoresdecks;
-                cmsNIcon.Items[3].Click += (ss, ee) => { SwitchToThisWindow(this.Handle); clickBotao(true, pMelhoresDecks, btnMelhoresDecks); };
+                cmsNIcon.Items[3].Click += (ss, ee) => { SwitchToThisWindow(this.Handle); ClickBotao(true, pMelhoresDecks, btnMelhoresDecks); };
                 cmsNIcon.Items.Add("Balanceamento");
                 cmsNIcon.Items[4].Image = Properties.Resources.balancear.ToBitmap();
-                cmsNIcon.Items[4].Click += (ss, ee) => { SwitchToThisWindow(this.Handle); clickBotao(true, pBalanceamento, btnBalanceamento); };
+                cmsNIcon.Items[4].Click += (ss, ee) => { SwitchToThisWindow(this.Handle); ClickBotao(true, pBalanceamento, btnBalanceamento); };
                 cmsNIcon.Items.Add("Configurações");
                 cmsNIcon.Items[5].Image = Properties.Resources.config.ToBitmap();
-                cmsNIcon.Items[5].Click += (ss, ee) => { SwitchToThisWindow(this.Handle); clickBotao(true, pConfig, btnConfig); };
+                cmsNIcon.Items[5].Click += (ss, ee) => { SwitchToThisWindow(this.Handle); ClickBotao(true, pConfig, btnConfig); };
                 cmsNIcon.Items.Add("Atualizador");
                 cmsNIcon.Items[6].Image = Properties.Resources.update.ToBitmap();
-                cmsNIcon.Items[6].Click += (ss, ee) => { SwitchToThisWindow(this.Handle); clickBotao(true, pAtualizador, btnAtualizador); };
+                cmsNIcon.Items[6].Click += (ss, ee) => { SwitchToThisWindow(this.Handle); ClickBotao(true, pAtualizador, btnAtualizador); };
                 cmsNIcon.Items.Add("Sobre");
                 cmsNIcon.Items[7].Image = Properties.Resources.info.ToBitmap();
-                cmsNIcon.Items[7].Click += (ss, ee) => { SwitchToThisWindow(this.Handle); clickBotao(true, pSobre, btnSobre); };
+                cmsNIcon.Items[7].Click += (ss, ee) => { SwitchToThisWindow(this.Handle); ClickBotao(true, pSobre, btnSobre); };
                 cmsNIcon.Items.Add("-");
                 cmsNIcon.Items.Add("Sair");
                 cmsNIcon.Items[9].Image = Properties.Resources.apagar.ToBitmap();
@@ -3664,21 +3735,28 @@
                     Cartas[valorI].Location = posInicialGD[valorI];
                     Cartas[valorI].Size = tamInicialGD[valorI];
                 };
-                Cartas[i].MouseDown += (s, e) =>
+                Cartas[i].Click += (s, e) =>
                 {
                     pGerador.Select();
-                    if (e.Button == System.Windows.Forms.MouseButtons.Left)
-                    {
-                        string infoAdicional = string.Empty;
-                        byte v = 0;
-                        for (byte j = System.Convert.ToByte(valores.Length - 1); j > 0; j--)
-                            if (_Deck.deckAtual[valorI] < valores[j]) { infoAdicional = string.Format("Arena: {0} {1}", arenas[v], v != 0 ? "(" + v + ")" : string.Empty); break; }
-                            else v++;
-                        string infoAdicional2 = _Deck.CartasInformacao[_Deck.deckAtual[valorI]] == "Nenhuma Carta selecionada" ?
-                        string.Empty : System.Environment.NewLine + string.Format("Custo de Elixir: {0}", _Deck.CustoElixir[_Deck.deckAtual[valorI]].ToString().Replace(',', '.'))
-                        + System.Environment.NewLine + string.Format("{0}", infoAdicional);
-                        lblInformacoes.Text = _Deck.CartasInformacao[_Deck.deckAtual[valorI]] + infoAdicional2;
-                    }
+                    string infoAdicional = string.Empty;
+                    byte v = 0;
+                    for (byte j = System.Convert.ToByte(valores.Length - 1); j > 0; j--)
+                        if (_Deck.deckAtual[valorI] < valores[j]) { infoAdicional = string.Format("Arena: {0} {1}", arenas[v], v != 0 ? "(" + v + ")" : string.Empty); break; }
+                        else v++;
+                    string infoAdicional2 = _Deck.CartasInformacao[_Deck.deckAtual[valorI]] == "Nenhuma Carta selecionada" ?
+                    string.Empty : System.Environment.NewLine + string.Format("Custo de Elixir: {0}", _Deck.CustoElixir[_Deck.deckAtual[valorI]].ToString().Replace(',', '.'))
+                    + System.Environment.NewLine + string.Format("{0}", infoAdicional);
+                    lblInformacoes.Text = _Deck.CartasInformacao[_Deck.deckAtual[valorI]] + infoAdicional2;
+                };
+                Cartas[i].MouseDown += (s, e) =>
+                {
+                    Cartas[valorI].Location = posInicialGD[valorI];
+                    Cartas[valorI].Size = tamInicialGD[valorI];
+                };
+                Cartas[i].MouseUp += (s, e) =>
+                {
+                    Cartas[valorI].Location = new System.Drawing.Point(posInicialGD[valorI].X - System.Convert.ToByte(nUpTCarta.Value), posInicialGD[valorI].Y - System.Convert.ToByte(nUpTCarta.Value));
+                    Cartas[valorI].Size = new System.Drawing.Size(tamInicialGD[valorI].Width + System.Convert.ToByte(nUpTCarta.Value) * 2, tamInicialGD[valorI].Height + System.Convert.ToByte(nUpTCarta.Value) * 2);
                 };
 
                 CMS[i] = new System.Windows.Forms.ContextMenuStrip();
@@ -3688,7 +3766,7 @@
                 CMS[i].Items[0].Click += (s, e) =>
                 {
                     pOpcoes.Select();
-                    string descricao = Classes.CartasDescricao.Descricao[_Deck.deckAtual[valorI]];
+                    string descricao = Classes.CartasDescInfo.Descricao[_Deck.deckAtual[valorI]];
                     string txt = _Deck.CartasInformacao[_Deck.deckAtual[valorI]].Split('\n')[0];
                     System.Windows.Forms.MessageBox.Show(descricao, "Descrição - " + (txt == "Nenhuma Carta selecionada" ? "Carta Inexistente" : txt), System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Information);
                 };
@@ -3735,16 +3813,10 @@
             else { CorEscuro(); rbEscuro.Checked = true; }
         }
 
-        private void AtualizaTamPos(byte i)
-        {
-            posInicialGD[i] = Cartas[i].Location;
-            tamInicialGD[i] = Cartas[i].Size;
-        }
-
         System.Drawing.Point[] posInicialGD;
         System.Drawing.Size[] tamInicialGD;
 
-        private byte bAtual = 35;
+        private byte bAtual = 36;
         private float media = 0.0f;
         private System.Random _Random = new System.Random();
         private System.Windows.Forms.AutoCompleteStringCollection dados = new System.Windows.Forms.AutoCompleteStringCollection();
@@ -3755,6 +3827,34 @@
         private string[] infos, arenas;
         private System.Drawing.Color corLetra, corFundo, corFundo2, corFundoClick;
         System.Windows.Forms.NotifyIcon nIcon;
+        System.Collections.ArrayList listaCartas;
+
+        private void AtualizaListaCartas()
+        {
+            byte qtdCartas = 0;
+
+            for (byte i = 0; i < valores.Length; i++)
+                if (cbArena.SelectedIndex == i) qtdCartas = valores[i];
+
+            listaCartas = new System.Collections.ArrayList();
+            string[] raridade = { "Comum", "Rara", "Épica", "Lendária" };
+            string[] tipo = { "Tropa", "Construção", "Feitiço" };
+
+            for (byte j = 1; j < qtdCartas; j++)
+                try
+                {
+                    if (cbPermitir[j - 1].Checked && cbRaridade.SelectedIndex == 0 && cbTipo.SelectedIndex == 0)
+                        listaCartas.Add(j);
+                    else if (cbPermitir[j - 1].Checked && cbRaridade.SelectedIndex == 0 && cbTipo.SelectedIndex != 0 && _Deck.CartasInformacao[j].Split('\n')[2] == "Tipo: " + tipo[cbTipo.SelectedIndex - 1])
+                        listaCartas.Add(j);
+                    else if (cbPermitir[j - 1].Checked && cbTipo.SelectedIndex == 0 && cbRaridade.SelectedIndex != 0 && _Deck.CartasInformacao[j].Split('\n')[1] == string.Format("Raridade: {0}", raridade[cbRaridade.SelectedIndex - 1]))
+                        listaCartas.Add(j);
+                    else if (cbPermitir[j - 1].Checked && cbRaridade.SelectedIndex != 0 && cbTipo.SelectedIndex != 0 && _Deck.CartasInformacao[j].Split('\n')[1] == string.Format("Raridade: {0}", raridade[cbRaridade.SelectedIndex - 1]) &&
+                        _Deck.CartasInformacao[j].Split('\n')[2] == string.Format("Tipo: {0}", tipo[cbTipo.SelectedIndex - 1]))
+                        listaCartas.Add(j);
+                }
+                catch { Classes.ArquivoRegras.ReCriar(); }
+        }
 
         private void GerarDeck()
         {
@@ -3860,31 +3960,6 @@
             {
                 try
                 {
-                    byte qtdCartas = 0;
-
-                    for (byte i = 0; i < valores.Length; i++)
-                        if (cbArena.SelectedIndex == i) qtdCartas = valores[i];
-
-                    System.Collections.ArrayList listaCartas = new System.Collections.ArrayList();
-                    string[] raridade = { "Comum", "Rara", "Épica", "Lendária" };
-                    string[] tipo = { "Tropa", "Construção", "Feitiço" };
-                    string[] check = System.IO.File.ReadAllLines(Classes.ArquivoRegras.pathSCartas);
-
-                    for (byte j = 1; j < qtdCartas; j++)
-                        try
-                        {
-                            if (check[j - 1].Split('|')[1] == "Permitido" && cbRaridade.SelectedIndex == 0 && cbTipo.SelectedIndex == 0)
-                                listaCartas.Add(j);
-                            else if (check[j - 1].Split('|')[1] == "Permitido" && cbRaridade.SelectedIndex == 0 && cbTipo.SelectedIndex != 0 && _Deck.CartasInformacao[j].Split('\n')[2] == "Tipo: " + tipo[cbTipo.SelectedIndex - 1])
-                                listaCartas.Add(j);
-                            else if (check[j - 1].Split('|')[1] == "Permitido" && cbTipo.SelectedIndex == 0 && cbRaridade.SelectedIndex != 0 && _Deck.CartasInformacao[j].Split('\n')[1] == string.Format("Raridade: {0}", raridade[cbRaridade.SelectedIndex - 1]))
-                                listaCartas.Add(j);
-                            else if (check[j - 1].Split('|')[1] == "Permitido" && cbRaridade.SelectedIndex != 0 && cbTipo.SelectedIndex != 0 && _Deck.CartasInformacao[j].Split('\n')[1] == string.Format("Raridade: {0}", raridade[cbRaridade.SelectedIndex - 1]) &&
-                                _Deck.CartasInformacao[j].Split('\n')[2] == string.Format("Tipo: {0}", tipo[cbTipo.SelectedIndex - 1]))
-                                listaCartas.Add(j);
-                        }
-                        catch { Classes.ArquivoRegras.ReCriar(); }
-
                     byte tamanho = System.Convert.ToByte(listaCartas.Count < 8 ? listaCartas.Count : _Deck.deckAtual.Length);
                     media = 0.0f;
 
@@ -4154,6 +4229,7 @@
                             for (byte j = 0; j < cbCartas.Items.Count; j++)
                                 if (cbCartas.Items[j].ToString() == _Deck.CartasInformacao[i].Split('\n')[0])
                                 { cbCartas.SelectedIndex = j; break; }
+
                     btnTrocar.Text = "Trocar"; tip.SetToolTip(btnTrocar, "Trocar Carta");
                 }
             };
@@ -4682,7 +4758,7 @@
             rbMinimalistico.Checked = true;
         }
 
-        private void clickBotao(bool atualiza, System.Windows.Forms.Panel painel, System.Windows.Forms.Button botao)
+        private void ClickBotao(bool atualiza, System.Windows.Forms.Panel painel, System.Windows.Forms.Button botao)
         {
             Mostrar(painel);
             AttNome(botao.Text);
@@ -4696,25 +4772,31 @@
         private void Seleciona(bool atualiza)
         {
             if ((this.Location.Y + pBarra.Size.Height + btnGeradorDeck.Location.Y) <= MousePosition.Y && (this.Location.Y + pBarra.Size.Height + btnGeradorDeck.Location.Y + btnGeradorDeck.Size.Height) >= MousePosition.Y)
-                clickBotao(atualiza, pGerador, btnGeradorDeck);
+                ClickBotao(atualiza, pGerador, btnGeradorDeck);
             else if ((this.Location.Y + pBarra.Size.Height + btnSelecaoDeCartas.Location.Y) <= MousePosition.Y && (this.Location.Y + pBarra.Size.Height + btnSelecaoDeCartas.Location.Y + btnSelecaoDeCartas.Size.Height) >= MousePosition.Y)
-                clickBotao(atualiza, pSelecaoDeCartas, btnSelecaoDeCartas);
+                ClickBotao(atualiza, pSelecaoDeCartas, btnSelecaoDeCartas);
             else if ((this.Location.Y + pBarra.Size.Height + btnDecksSalvos.Location.Y) <= MousePosition.Y && (this.Location.Y + pBarra.Size.Height + btnDecksSalvos.Location.Y + btnDecksSalvos.Size.Height) >= MousePosition.Y)
-                clickBotao(atualiza, pDecksSalvos, btnDecksSalvos);
+                ClickBotao(atualiza, pDecksSalvos, btnDecksSalvos);
             else if ((this.Location.Y + pBarra.Size.Height + btnMelhoresDecks.Location.Y) <= MousePosition.Y && (this.Location.Y + pBarra.Size.Height + btnMelhoresDecks.Location.Y + btnMelhoresDecks.Size.Height) >= MousePosition.Y)
-                clickBotao(atualiza, pMelhoresDecks, btnMelhoresDecks);
+                ClickBotao(atualiza, pMelhoresDecks, btnMelhoresDecks);
             else if ((this.Location.Y + pBarra.Size.Height + btnBalanceamento.Location.Y) <= MousePosition.Y && (this.Location.Y + pBarra.Size.Height + btnBalanceamento.Location.Y + btnBalanceamento.Size.Height) >= MousePosition.Y)
-                clickBotao(atualiza, pBalanceamento, btnBalanceamento);
+                ClickBotao(atualiza, pBalanceamento, btnBalanceamento);
             else if ((this.Location.Y + pBarra.Size.Height + btnConfig.Location.Y) <= MousePosition.Y && (this.Location.Y + pBarra.Size.Height + btnConfig.Location.Y + btnConfig.Size.Height) >= MousePosition.Y)
-                clickBotao(atualiza, pConfig, btnConfig);
+                ClickBotao(atualiza, pConfig, btnConfig);
             else if ((this.Location.Y + pBarra.Size.Height + btnAtualizador.Location.Y) <= MousePosition.Y && (this.Location.Y + pBarra.Size.Height + btnAtualizador.Location.Y + btnAtualizador.Size.Height) >= MousePosition.Y)
-                clickBotao(atualiza, pAtualizador, btnAtualizador);
+                ClickBotao(atualiza, pAtualizador, btnAtualizador);
             else if ((this.Location.Y + pBarra.Size.Height + btnSobre.Location.Y) <= MousePosition.Y && (this.Location.Y + pBarra.Size.Height + btnSobre.Location.Y + btnSobre.Size.Height) >= MousePosition.Y)
-                clickBotao(atualiza, pSobre, btnSobre);
+                ClickBotao(atualiza, pSobre, btnSobre);
             else if (pAtualizador.Visible && (this.Location.Y + pBarra.Size.Height + btnAtualizador.Location.Y + btnAtualizador.Size.Height) <= MousePosition.Y && (this.Location.Y + pBarra.Size.Height + btnSobre.Location.Y) + 1 >= MousePosition.Y)
-                clickBotao(atualiza, pAtualizador, btnAtualizador);
+                ClickBotao(atualiza, pAtualizador, btnAtualizador);
             else if (pSobre.Visible && (this.Location.Y + pBarra.Size.Height + btnAtualizador.Location.Y + btnAtualizador.Size.Height) <= MousePosition.Y && (this.Location.Y + pBarra.Size.Height + btnSobre.Location.Y) >= MousePosition.Y)
-                clickBotao(atualiza, pSobre, btnSobre);
+                ClickBotao(atualiza, pSobre, btnSobre);
+        }
+
+        private void AtualizaTamPos(byte i)
+        {
+            posInicialGD[i] = Cartas[i].Location;
+            tamInicialGD[i] = Cartas[i].Size;
         }
         #endregion
 
@@ -4744,7 +4826,7 @@
         {
             if (cbSort.SelectedIndex != 0)
                 cbSort.SelectedIndex = 0;
-            
+
             for (byte i = 0; i < (decksSalvos != null ? (decksSalvos.Length > 50 ? 50 : decksSalvos.Length) : 0); i++)
             {
                 grpBoxDSalvos[i].Anchor = btnCopia[i].Anchor = btnCola[i].Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -4756,7 +4838,7 @@
 
             for (byte i = 0; i < (cartasBalanceadas == null ? 0 : cartasBalanceadas.Length); i++)
                 grpBoxBalanceamento[i].Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            
+
             int valorAtual = pBalanceamento.Size.Width;
 
             if (this.Size != new System.Drawing.Size(System.Windows.Forms.Screen.PrimaryScreen.WorkingArea.Width,
@@ -4776,7 +4858,7 @@
                 this.Location = localInicialForm;
                 this.Size = new System.Drawing.Size(933, 470);
             }
-            if (pSobre.Visible) clickBotao(true, pSobre, btnSobre);
+            if (pSobre.Visible) ClickBotao(true, pSobre, btnSobre);
 
             for (byte i = 0; i < Cartas.Length; i++)
                 AtualizaTamPos(i);
