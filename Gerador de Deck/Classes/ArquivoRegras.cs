@@ -7,18 +7,8 @@
             try
             {
                 if (!System.IO.File.Exists(pathSCartas)) CriarArquivo();
-                else if (System.IO.File.ReadAllLines(pathSCartas).Length < 82)
-                {
-                    if (System.IO.File.Exists(pathSCartas)) System.IO.File.SetAttributes(pathSCartas, System.IO.FileAttributes.Normal);
-                    System.IO.File.Delete(pathSCartas);
-                    CriarArquivo();
-                }
-                else if (System.Array.IndexOf(System.IO.File.ReadAllLines(pathSCartas), string.Empty) != -1)
-                {
-                    if (System.IO.File.Exists(pathSCartas)) System.IO.File.SetAttributes(pathSCartas, System.IO.FileAttributes.Normal);
-                    System.IO.File.Delete(pathSCartas);
-                    CriarArquivo();
-                }
+                else if (System.IO.File.ReadAllLines(pathSCartas).Length < 84) ReCriar();
+                else if (System.Array.IndexOf(System.IO.File.ReadAllLines(pathSCartas), string.Empty) != -1) ReCriar();
             }
             catch { }
         }
@@ -28,10 +18,8 @@
             try
             {
                 if (System.IO.File.Exists(pathSCartas))
-                {
                     System.IO.File.SetAttributes(pathSCartas, System.IO.FileAttributes.Normal);
-                    System.IO.File.Delete(pathSCartas);
-                }
+                System.IO.File.Delete(pathSCartas);
             }
             finally { CriarArquivo(); }
         }

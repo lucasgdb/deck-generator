@@ -3,93 +3,94 @@
     public class CartasInformacoes
     {
         public System.Drawing.Bitmap[] CartasImagem =  { Properties.Resources.nova_carta_clash_royale,
-           Properties.Resources.chr_witch, //bruxa
-            Properties.Resources.skeleton_horde, // exército de esqueletos
-            Properties.Resources.baby_dragon, //bebe dragao
-                Properties.Resources.prince, //principe
-                Properties.Resources.giant, //gigante
-                Properties.Resources.musketeer, //mosqueteira
-                Properties.Resources.mini_pekka, //mini pekka
-                Properties.Resources.fire_fireball, //bola de fogo
-                Properties.Resources.knight, //cavaleiro
-                Properties.Resources.archers, //arqueiras
-                Properties.Resources.bomber, //bombardeiro 
-                Properties.Resources.order_volley, //flechas
-                Properties.Resources.goblin_barrel,//barril de goblins
-                Properties.Resources.lightning,//relampago
-                Properties.Resources.valkyrie,//valquiria
-                Properties.Resources.fire_furnace,//cabana de goblins
-                Properties.Resources.goblins,//goblins
-                Properties.Resources.goblin_archer,//goblins lanceiros
-                Properties.Resources.chr_balloon,//balao
-                Properties.Resources.giant_skeleton,//gigante esqueleto
-                Properties.Resources.bomb_tower,//torre de bombas
-                Properties.Resources.tombstone, //Lápide
-                Properties.Resources.minion,//servos
-                Properties.Resources.skeletons,//esqueletos
-                Properties.Resources.building_xbow,//x-besta
-                Properties.Resources.rage, //furia
-                Properties.Resources.barbarian_hut, //cabana barbaros
-                Properties.Resources.rocket, //foguete
-                Properties.Resources.barbarians,//bárbaros
-                Properties.Resources.chaos_cannon, //canhao
-                Properties.Resources.lava_hound,//lavahound
-                Properties.Resources.inferno_dragon,//dragao infernal
-                Properties.Resources.pekka,//pekka
-                Properties.Resources.freeze, //gelo
-                Properties.Resources.hog_rider, //corredor
-                Properties.Resources.building_inferno,//torre inferno
-                Properties.Resources.minion_horde, //horda de servos
-                Properties.Resources.building_tesla,//tesla
-                Properties.Resources.ice_wizard,//mago de gelo
-                Properties.Resources.graveyard, //cemiterio
-                Properties.Resources.mirror, //espelho
-                Properties.Resources.poison, //veneno
-                Properties.Resources.wizard,//mago
-                Properties.Resources.firespirit_hut, //fornalha
-                Properties.Resources.fire_spirits,//espiritos de fogo
-                Properties.Resources.zap,//zap
-                Properties.Resources.miner,//mineiro
-                Properties.Resources.zapMachine, //sparky
-                Properties.Resources.the_log, //tronco
-                Properties.Resources.chr_golem,//golem
-                Properties.Resources.tornado,//tornado
-                Properties.Resources.battle_ram, //ariete de batalha
-                Properties.Resources.building_elixir_collector,//coletor de elixir
-                Properties.Resources.skeleton_balloon,//barril de esqueletos
-                Properties.Resources.building_mortar,//morteiro
-                Properties.Resources.princess,//princesa
-                Properties.Resources.electro_wizard,//mago eletrico
-                Properties.Resources.skeleton_warriors,//guardas
-                Properties.Resources.dark_prince,//principe das trevas
-                Properties.Resources.three_musketeers,//tres mosqueteiras
-                Properties.Resources.mega_minion,//megasservo
-                Properties.Resources.royal_giant,//gigante real
-                Properties.Resources.angry_barbarian,//barbaros de elite
-                Properties.Resources.rage_barbarian,//lenhador
-                Properties.Resources.dark_witch,//bruxa sombria
-                Properties.Resources.bowler,//lançador
-                Properties.Resources.copy, //clone
-                Properties.Resources.ice_golem,//golem de gelo
-                Properties.Resources.snow_spirits,//espirito de gelo
-                Properties.Resources.bats, //morcegos
-                Properties.Resources.bandit,//bandida
-                Properties.Resources.hunter, //caçador
-                Properties.Resources.executioner,//executador
-                Properties.Resources.blowdart_goblin,//goblins com dardos
-                Properties.Resources.flying_machine,//maquina voadora
-                Properties.Resources.goblin_gang,//gangue de goblins
-                Properties.Resources.ghost, //Fantasma Real
-                Properties.Resources.mega_knight,//megacavaleiro
-                Properties.Resources.cannon_cart, // carrinho de canhao
-                Properties.Resources.barb_barrel, //Barril de bárbaro
-                Properties.Resources.heal,//cura
-                Properties.Resources.magic_archer, // Arqueiro mágico
-                Properties.Resources.zappies//eletrocutadores
+                Properties.Resources.Bruxa, //bruxa
+                Properties.Resources.Exercito_de_Esqueletos, // exército de esqueletos
+                Properties.Resources.Bebe_Dragao, //bebe dragao
+                Properties.Resources.Principe, //principe
+                Properties.Resources.Gigante, //gigante
+                Properties.Resources.Mosqueteira, //mosqueteira
+                Properties.Resources.Mini_Pekka, //mini pekka
+                Properties.Resources.Bola_de_Fogo, //bola de fogo
+                Properties.Resources.Cavaleiro, //cavaleiro
+                Properties.Resources.Arqueiras, //arqueiras
+                Properties.Resources.Bombardeiro, //bombardeiro 
+                Properties.Resources.Flechas, //flechas
+                Properties.Resources.Barril_de_Goblin,//barril de goblins
+                Properties.Resources.Relampago,//relampago
+                Properties.Resources.Valquiria,//valquiria
+                Properties.Resources.Cabana_de_Goblins,//cabana de goblins
+                Properties.Resources.Goblins,//goblins
+                Properties.Resources.Goblins_Lanceiros,//goblins lanceiros
+                Properties.Resources.Balao,//balao
+                Properties.Resources.Gigante_Esqueleto,//gigante esqueleto
+                Properties.Resources.Torre_de_Bombas,//torre de bombas
+                Properties.Resources.Lapide, //Lápide
+                Properties.Resources.Servos,//servos
+                Properties.Resources.Esqueletos,//esqueletos
+                Properties.Resources.X_Besta,//x-besta
+                Properties.Resources.Furia, //furia
+                Properties.Resources.Cabana_de_Barbaros, //cabana barbaros
+                Properties.Resources.Foguete, //foguete
+                Properties.Resources.Barbaros,//bárbaros
+                Properties.Resources.Canhao, //canhao
+                Properties.Resources.Lava_Hound,//lavahound
+                Properties.Resources.Dragao_Infernal,//dragao infernal
+                Properties.Resources.Pekka,//pekka
+                Properties.Resources.Gelo, //gelo
+                Properties.Resources.Corredor, //corredor
+                Properties.Resources.Torre_Inferno,//torre inferno
+                Properties.Resources.Horda_de_Servos, //horda de servos
+                Properties.Resources.Tesla,//tesla
+                Properties.Resources.Mago_de_Gelo,//mago de gelo
+                Properties.Resources.Cemiterio, //cemiterio
+                Properties.Resources.Espelho, //espelho
+                Properties.Resources.Veneno, //veneno
+                Properties.Resources.Mago,//mago
+                Properties.Resources.Fornalha, //fornalha
+                Properties.Resources.Espiritos_de_Fogo,//espiritos de fogo
+                Properties.Resources.Zap,//zap
+                Properties.Resources.Mineiro,//mineiro
+                Properties.Resources.Sparky, //sparky
+                Properties.Resources.Tronco, //tronco
+                Properties.Resources.Golem,//golem
+                Properties.Resources.Tornado,//tornado
+                Properties.Resources.Ariete_de_Batalha, //ariete de batalha
+                Properties.Resources.Coletor_de_Elixir,//coletor de elixir
+                Properties.Resources.Barril_de_Esqueletos,//barril de esqueletos
+                Properties.Resources.Morteiro,//morteiro
+                Properties.Resources.Princesa,//princesa
+                Properties.Resources.Mago_Eletrico,//mago eletrico
+                Properties.Resources.Guardas,//guardas
+                Properties.Resources.Principe_das_Trevas,//principe das trevas
+                Properties.Resources.Tres_Mosqueteiras,//tres mosqueteiras
+                Properties.Resources.Megasservo,//megasservo
+                Properties.Resources.Gigante_Real,//gigante real
+                Properties.Resources.Barbaros_de_Elite,//barbaros de elite
+                Properties.Resources.Lenhador,//lenhador
+                Properties.Resources.Bruxa_Sombria,//bruxa sombria
+                Properties.Resources.Lançador,//lançador
+                Properties.Resources.Clone, //clone
+                Properties.Resources.Golem_de_Gelo,//golem de gelo
+                Properties.Resources.Espirito_de_Gelo,//espirito de gelo
+                Properties.Resources.Morcegos, //morcegos
+                Properties.Resources.Bandida,//bandida
+                Properties.Resources.Caçador, //caçador
+                Properties.Resources.Executor,//executador
+                Properties.Resources.Goblin_com_Dardo,//goblin com dardo
+                Properties.Resources.Maquina_Voadora,//maquina voadora
+                Properties.Resources.Gangue_de_Goblins,//gangue de goblins
+                Properties.Resources.Patifes, // Patifes
+                Properties.Resources.Fantasma_Real, //Fantasma Real
+                Properties.Resources.Megacavaleiro,//megacavaleiro
+                Properties.Resources.Carrinho_de_Canhao, // carrinho de canhao
+                Properties.Resources.Barril_de_Barbaro, //Barril de bárbaro
+                Properties.Resources.Cura,//cura
+                Properties.Resources.Arqueiro_Magico, // Arqueiro mágico
+                Properties.Resources.Eletrocutadores//eletrocutadores
         };
 
         public float[] CustoElixir = { 0,5,3,4,5,5,4,4,4,3,3,3,3,3,6,4,5,2,2,5,6,5,3,3,1,6,2,7,6,5,3,7,4,7,4,4,5,5,4,3,5,1.4f,4,5,4,2,2,3,6,2,8,3,4,6,3,
-        4,3,4,3,4,9,3,6,6,4,4,5,3,2,1,2,3,4,5,3,4,3,3,7,5,3,3,4,4};
+        4,3,4,3,4,9,3,6,6,4,4,5,3,2,1,2,3,4,5,3,4,3,5,3,7,5,3,3,4,4};
 
         public string[] CartasInformacao = {
         "Nenhuma Carta selecionada",
@@ -178,6 +179,7 @@
         "Goblin com Dardo\nRaridade: Rara\nTipo: Tropa\nVelocidade de impacto: 0.6seg\nAlvos: Aéreo/Terrestre\nVelocidade: Muito Rápida\nAlcance: 6.5\nTempo de mobilização: 1seg",
         "Máquina Voadora\nRaridade: Rara\nTipo: Tropa\nVelocidade de impacto: 1seg\nAlvos: Aéreo/Terrestre\nVelocidade: Rápida\nAlcance: 6\nTempo de mobilização: 1seg",
         "Gangue de Goblins\nRaridade: Comum\nTipo: Tropa\nContagem de Goblin: x3\nContagem de Goblin Lanceiro: x2\nTempo de mobilização: 1seg",
+        "Patifes\nRaridade: Comum\nTipo: Tropa\nContagem de Patifa: x2\nContagem de Patife: x1\nTempo de mobilização: 1seg",
         // Montanha do Porco
         "Fantasma Real\nRaridade: Lendária\nTipo: Tropa\nVelocidade de impacto: 1.8seg\nAlvos: Terrestre\nVelocidade: Rápida\nAlcance: Corpo a corpo\nAtraso da Invisibilidade: 1.2seg\nTempo de mobilização: 1seg",
         "Megacavaleiro\nRaridade: Lendária\nTipo: Tropa\nVelocidade de impacto: 1.8seg\nAlvos: Terrestre\nVelocidade: Média\nAlcance: Corpo a corpo\nTempo de mobilização: 1seg",
@@ -199,7 +201,7 @@
             26000032, 26000033, 28000011, 26000009, 28000012, 26000036, 27000007, 26000056, 27000002, // Arena 6
             26000026, 26000042,26000025, 26000027, 26000028, 26000039, 26000024, 26000043, // Arena 7
             26000035, 26000048, 26000034, 28000013, 26000038, 26000030, 26000049, // Arena 8
-            26000046,26000044,26000045, 26000040, 26000057, 26000041, // Arena 9
+            26000046,26000044,26000045, 26000040, 26000057, 26000041, 26000053, // Arena 9
             26000050,26000055, 26000054, 28000015, 28000016, // Arena 10
             26000062, 26000052 // Arena 11
         };

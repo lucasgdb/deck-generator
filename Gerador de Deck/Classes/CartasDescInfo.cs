@@ -80,6 +80,7 @@
             "Corre muito, atira longe e masca chiclete. Como ele lança dardos com a boca cheia de chiclete? Anos de prática!",
             "O mestre construtor enviou sua primeira engenhoca para a arena! É uma máquina voadora veloz e divertida, porém frágil.",
             "Gera cinco Goblins, três com facas e dois com lanças, por um custo mais baixo de elixir. É um pacote especial de Goblins!",
+            "Gera um trio de Patifes arteiros! O menino toma a frente, e as meninas vêm logo atrás prontas para atacar... com estilingues cheios de chiclete!",
             "Ele paira invisivelmente pela arena até se assustar com algum inimigo... E, então, ele ataca! Depois fica invisível de novo. Zzzz...",
             "Ele chega com a força de mil bigodes, depois pula de inimigo em inimigo causando grande dano em área. Saia da frente!",
             "Um canhão de rodinhas! Quem podia imaginar? Depois que você quebra o escudo, ele vira um canhão mortal.",
@@ -90,7 +91,7 @@
         };
 
         public static string[] Dica = { "Clique com o botão direito do mouse nos formulários para ver mais opções", "Selecione sua Arena, Raridade e Tipo de Carta de preferência, em Gerador de Deck",
-                "Há mais de 39.443.226.966 possibilidades de Decks diferentes", "Remova as Cartas que você não possui do ciclo de geração, em Seleção de Cartas",
+                "Há 43.595.145.594 possibilidades de Decks diferentes", "Remova as Cartas que você não possui do ciclo de geração, em Seleção de Cartas",
                 "Salve seus Decks favoritos (Max: 50 Decks)", "Verifique atualizações periodicamente, em Atualizador", "Copie e cole Decks no dentro e fora do Programa",
                 "Embaralhe seus Decks no Gerador, clicando com o botão direito do mouse", "Clique no baú ao lado das dicas para ver os melhores Decks atualmente (M.E.T.A.)",
                 "Visite meu canal no YouTube, clicando no ícone do YouTube", "Clique em Buscar Deck para gerar Decks até encontrar com o Elixir médio escolhido",

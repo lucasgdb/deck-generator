@@ -35,7 +35,7 @@
             // Variáveis
             this.components = new System.ComponentModel.Container();
             _Deck = new Classes.CartasInformacoes();
-            valores = new byte[] { 84, 84, 81, 77, 71, 64, 56, 47, 39, 31, 25, 19, 13 };
+            valores = new byte[] { 85, 85, 82, 78, 71, 64, 56, 47, 39, 31, 25, 19, 13 };
             arenas = new string[] { "Campo de Treino", "Estádio Goblin", "Fosso dos Ossos", "Torneio Bárbaro",
                 "Parquinho da P.E.K.K.A", "Vale dos Feitiços", "Oficina do Construtor", "Arena Real", "Pico Congelado",
                 "Arena da Selva", "Montanha do Porco", "Eletrovale", "Arena Lendária" };
@@ -51,6 +51,14 @@
             };
 
             #region Barra superior
+            this.pBarra = new System.Windows.Forms.Panel
+            {
+                Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right,
+                BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle,
+                Location = new System.Drawing.Point(167, 0),
+                Size = new System.Drawing.Size(766, 30),
+            };
+
             this.picIco = new System.Windows.Forms.PictureBox
             {
                 Cursor = System.Windows.Forms.Cursors.Default,
@@ -62,7 +70,7 @@
             };
             ((System.ComponentModel.ISupportInitialize)(this.picIco)).BeginInit();
             this.tip.SetToolTip(this.picIco, "Gerador de Deck - Clash Royale");
-            this.picIco.DoubleClick += new System.EventHandler(this.Control_MaximizaRestaura);
+            this.picIco.DoubleClick += (s, e) => Control_MaximizaRestaura();
             this.picIco.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Control_MouseDown);
             this.picIco.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Control_MouseMove);
             ((System.ComponentModel.ISupportInitialize)(this.picIco)).EndInit();
@@ -73,7 +81,7 @@
                 AutoSize = true,
                 Font = new System.Drawing.Font("Microsoft Sans Serif", 13.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0),
             };
-            this.lblNome.DoubleClick += new System.EventHandler(this.Control_MaximizaRestaura);
+            this.lblNome.DoubleClick += (s, e) => Control_MaximizaRestaura();
             this.lblNome.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Control_MouseDown);
             this.lblNome.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Control_MouseMove);
 
@@ -82,7 +90,7 @@
                 Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right,
                 Cursor = System.Windows.Forms.Cursors.Hand,
                 Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0),
-                Location = new System.Drawing.Point(843, 0),
+                Location = new System.Drawing.Point(676, 0),
                 Size = new System.Drawing.Size(30, 28),
                 Text = "─",
                 UseVisualStyleBackColor = true,
@@ -93,23 +101,23 @@
             this.btnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimizar.Click += (s, e) => { pOpcoes.Select(); WindowState = System.Windows.Forms.FormWindowState.Minimized; };
 
-            this.btnMaximizar = new System.Windows.Forms.Button()
+            this.btnRedimensionar = new System.Windows.Forms.Button()
             {
                 Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right,
                 Cursor = System.Windows.Forms.Cursors.Hand,
                 Font = new System.Drawing.Font("Marlett", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0x31),
-                Location = new System.Drawing.Point(873, 0),
+                Location = new System.Drawing.Point(706, 0),
                 Size = new System.Drawing.Size(30, 28),
                 Text = "1",
                 UseVisualStyleBackColor = true,
                 TextAlign = System.Drawing.ContentAlignment.MiddleRight,
                 TabStop = false
             };
-            this.tip.SetToolTip(this.btnMaximizar, "Redimensionar");
-            this.btnMaximizar.FlatAppearance.BorderSize = 0;
-            this.btnMaximizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMaximizar.Click += new System.EventHandler(Control_MaximizaRestaura);
-            this.btnMaximizar.Click += (s, e) => pBarra.Select();
+            this.tip.SetToolTip(this.btnRedimensionar, "Redimensionar");
+            this.btnRedimensionar.FlatAppearance.BorderSize = 0;
+            this.btnRedimensionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRedimensionar.Click += (s, e) => Control_MaximizaRestaura();
+            this.btnRedimensionar.Click += (s, e) => pBarra.Select();
 
             this.btnFechar = new System.Windows.Forms.Button
             {
@@ -119,7 +127,6 @@
                 Font = new System.Drawing.Font("Marlett", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0x72),
                 Text = "r",
                 TextAlign = System.Drawing.ContentAlignment.MiddleCenter,
-                Location = new System.Drawing.Point(901, 0),
                 Size = new System.Drawing.Size(30, 28),
                 UseVisualStyleBackColor = true,
                 TabStop = false
@@ -134,27 +141,28 @@
                 System.Environment.Exit(0);
             };
 
-            this.pBarra = new System.Windows.Forms.Panel
-            {
-                Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right,
-                BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle,
-                Location = new System.Drawing.Point(0, 0),
-                Size = new System.Drawing.Size(933, 30),
-            };
             this.pBarra.SuspendLayout();
             this.pBarra.Controls.Add(this.btnFechar);
-            this.pBarra.Controls.Add(this.btnMaximizar);
+            this.pBarra.Controls.Add(this.btnRedimensionar);
             this.pBarra.Controls.Add(this.btnMinimizar);
             this.pBarra.Controls.Add(this.lblNome);
             this.pBarra.Controls.Add(this.picIco);
-            this.pBarra.DoubleClick += new System.EventHandler(this.Control_MaximizaRestaura);
+            this.pBarra.DoubleClick += (s, e) => Control_MaximizaRestaura();
             this.pBarra.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Control_MouseDown);
             this.pBarra.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Control_MouseMove);
             this.pBarra.ResumeLayout(false);
             this.pBarra.PerformLayout();
             #endregion
 
-            #region Barra lateral esquerda       
+            #region Barra lateral esquerda      
+            this.pOpcoes = new System.Windows.Forms.Panel
+            {
+                Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left,
+                BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle,
+                Location = new System.Drawing.Point(0, 0),
+                Size = new System.Drawing.Size(168, 470),
+            };
+
             System.Windows.Forms.PictureBox picLinha1 = new System.Windows.Forms.PictureBox
             {
                 BackColor = System.Drawing.Color.White,
@@ -182,7 +190,7 @@
                 Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left,
                 BackColor = System.Drawing.Color.White,
                 BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle,
-                Location = new System.Drawing.Point(12, 430),
+                Location = new System.Drawing.Point(12, 460),
                 Size = new System.Drawing.Size(130, 1),
                 TabStop = false
             };
@@ -238,7 +246,7 @@
                 Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left,
                 BackColor = System.Drawing.Color.White,
                 BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle,
-                Location = new System.Drawing.Point(12, 381),
+                Location = new System.Drawing.Point(12, 411),
                 Size = new System.Drawing.Size(130, 1),
                 TabStop = false
             };
@@ -381,7 +389,7 @@
                 Image = Properties.Resources.info.ToBitmap(),
                 ImageAlign = System.Drawing.ContentAlignment.MiddleLeft,
                 TextAlign = System.Drawing.ContentAlignment.MiddleCenter,
-                Location = new System.Drawing.Point(12, 381),
+                Location = new System.Drawing.Point(12, 411),
                 Size = new System.Drawing.Size(130, 50),
                 Text = "        Sobre",
                 UseVisualStyleBackColor = true,
@@ -438,13 +446,6 @@
                 pSelected.Size = new System.Drawing.Size(pSelected.Size.Width - 1, pSelected.Size.Height - 2);
             };
 
-            this.pOpcoes = new System.Windows.Forms.Panel
-            {
-                Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left,
-                BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle,
-                Location = new System.Drawing.Point(0, 29),
-                Size = new System.Drawing.Size(168, 441),
-            };
             this.pOpcoes.SuspendLayout();
             this.pOpcoes.Controls.Add(picLinha1);
             this.pOpcoes.Controls.Add(picLinha2);
@@ -469,6 +470,14 @@
             #endregion
 
             #region Gerador de Deck
+            this.pGerador = new System.Windows.Forms.Panel
+            {
+                Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right,
+                BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle,
+                Location = new System.Drawing.Point(167, 29),
+                Size = new System.Drawing.Size(766, 441),
+            };
+            
             this.CMSGerador = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.CMSGerador.SuspendLayout();
             System.Windows.Forms.ToolStripMenuItem ligarGerador = new System.Windows.Forms.ToolStripMenuItem() { Text = "Ligar Gerador de Deck" };
@@ -575,6 +584,7 @@
             this.tip.SetToolTip(this.picDica, "Dicas");
             this.picDica.Click += (s, e) =>
             {
+                pGerador.Select();
                 byte i = System.Convert.ToByte(_Random.Next(0, Classes.CartasDescInfo.Dica.Length));
                 System.Windows.Forms.MessageBox.Show(Classes.CartasDescInfo.Dica[i] + '.', string.Format("Dica {0} de {1}", (i + 1).ToString().Length == 1 ? "0" + (i + 1) : (i + 1).ToString(), Classes.CartasDescInfo.Dica.Length), System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Information);
             };
@@ -829,8 +839,8 @@
                 BackColor = System.Drawing.Color.Transparent,
                 Cursor = System.Windows.Forms.Cursors.Hand,
                 Image = Properties.Resources.nova_carta_clash_royale,
-                Location = new System.Drawing.Point(227, 7),
-                Size = new System.Drawing.Size(129, 156),
+                Location = new System.Drawing.Point(230, 8),
+                Size = new System.Drawing.Size(124, 154),
                 SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage,
                 TabStop = false
             };
@@ -843,8 +853,8 @@
                 BackColor = System.Drawing.Color.Transparent,
                 Cursor = System.Windows.Forms.Cursors.Hand,
                 Image = Properties.Resources.nova_carta_clash_royale,
-                Location = new System.Drawing.Point(360, 7),
-                Size = new System.Drawing.Size(129, 156),
+                Location = new System.Drawing.Point(362, 8),
+                Size = new System.Drawing.Size(127, 154),
                 SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage,
                 TabStop = false
             };
@@ -857,8 +867,8 @@
                 BackColor = System.Drawing.Color.Transparent,
                 Cursor = System.Windows.Forms.Cursors.Hand,
                 Image = Properties.Resources.nova_carta_clash_royale,
-                Location = new System.Drawing.Point(493, 7),
-                Size = new System.Drawing.Size(129, 156),
+                Location = new System.Drawing.Point(496, 8),
+                Size = new System.Drawing.Size(124, 154),
                 SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage,
                 TabStop = false
             };
@@ -871,8 +881,8 @@
                 BackColor = System.Drawing.Color.Transparent,
                 Cursor = System.Windows.Forms.Cursors.Hand,
                 Image = Properties.Resources.nova_carta_clash_royale,
-                Location = new System.Drawing.Point(626, 7),
-                Size = new System.Drawing.Size(129, 156),
+                Location = new System.Drawing.Point(629, 8),
+                Size = new System.Drawing.Size(124, 154),
                 SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage,
                 TabStop = false
             };
@@ -885,8 +895,8 @@
                 BackColor = System.Drawing.Color.Transparent,
                 Cursor = System.Windows.Forms.Cursors.Hand,
                 Image = Properties.Resources.nova_carta_clash_royale,
-                Location = new System.Drawing.Point(227, 170),
-                Size = new System.Drawing.Size(129, 156),
+                Location = new System.Drawing.Point(230, 171),
+                Size = new System.Drawing.Size(124, 154),
                 SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage,
                 TabStop = false
             };
@@ -899,8 +909,8 @@
                 BackColor = System.Drawing.Color.Transparent,
                 Cursor = System.Windows.Forms.Cursors.Hand,
                 Image = Properties.Resources.nova_carta_clash_royale,
-                Location = new System.Drawing.Point(360, 170),
-                Size = new System.Drawing.Size(129, 156),
+                Location = new System.Drawing.Point(363, 171),
+                Size = new System.Drawing.Size(124, 154),
                 SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage,
                 TabStop = false
             };
@@ -913,8 +923,8 @@
                 BackColor = System.Drawing.Color.Transparent,
                 Cursor = System.Windows.Forms.Cursors.Hand,
                 Image = Properties.Resources.nova_carta_clash_royale,
-                Location = new System.Drawing.Point(493, 170),
-                Size = new System.Drawing.Size(129, 156),
+                Location = new System.Drawing.Point(496, 171),
+                Size = new System.Drawing.Size(124, 154),
                 SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage,
                 TabStop = false
             };
@@ -927,8 +937,8 @@
                 BackColor = System.Drawing.Color.Transparent,
                 Cursor = System.Windows.Forms.Cursors.Hand,
                 Image = Properties.Resources.nova_carta_clash_royale,
-                Location = new System.Drawing.Point(626, 170),
-                Size = new System.Drawing.Size(129, 156),
+                Location = new System.Drawing.Point(629, 171),
+                Size = new System.Drawing.Size(124, 154),
                 SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage,
                 TabStop = false
             };
@@ -1106,14 +1116,7 @@
             this.gbFuncoes.ResumeLayout(false);
             this.gbFuncoes.PerformLayout();
 
-            this.pGerador = new System.Windows.Forms.Panel
-            {
-                Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right,
-                BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle,
-                ContextMenuStrip = this.CMSGerador,
-                Location = new System.Drawing.Point(167, 29),
-                Size = new System.Drawing.Size(766, 441),
-            };
+            this.pGerador.ContextMenuStrip = CMSGerador;
             this.pGerador.SuspendLayout();
             this.pGerador.Controls.Add(this.Carta1);
             this.pGerador.Controls.Add(this.Carta2);
@@ -1146,16 +1149,24 @@
             #endregion
 
             #region Atualizador
+            this.pAtualizador = new System.Windows.Forms.Panel
+            {
+                Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right,
+                BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle,
+                Location = new System.Drawing.Point(167, 29),
+                Size = new System.Drawing.Size(766, 441),
+            };
+
             this.lbl13 = new System.Windows.Forms.Label
             {
                 Anchor = System.Windows.Forms.AnchorStyles.Top,
                 AutoSize = true,
                 BackColor = System.Drawing.Color.Transparent,
                 Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0),
-                Location = new System.Drawing.Point(286, 6),
                 Size = new System.Drawing.Size(228, 25),
                 Text = "Versão atual: 3.0 Final"
             };
+            lbl13.Location = new System.Drawing.Point((pAtualizador.Size.Width - lbl13.Size.Width) / 2, 6);
             this.lbl13.Click += (s, e) => pAtualizador.Select();
 
             this.lblBuild = new System.Windows.Forms.Label
@@ -1164,10 +1175,10 @@
                 AutoSize = true,
                 BackColor = System.Drawing.Color.Transparent,
                 Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0),
-                Location = new System.Drawing.Point(353, 37),
                 Size = new System.Drawing.Size(80, 25),
                 Text = "Build " + bAtual
             };
+            lblBuild.Location = new System.Drawing.Point((pAtualizador.Size.Width - lblBuild.Size.Width) / 2, 37);
             this.lblBuild.Click += (s, e) => pAtualizador.Select();
 
             this.btnAtualizar = new System.Windows.Forms.Button
@@ -1176,11 +1187,11 @@
                 Cursor = System.Windows.Forms.Cursors.Hand,
                 Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0),
                 ForeColor = System.Drawing.Color.White,
-                Location = new System.Drawing.Point(280, 73),
                 Size = new System.Drawing.Size(244, 39),
                 Text = "&Verificar atualização",
                 UseVisualStyleBackColor = false
             };
+            btnAtualizar.Location = new System.Drawing.Point((pAtualizador.Size.Width - btnAtualizar.Size.Width) / 2, 73);
             this.tip.SetToolTip(this.btnAtualizar, "Verificar atualização");
             this.btnAtualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAtualizar.Click += (s, e) =>
@@ -1263,7 +1274,7 @@
                 Anchor = System.Windows.Forms.AnchorStyles.Top,
                 BackColor = System.Drawing.Color.Transparent,
                 Image = Properties.Resources.gifEscuro,
-                Location = new System.Drawing.Point(528, 73),
+                Location = new System.Drawing.Point(btnAtualizar.Location.X + btnAtualizar.Size.Width + 7, 73),
                 Size = new System.Drawing.Size(46, 39),
                 SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage,
                 TabStop = false
@@ -1280,10 +1291,10 @@
                 AutoSize = true,
                 BackColor = System.Drawing.Color.Transparent,
                 Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0),
-                Location = new System.Drawing.Point(275, 119),
                 Size = new System.Drawing.Size(255, 25),
                 Text = "Última Build: Aguardando"
             };
+            lblUBuild.Location = new System.Drawing.Point((pAtualizador.Size.Width - lblUBuild.Size.Width) / 2, 119);
             this.lblUBuild.Click += (s, e) => pAtualizador.Select();
 
             this.lblStatus = new System.Windows.Forms.Label
@@ -1342,13 +1353,6 @@
             this.tip.SetToolTip(this.lblV25, "Baixar Gerador de Deck Versão 2.5");
             this.lblV25.Click += (s, e) => BaixarGerador("https://drive.google.com/uc?authuser=0&id=1uSono0pTD5BfC9Wy2M6XOLzdltuhHh6x&export=download", "4079", "2.5");
 
-            this.pAtualizador = new System.Windows.Forms.Panel
-            {
-                Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right,
-                BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle,
-                Location = new System.Drawing.Point(167, 29),
-                Size = new System.Drawing.Size(766, 441),
-            };
             this.pAtualizador.SuspendLayout();
             this.pAtualizador.Controls.Add(this.lblV25);
             this.pAtualizador.Controls.Add(this.lblV2);
@@ -1365,16 +1369,24 @@
             #endregion                      
 
             #region Sobre
+            this.pSobre = new System.Windows.Forms.Panel
+            {
+                Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right,
+                BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle,
+                Location = new System.Drawing.Point(167, 29),
+                Size = new System.Drawing.Size(766, 441),
+            };
+
             this.lbl2 = new System.Windows.Forms.Label
             {
                 Anchor = System.Windows.Forms.AnchorStyles.Top,
                 AutoSize = true,
                 BackColor = System.Drawing.Color.Transparent,
                 Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0),
-                Location = new System.Drawing.Point(188, 9),
                 Size = new System.Drawing.Size(392, 25),
                 Text = "Programa Desenvolvido por Lucas Naja"
             };
+            lbl2.Location = new System.Drawing.Point((pSobre.Size.Width - lbl2.Size.Width) / 2, 9);
             this.lbl2.Click += (s, e) => System.Diagnostics.Process.Start("https://www.youtube.com/c/lucasnaja");
 
             this.lbl3 = new System.Windows.Forms.Label
@@ -1383,10 +1395,10 @@
                 AutoSize = true,
                 BackColor = System.Drawing.Color.Transparent,
                 Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0),
-                Location = new System.Drawing.Point(266, 34),
                 Size = new System.Drawing.Size(228, 25),
                 Text = "Versão atual: 3.0 Final"
             };
+            lbl3.Location = new System.Drawing.Point((pSobre.Size.Width - lbl3.Size.Width) / 2, 34);
             this.lbl3.Click += (s, e) => pSobre.Select();
 
             this.lblBuild2 = new System.Windows.Forms.Label
@@ -1395,10 +1407,10 @@
                 AutoSize = true,
                 BackColor = System.Drawing.Color.Transparent,
                 Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0),
-                Location = new System.Drawing.Point(335, 59),
                 Size = new System.Drawing.Size(80, 25),
                 Text = "Build " + bAtual
             };
+            lblBuild2.Location = new System.Drawing.Point((pSobre.Size.Width - lblBuild2.Size.Width) / 2, 59);
             this.lblBuild2.Click += (s, e) => pSobre.Select();
 
             this.picCanal = new System.Windows.Forms.PictureBox
@@ -1613,13 +1625,6 @@
             this.picYouTube2.Click += (s, e) => System.Diagnostics.Process.Start("https://www.youtube.com/c/lucasnaja");
             ((System.ComponentModel.ISupportInitialize)(this.picYouTube2)).EndInit();
 
-            this.pSobre = new System.Windows.Forms.Panel
-            {
-                Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right,
-                BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle,
-                Location = new System.Drawing.Point(167, 29),
-                Size = new System.Drawing.Size(766, 441),
-            };
             this.pSobre.SuspendLayout();
             this.pSobre.Controls.Add(this.lbl12);
             this.pSobre.Controls.Add(this.lblBuild2);
@@ -1644,6 +1649,15 @@
             #endregion
 
             #region Configurações
+            this.pConfig = new System.Windows.Forms.Panel
+            {
+                Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right,
+                BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle,
+                ForeColor = System.Drawing.Color.White,
+                Location = new System.Drawing.Point(167, 29),
+                Size = new System.Drawing.Size(766, 441),
+            };
+
             this.CMSConfig = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.CMSConfig.SuspendLayout();
             this.CMSConfig.Size = new System.Drawing.Size(214, 70);
@@ -1755,7 +1769,7 @@
                 }
             };
 
-            this.ckEfeito = new System.Windows.Forms.CheckBox
+            this.ckEfeitoMouse = new System.Windows.Forms.CheckBox
             {
                 Anchor = System.Windows.Forms.AnchorStyles.Top,
                 AutoSize = true,
@@ -1765,13 +1779,13 @@
                 ForeColor = System.Drawing.Color.White,
                 Location = new System.Drawing.Point(221, 32),
                 Size = new System.Drawing.Size(295, 24),
-                Text = "Efeito de Crescimento e Clique das Cartas",
+                Text = "Efeito de Crescimento das Cartas",
                 UseVisualStyleBackColor = false,
                 TabIndex = 1
             };
-            this.ckEfeito.CheckedChanged += (s, e) =>
+            this.ckEfeitoMouse.CheckedChanged += (s, e) =>
             {
-                if (ckEfeito.Checked)
+                if (ckEfeitoMouse.Checked)
                 {
                     nUpTCarta.Enabled = true;
                     lblTamanho.Enabled = true;
@@ -1788,13 +1802,29 @@
                 }
             };
 
+            this.ckEfeitoClick = new System.Windows.Forms.CheckBox()
+            {
+                Anchor = System.Windows.Forms.AnchorStyles.Top,
+                AutoSize = true,
+                BackColor = System.Drawing.Color.Transparent,
+                Cursor = System.Windows.Forms.Cursors.Hand,
+                Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0),
+                ForeColor = System.Drawing.Color.White,
+                Location = new System.Drawing.Point(221, 57),
+                Size = new System.Drawing.Size(295, 24),
+                Text = "Efeito de Clique das Cartas",
+                UseVisualStyleBackColor = false,
+                TabIndex = 1
+            };
+            if (Properties.Settings.Default.cliqueCartas) ckEfeitoClick.Checked = true;
+
             this.nUpTCarta = new System.Windows.Forms.NumericUpDown
             {
                 Anchor = System.Windows.Forms.AnchorStyles.Top,
                 Cursor = System.Windows.Forms.Cursors.Hand,
                 Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0),
                 ForeColor = System.Drawing.Color.White,
-                Location = new System.Drawing.Point(221, 61),
+                Location = new System.Drawing.Point(221, 86),
                 Maximum = 2M,
                 Minimum = 1M,
                 Size = new System.Drawing.Size(33, 21),
@@ -1813,7 +1843,7 @@
                 Cursor = System.Windows.Forms.Cursors.Hand,
                 Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0),
                 ForeColor = System.Drawing.Color.White,
-                Location = new System.Drawing.Point(258, 61),
+                Location = new System.Drawing.Point(258, 86),
                 Size = new System.Drawing.Size(293, 20),
                 Text = "Tamanho do crescimento de Cartas"
             };
@@ -1825,7 +1855,7 @@
 
             if (Properties.Settings.Default.efeitoCartas)
             {
-                ckEfeito.Checked = true;
+                ckEfeitoMouse.Checked = true;
                 nUpTCarta.Value = Properties.Settings.Default.efeitoValor;
             }
             else
@@ -1843,7 +1873,7 @@
                 Cursor = System.Windows.Forms.Cursors.Hand,
                 Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0),
                 ForeColor = System.Drawing.Color.White,
-                Location = new System.Drawing.Point(221, 89),
+                Location = new System.Drawing.Point(221, 114),
                 Size = new System.Drawing.Size(354, 24),
                 Text = "Transparência ao desfoque de Programa",
                 UseVisualStyleBackColor = false,
@@ -1859,7 +1889,7 @@
                 Cursor = System.Windows.Forms.Cursors.Hand,
                 Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0),
                 ForeColor = System.Drawing.Color.White,
-                Location = new System.Drawing.Point(221, 115),
+                Location = new System.Drawing.Point(221, 140),
                 Size = new System.Drawing.Size(267, 24),
                 Text = "Botão Voltar ao Deck anterior",
                 UseVisualStyleBackColor = false,
@@ -1926,7 +1956,7 @@
                 BackColor = System.Drawing.Color.Transparent,
                 Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0),
                 ForeColor = System.Drawing.Color.White,
-                Location = new System.Drawing.Point(218, 145),
+                Location = new System.Drawing.Point(218, 170),
                 Size = new System.Drawing.Size(330, 52),
                 TabStop = false,
                 Text = "Elixir Médio total de Cartas ao mudar Arena/Raridade",
@@ -1992,7 +2022,7 @@
                 BackColor = System.Drawing.Color.Transparent,
                 Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0),
                 ForeColor = System.Drawing.Color.White,
-                Location = new System.Drawing.Point(218, 203),
+                Location = new System.Drawing.Point(218, 228),
                 Size = new System.Drawing.Size(330, 52),
                 TabStop = false,
                 Text = "Temas",
@@ -2043,7 +2073,7 @@
                 BackColor = System.Drawing.Color.Transparent,
                 Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0),
                 ForeColor = System.Drawing.Color.White,
-                Location = new System.Drawing.Point(218, 261),
+                Location = new System.Drawing.Point(218, 286),
                 Size = new System.Drawing.Size(330, 52),
                 TabStop = false,
                 Text = "Decks salvos - Modo",
@@ -2061,7 +2091,7 @@
                 Cursor = System.Windows.Forms.Cursors.Hand,
                 Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0),
                 ForeColor = System.Drawing.Color.White,
-                Location = new System.Drawing.Point(218, 319),
+                Location = new System.Drawing.Point(218, 344),
                 Size = new System.Drawing.Size(130, 40),
                 Text = "&Salvar",
                 UseVisualStyleBackColor = false,
@@ -2071,15 +2101,7 @@
             this.btnCSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCSalvar.Click += (s, e) => { pConfig.Select(); CSalvar(); };
 
-            this.pConfig = new System.Windows.Forms.Panel
-            {
-                Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right,
-                BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle,
-                ContextMenuStrip = this.CMSConfig,
-                ForeColor = System.Drawing.Color.White,
-                Location = new System.Drawing.Point(167, 29),
-                Size = new System.Drawing.Size(766, 441),
-            };
+            this.pConfig.ContextMenuStrip = CMSConfig;
             this.pConfig.SuspendLayout();
             this.pConfig.Controls.Add(this.gbModo);
             this.pConfig.Controls.Add(this.gbTema);
@@ -2090,7 +2112,8 @@
             this.pConfig.Controls.Add(this.lblTamanho);
             this.pConfig.Controls.Add(this.nUpTCarta);
             this.pConfig.Controls.Add(this.ckNome);
-            this.pConfig.Controls.Add(this.ckEfeito);
+            this.pConfig.Controls.Add(this.ckEfeitoClick);
+            this.pConfig.Controls.Add(this.ckEfeitoMouse);
             this.pConfig.Controls.Add(this.menuStripConfig);
             this.pConfig.Click += (s, e) => pConfig.Select();
             this.pConfig.ResumeLayout(false);
@@ -2140,8 +2163,8 @@
                 // picCarta
                 picCarta[i] = new System.Windows.Forms.PictureBox
                 {
-                    Size = new System.Drawing.Size(126, 147),
-                    Location = new System.Drawing.Point(5, 15),
+                    Size = new System.Drawing.Size(123, 144),
+                    Location = new System.Drawing.Point(7, 17),
                     BackColor = System.Drawing.Color.Transparent,
                     SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage,
                     Image = _Deck.CartasImagem[i + 1],
@@ -2156,7 +2179,7 @@
                 lblInfo[i] = new System.Windows.Forms.Label
                 {
                     AutoSize = true,
-                    Location = new System.Drawing.Point(133, 25),
+                    Location = new System.Drawing.Point(132, 25),
                     Font = new System.Drawing.Font(Font.FontFamily, 8.25f, System.Drawing.FontStyle.Regular),
                     Text = _Deck.CartasInformacao[i + 1].Split('\n')[0] + System.Environment.NewLine +
                     _Deck.CartasInformacao[i + 1].Split('\n')[1] + System.Environment.NewLine +
@@ -2209,14 +2232,21 @@
                 };
                 picCarta[i].MouseDown += (s, e) =>
                 {
-                    picCarta[valorI].Location = new System.Drawing.Point(localInicialX, localInicialY);
-                    picCarta[valorI].Size = new System.Drawing.Size(tamInicialWidth, tamInicialHeigth);
+                    if (ckEfeitoClick.Checked)
+                    {
+                        picCarta[valorI].Location = new System.Drawing.Point(picCarta[valorI].Location.X + 2 + System.Convert.ToByte(nUpTCarta.Value), picCarta[valorI].Location.Y + 2 + System.Convert.ToByte(nUpTCarta.Value));
+                        picCarta[valorI].Size = new System.Drawing.Size(picCarta[valorI].Size.Width - 4 - System.Convert.ToByte(nUpTCarta.Value) * 2, picCarta[valorI].Size.Height - 4 - System.Convert.ToByte(nUpTCarta.Value) * 2);
+                    }
                 };
                 picCarta[i].MouseUp += (s, e) =>
                 {
-                    picCarta[valorI].Location = new System.Drawing.Point(localInicialX - System.Convert.ToByte(nUpTCarta.Value), localInicialY - System.Convert.ToByte(nUpTCarta.Value));
-                    picCarta[valorI].Size = new System.Drawing.Size(tamInicialWidth + System.Convert.ToByte(nUpTCarta.Value) * 2, tamInicialHeigth + System.Convert.ToByte(nUpTCarta.Value) * 2);
+                    if (ckEfeitoClick.Checked)
+                    {
+                        picCarta[valorI].Location = new System.Drawing.Point(picCarta[valorI].Location.X - 2 - System.Convert.ToByte(nUpTCarta.Value), picCarta[valorI].Location.Y - 2 - System.Convert.ToByte(nUpTCarta.Value));
+                        picCarta[valorI].Size = new System.Drawing.Size(picCarta[valorI].Size.Width + 4 + System.Convert.ToByte(nUpTCarta.Value) * 2, picCarta[valorI].Size.Height + 4 + System.Convert.ToByte(nUpTCarta.Value) * 2);
+                    }
                 };
+
                 picCarta[i].Click += (s, e) =>
                 {
                     grpBoxSCartas[valorI].Select();
@@ -2256,8 +2286,8 @@
                 grpBoxSCartas[i].Controls.Add(cbPermitir[i]);
                 #endregion
 
-                if (i == grpBoxSCartas.Length - 1 && i % 2 == 1) { xx = 109; y += 175; }
-                else if (i == grpBoxSCartas.Length - 1 && i % 2 == 0) { xx = 380; }
+                if (i == grpBoxSCartas.Length - 1 && (i + 1) % 2 == 0) { xx = 109; yy += 175; }
+                else if (i == grpBoxSCartas.Length - 1 && (i + 1) % 2 == 1) { xx = 380; }
             }
 
             lblProx = new System.Windows.Forms.Label()
@@ -2265,22 +2295,24 @@
                 Text = "Em breve",
                 AutoSize = true,
                 Font = new System.Drawing.Font(Font.FontFamily, 8.25f, System.Drawing.FontStyle.Regular),
-                Location = new System.Drawing.Point(131, 25)
+                Location = new System.Drawing.Point(132, 25)
             };
             lblProx.Click += (s, e) => gbProx.Select();
 
             picProx = new System.Windows.Forms.PictureBox()
             {
-                Size = new System.Drawing.Size(129, 151),
-                Location = new System.Drawing.Point(3, 13),
+                Size = new System.Drawing.Size(123, 144),
+                Location = new System.Drawing.Point(7, 17),
                 BackColor = System.Drawing.Color.Transparent,
                 SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage,
                 Image = _Deck.CartasImagem[0],
                 Cursor = System.Windows.Forms.Cursors.Hand
             };
             picProx.Click += (s, e) => gbProx.Select();
+
             byte posInicialX = System.Convert.ToByte(picProx.Location.X), posInicialY = System.Convert.ToByte(picProx.Location.Y);
             byte tamInicialW = System.Convert.ToByte(picProx.Size.Width), tamInicialH = System.Convert.ToByte(picProx.Size.Height);
+
             picProx.MouseEnter += (s, e) =>
             {
                 picProx.Location = new System.Drawing.Point(posInicialX - System.Convert.ToByte(nUpTCarta.Value), posInicialY - System.Convert.ToByte(nUpTCarta.Value));
@@ -2291,7 +2323,46 @@
                 picProx.Location = new System.Drawing.Point(posInicialX, posInicialY);
                 picProx.Size = new System.Drawing.Size(tamInicialW, tamInicialH);
             };
+            picProx.MouseDown += (s, e) =>
+            {
+                if (ckEfeitoClick.Checked)
+                {
+                    picProx.Location = new System.Drawing.Point(picProx.Location.X + 2 + System.Convert.ToByte(nUpTCarta.Value), picProx.Location.Y + 2 + System.Convert.ToByte(nUpTCarta.Value));
+                    picProx.Size = new System.Drawing.Size(picProx.Size.Width - 4 - System.Convert.ToByte(nUpTCarta.Value) * 2, picProx.Size.Height - 4 - System.Convert.ToByte(nUpTCarta.Value) * 2);
+                }
+            };
+            picProx.MouseUp += (s, e) =>
+            {
+                if (ckEfeitoClick.Checked)
+                {
+                    picProx.Location = new System.Drawing.Point(picProx.Location.X - 2 - System.Convert.ToByte(nUpTCarta.Value), picProx.Location.Y - 2 - System.Convert.ToByte(nUpTCarta.Value));
+                    picProx.Size = new System.Drawing.Size(picProx.Size.Width + 4 + System.Convert.ToByte(nUpTCarta.Value) * 2, picProx.Size.Height + 4 + System.Convert.ToByte(nUpTCarta.Value) * 2);
+                }
+            };
+
             picProx.Click += (s, e) => lblInformacoes.Text = _Deck.CartasInformacao[0];
+
+            cbProx = new System.Windows.Forms.CheckBox()
+            {
+                Enabled = false,
+                Text = "Permitir",
+                AutoSize = true,
+                Location = new System.Drawing.Point(192, 116),
+                Cursor = System.Windows.Forms.Cursors.Hand,
+                BackColor = System.Drawing.Color.Transparent
+            };
+
+            btnProx = new System.Windows.Forms.Button()
+            {
+                Enabled = false,
+                Text = "Descrição",
+                FlatStyle = System.Windows.Forms.FlatStyle.Flat,
+                Cursor = System.Windows.Forms.Cursors.Hand,
+                Size = new System.Drawing.Size(80, 25),
+                Font = new System.Drawing.Font(Font.FontFamily, 8.25f, System.Drawing.FontStyle.Bold),
+                Location = new System.Drawing.Point(177, 136),
+                ForeColor = System.Drawing.Color.White
+            };
 
             gbProx = new System.Windows.Forms.GroupBox()
             {
@@ -2304,6 +2375,8 @@
             gbProx.Click += (s, e) => gbProx.Select();
             gbProx.Controls.Add(lblProx);
             gbProx.Controls.Add(picProx);
+            gbProx.Controls.Add(cbProx);
+            gbProx.Controls.Add(btnProx);
 
             for (byte i = 0; i < tsItems.Length; i++)
             {
@@ -2832,7 +2905,7 @@
                         conOpcoes[copiaI].Items[0].Text = "Mostrar Deck - Minimalista";
                         grpBoxDSalvos[copiaI].Size = new System.Drawing.Size(536, 340);
                         picImagem[copiaI] = new System.Windows.Forms.PictureBox[8];
-                        int x1 = 5, x2 = 5;
+                        int x1 = 6, x2 = 6;
 
                         for (byte j = 0; j < picImagem[copiaI].Length; j++)
                         {
@@ -2840,7 +2913,7 @@
                             picImagem[copiaI][j] = new System.Windows.Forms.PictureBox
                             {
                                 BackColor = System.Drawing.Color.Transparent,
-                                Size = new System.Drawing.Size(127, 150),
+                                Size = new System.Drawing.Size(124, 150),
                                 SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage,
                                 Cursor = System.Windows.Forms.Cursors.Hand,
                             };
@@ -2863,15 +2936,21 @@
                                 picImagem[copiaI][copiaJ].Location = new System.Drawing.Point(posInicialXX, posInicialYY);
                                 picImagem[copiaI][copiaJ].Size = new System.Drawing.Size(tamInicialWidth, tamInicialHeigth);
                             };
-                            picImagem[copiaI][j].MouseUp += (ss, ee) =>
+                            picImagem[copiaI][j].MouseDown += (s, e) =>
                             {
-                                picImagem[copiaI][copiaJ].Location = new System.Drawing.Point(posInicialXX - System.Convert.ToByte(nUpTCarta.Value), posInicialYY - System.Convert.ToByte(nUpTCarta.Value));
-                                picImagem[copiaI][copiaJ].Size = new System.Drawing.Size(tamInicialWidth + System.Convert.ToByte(nUpTCarta.Value) * 2, tamInicialHeigth + System.Convert.ToByte(nUpTCarta.Value) * 2);
+                                if (ckEfeitoClick.Checked)
+                                {
+                                    picImagem[copiaI][copiaJ].Location = new System.Drawing.Point(picImagem[copiaI][copiaJ].Location.X + 2 + System.Convert.ToByte(nUpTCarta.Value), picImagem[copiaI][copiaJ].Location.Y + 2 + System.Convert.ToByte(nUpTCarta.Value));
+                                    picImagem[copiaI][copiaJ].Size = new System.Drawing.Size(picImagem[copiaI][copiaJ].Size.Width - 4 - System.Convert.ToByte(nUpTCarta.Value) * 2, picImagem[copiaI][copiaJ].Size.Height - 4 - System.Convert.ToByte(nUpTCarta.Value) * 2);
+                                }
                             };
-                            picImagem[copiaI][j].MouseDown += (ss, ee) =>
+                            picImagem[copiaI][j].MouseUp += (s, e) =>
                             {
-                                picImagem[copiaI][copiaJ].Location = new System.Drawing.Point(posInicialXX, posInicialYY);
-                                picImagem[copiaI][copiaJ].Size = new System.Drawing.Size(tamInicialWidth, tamInicialHeigth);
+                                if (ckEfeitoClick.Checked)
+                                {
+                                    picImagem[copiaI][copiaJ].Location = new System.Drawing.Point(picImagem[copiaI][copiaJ].Location.X - 2 - System.Convert.ToByte(nUpTCarta.Value), picImagem[copiaI][copiaJ].Location.Y - 2 - System.Convert.ToByte(nUpTCarta.Value));
+                                    picImagem[copiaI][copiaJ].Size = new System.Drawing.Size(picImagem[copiaI][copiaJ].Size.Width + 4 + System.Convert.ToByte(nUpTCarta.Value) * 2, picImagem[copiaI][copiaJ].Size.Height + 4 + System.Convert.ToByte(nUpTCarta.Value) * 2);
+                                }
                             };
 
                             for (byte b = 0; b < _Deck.CartasImagem.Length; b++)
@@ -3175,14 +3254,14 @@
                     grpBoxMDecks[i].ContextMenuStrip = cmsGBMDecks[i];
 
                     picImagemMDecks[i] = new System.Windows.Forms.PictureBox[8];
-                    int x1 = 5, x2 = 5;
+                    int x1 = 6, x2 = 6;
 
                     for (byte j = 0; j < picImagemMDecks[i].Length; j++)
                     {
                         byte copiaJ = j;
                         picImagemMDecks[i][j] = new System.Windows.Forms.PictureBox()
                         {
-                            Size = new System.Drawing.Size(127, 150),
+                            Size = new System.Drawing.Size(124, 150),
                             SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage,
                             BackColor = System.Drawing.Color.Transparent,
                             Cursor = System.Windows.Forms.Cursors.Hand
@@ -3214,15 +3293,21 @@
                             picImagemMDecks[copiaI][copiaJ].Location = new System.Drawing.Point(posInicialXX, posInicialYY);
                             picImagemMDecks[copiaI][copiaJ].Size = new System.Drawing.Size(tamInicialWidth, tamInicialHeigth);
                         };
-                        picImagemMDecks[i][j].MouseUp += (s, e) =>
-                        {
-                            picImagemMDecks[copiaI][copiaJ].Location = new System.Drawing.Point(posInicialXX - System.Convert.ToByte(nUpTCarta.Value), posInicialYY - System.Convert.ToByte(nUpTCarta.Value));
-                            picImagemMDecks[copiaI][copiaJ].Size = new System.Drawing.Size(tamInicialWidth + System.Convert.ToByte(nUpTCarta.Value) * 2, tamInicialHeigth + System.Convert.ToByte(nUpTCarta.Value) * 2);
-                        };
                         picImagemMDecks[i][j].MouseDown += (s, e) =>
                         {
-                            picImagemMDecks[copiaI][copiaJ].Location = new System.Drawing.Point(posInicialXX, posInicialYY);
-                            picImagemMDecks[copiaI][copiaJ].Size = new System.Drawing.Size(tamInicialWidth, tamInicialHeigth);
+                            if (ckEfeitoClick.Checked)
+                            {
+                                picImagemMDecks[copiaI][copiaJ].Location = new System.Drawing.Point(picImagemMDecks[copiaI][copiaJ].Location.X + 2 + System.Convert.ToByte(nUpTCarta.Value), picImagemMDecks[copiaI][copiaJ].Location.Y + 2 + System.Convert.ToByte(nUpTCarta.Value));
+                                picImagemMDecks[copiaI][copiaJ].Size = new System.Drawing.Size(picImagemMDecks[copiaI][copiaJ].Size.Width - 4 - System.Convert.ToByte(nUpTCarta.Value) * 2, picImagemMDecks[copiaI][copiaJ].Size.Height - 4 - System.Convert.ToByte(nUpTCarta.Value) * 2);
+                            }
+                        };
+                        picImagemMDecks[i][j].MouseUp += (s, e) =>
+                        {
+                            if (ckEfeitoClick.Checked)
+                            {
+                                picImagemMDecks[copiaI][copiaJ].Location = new System.Drawing.Point(picImagemMDecks[copiaI][copiaJ].Location.X - 2 - System.Convert.ToByte(nUpTCarta.Value), picImagemMDecks[copiaI][copiaJ].Location.Y - 2 - System.Convert.ToByte(nUpTCarta.Value));
+                                picImagemMDecks[copiaI][copiaJ].Size = new System.Drawing.Size(picImagemMDecks[copiaI][copiaJ].Size.Width + 4 + System.Convert.ToByte(nUpTCarta.Value) * 2, picImagemMDecks[copiaI][copiaJ].Size.Height + 4 + System.Convert.ToByte(nUpTCarta.Value) * 2);
+                            }
                         };
                         picImagemMDecks[i][j].Click += (ss, ee) =>
                         {
@@ -3432,8 +3517,8 @@
 
                     picImagemBalanceamento[i] = new System.Windows.Forms.PictureBox()
                     {
-                        Size = new System.Drawing.Size(131, 151),
-                        Location = new System.Drawing.Point(6, 16),
+                        Size = new System.Drawing.Size(124, 146),
+                        Location = new System.Drawing.Point(8, 18),
                         BackColor = System.Drawing.Color.Transparent,
                         SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage,
                         Cursor = System.Windows.Forms.Cursors.Hand
@@ -3477,15 +3562,21 @@
                         picImagemBalanceamento[copiaI].Location = new System.Drawing.Point(posInicialXX, posInicialYY);
                         picImagemBalanceamento[copiaI].Size = new System.Drawing.Size(tamInicialWW, tamInicialHH);
                     };
-                    picImagemBalanceamento[i].MouseUp += (s, e) =>
-                    {
-                        picImagemBalanceamento[copiaI].Location = new System.Drawing.Point(posInicialXX - System.Convert.ToByte(nUpTCarta.Value), posInicialYY - System.Convert.ToByte(nUpTCarta.Value));
-                        picImagemBalanceamento[copiaI].Size = new System.Drawing.Size(tamInicialWW + System.Convert.ToByte(nUpTCarta.Value * 2), tamInicialHH + System.Convert.ToByte(nUpTCarta.Value * 2));
-                    };
                     picImagemBalanceamento[i].MouseDown += (s, e) =>
                     {
-                        picImagemBalanceamento[copiaI].Location = new System.Drawing.Point(posInicialXX, posInicialYY);
-                        picImagemBalanceamento[copiaI].Size = new System.Drawing.Size(tamInicialWW, tamInicialHH);
+                        if (ckEfeitoClick.Checked)
+                        {
+                            picImagemBalanceamento[copiaI].Location = new System.Drawing.Point(picImagemBalanceamento[copiaI].Location.X + 2 + System.Convert.ToByte(nUpTCarta.Value), picImagemBalanceamento[copiaI].Location.Y + 2 + System.Convert.ToByte(nUpTCarta.Value));
+                            picImagemBalanceamento[copiaI].Size = new System.Drawing.Size(picImagemBalanceamento[copiaI].Size.Width - 4 - System.Convert.ToByte(nUpTCarta.Value) * 2, picImagemBalanceamento[copiaI].Size.Height - 4 - System.Convert.ToByte(nUpTCarta.Value) * 2);
+                        }
+                    };
+                    picImagemBalanceamento[i].MouseUp += (s, e) =>
+                    {
+                        if (ckEfeitoClick.Checked)
+                        {
+                            picImagemBalanceamento[copiaI].Location = new System.Drawing.Point(picImagemBalanceamento[copiaI].Location.X - 2 - System.Convert.ToByte(nUpTCarta.Value), picImagemBalanceamento[copiaI].Location.Y - 2 - System.Convert.ToByte(nUpTCarta.Value));
+                            picImagemBalanceamento[copiaI].Size = new System.Drawing.Size(picImagemBalanceamento[copiaI].Size.Width + 4 + System.Convert.ToByte(nUpTCarta.Value) * 2, picImagemBalanceamento[copiaI].Size.Height + 4 + System.Convert.ToByte(nUpTCarta.Value) * 2);
+                        }
                     };
 
                     cmsPicBalanceamento[i] = new System.Windows.Forms.ContextMenuStrip();
@@ -3608,6 +3699,8 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = Properties.Resources.icon;
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(this.ClientSize.Width, 470);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Controls.Add(this.pBarra);
             this.Controls.Add(this.pOpcoes);
@@ -3622,20 +3715,24 @@
 
             this.Activated += (s, e) =>
             {
+                if (btnRedimensionar.Text == "2" && this.Size != System.Windows.Forms.Screen.PrimaryScreen.WorkingArea.Size)
+                    this.ClientSize = System.Windows.Forms.Screen.PrimaryScreen.WorkingArea.Size;
                 Opacity = 1;
-                System.Windows.Forms.Control[] controles = { lblNome, btnMinimizar, btnMaximizar, btnFechar, btnGeradorDeck, btnSelecaoDeCartas, btnDecksSalvos,
+                System.Windows.Forms.Control[] controles = { lblNome, btnMinimizar, btnRedimensionar, btnFechar, btnGeradorDeck, btnSelecaoDeCartas, btnDecksSalvos,
                 btnMelhoresDecks, btnBalanceamento, btnConfig, btnAtualizador, btnSobre};
                 for (byte i = 0; i < controles.Length; i++) controles[i].ForeColor = System.Drawing.Color.White;
             };
             this.Deactivate += (s, e) =>
             {
                 if (ckDesfoque.Checked) Opacity = 0.93;
-                System.Windows.Forms.Control[] controles = { lblNome, btnMinimizar, btnMaximizar, btnFechar, btnGeradorDeck, btnSelecaoDeCartas, btnDecksSalvos,
+                System.Windows.Forms.Control[] controles = { lblNome, btnMinimizar, btnRedimensionar, btnFechar, btnGeradorDeck, btnSelecaoDeCartas, btnDecksSalvos,
                 btnMelhoresDecks, btnBalanceamento, btnConfig, btnAtualizador, btnSobre};
                 for (byte i = 0; i < controles.Length; i++) controles[i].ForeColor = System.Drawing.Color.LightGray;
             };
             this.Load += (s, e) =>
             {
+                pGerador.Select();
+
                 for (byte i = 0; i < grpBoxSCartas.Length; i++)
                     grpBoxSCartas[i].Anchor = System.Windows.Forms.AnchorStyles.Top;
                 gbProx.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -3643,9 +3740,11 @@
                 ClickBotao(true, pGerador, btnGeradorDeck);
                 AtualizaArena(); AtualizaRaridade(); AtualizaTipo();
                 AtualizaListaCartas();
+
                 if (Properties.Settings.Default.minmmax == 0) rbMin.Checked = true;
                 else if (Properties.Settings.Default.minmmax == 1) rbMed.Checked = true;
                 else rbMax.Checked = true;
+
                 System.Windows.Forms.ContextMenuStrip cmsNIcon = new System.Windows.Forms.ContextMenuStrip();
                 cmsNIcon.Items.Add("Gerador de Deck");
                 cmsNIcon.Items[0].Image = Properties.Resources.icon.ToBitmap();
@@ -3679,6 +3778,7 @@
                     nIcon.Dispose();
                     System.Environment.Exit(0);
                 };
+
                 nIcon = new System.Windows.Forms.NotifyIcon()
                 {
                     BalloonTipIcon = System.Windows.Forms.ToolTipIcon.Info,
@@ -3689,6 +3789,7 @@
                     ContextMenuStrip = cmsNIcon
                 };
                 nIcon.DoubleClick += (ss, ee) => SwitchToThisWindow(this.Handle);
+
                 SwitchToThisWindow(this.Handle);
             };
             this.ResumeLayout(false);
@@ -3750,13 +3851,19 @@
                 };
                 Cartas[i].MouseDown += (s, e) =>
                 {
-                    Cartas[valorI].Location = posInicialGD[valorI];
-                    Cartas[valorI].Size = tamInicialGD[valorI];
+                    if (ckEfeitoClick.Checked)
+                    {
+                        Cartas[valorI].Location = new System.Drawing.Point(Cartas[valorI].Location.X + 2 + System.Convert.ToByte(nUpTCarta.Value), Cartas[valorI].Location.Y + 2 + System.Convert.ToByte(nUpTCarta.Value));
+                        Cartas[valorI].Size = new System.Drawing.Size(Cartas[valorI].Size.Width - 4 - System.Convert.ToByte(nUpTCarta.Value) * 2, Cartas[valorI].Size.Height - 4 - System.Convert.ToByte(nUpTCarta.Value) * 2);
+                    }
                 };
                 Cartas[i].MouseUp += (s, e) =>
                 {
-                    Cartas[valorI].Location = new System.Drawing.Point(posInicialGD[valorI].X - System.Convert.ToByte(nUpTCarta.Value), posInicialGD[valorI].Y - System.Convert.ToByte(nUpTCarta.Value));
-                    Cartas[valorI].Size = new System.Drawing.Size(tamInicialGD[valorI].Width + System.Convert.ToByte(nUpTCarta.Value) * 2, tamInicialGD[valorI].Height + System.Convert.ToByte(nUpTCarta.Value) * 2);
+                    if (ckEfeitoClick.Checked)
+                    {
+                        Cartas[valorI].Location = new System.Drawing.Point(Cartas[valorI].Location.X - 2 - System.Convert.ToByte(nUpTCarta.Value), Cartas[valorI].Location.Y - 2 - System.Convert.ToByte(nUpTCarta.Value));
+                        Cartas[valorI].Size = new System.Drawing.Size(Cartas[valorI].Size.Width + 4 + System.Convert.ToByte(nUpTCarta.Value) * 2, Cartas[valorI].Size.Height + 4 + System.Convert.ToByte(nUpTCarta.Value) * 2);
+                    }
                 };
 
                 CMS[i] = new System.Windows.Forms.ContextMenuStrip();
@@ -3816,7 +3923,7 @@
         System.Drawing.Point[] posInicialGD;
         System.Drawing.Size[] tamInicialGD;
 
-        private byte bAtual = 36;
+        private byte bAtual = 37;
         private float media = 0.0f;
         private System.Random _Random = new System.Random();
         private System.Windows.Forms.AutoCompleteStringCollection dados = new System.Windows.Forms.AutoCompleteStringCollection();
@@ -3841,50 +3948,59 @@
             string[] tipo = { "Tropa", "Construção", "Feitiço" };
 
             for (byte j = 1; j < qtdCartas; j++)
-                try
-                {
-                    if (cbPermitir[j - 1].Checked && cbRaridade.SelectedIndex == 0 && cbTipo.SelectedIndex == 0)
-                        listaCartas.Add(j);
-                    else if (cbPermitir[j - 1].Checked && cbRaridade.SelectedIndex == 0 && cbTipo.SelectedIndex != 0 && _Deck.CartasInformacao[j].Split('\n')[2] == "Tipo: " + tipo[cbTipo.SelectedIndex - 1])
-                        listaCartas.Add(j);
-                    else if (cbPermitir[j - 1].Checked && cbTipo.SelectedIndex == 0 && cbRaridade.SelectedIndex != 0 && _Deck.CartasInformacao[j].Split('\n')[1] == string.Format("Raridade: {0}", raridade[cbRaridade.SelectedIndex - 1]))
-                        listaCartas.Add(j);
-                    else if (cbPermitir[j - 1].Checked && cbRaridade.SelectedIndex != 0 && cbTipo.SelectedIndex != 0 && _Deck.CartasInformacao[j].Split('\n')[1] == string.Format("Raridade: {0}", raridade[cbRaridade.SelectedIndex - 1]) &&
-                        _Deck.CartasInformacao[j].Split('\n')[2] == string.Format("Tipo: {0}", tipo[cbTipo.SelectedIndex - 1]))
-                        listaCartas.Add(j);
-                }
-                catch { Classes.ArquivoRegras.ReCriar(); }
+                if (cbPermitir[j - 1].Checked && cbRaridade.SelectedIndex == 0 && cbTipo.SelectedIndex == 0)
+                    listaCartas.Add(j);
+                else if (cbPermitir[j - 1].Checked && cbRaridade.SelectedIndex == 0 && cbTipo.SelectedIndex != 0 && _Deck.CartasInformacao[j].Split('\n')[2] == "Tipo: " + tipo[cbTipo.SelectedIndex - 1])
+                    listaCartas.Add(j);
+                else if (cbPermitir[j - 1].Checked && cbTipo.SelectedIndex == 0 && cbRaridade.SelectedIndex != 0 && _Deck.CartasInformacao[j].Split('\n')[1] == string.Format("Raridade: {0}", raridade[cbRaridade.SelectedIndex - 1]))
+                    listaCartas.Add(j);
+                else if (cbPermitir[j - 1].Checked && cbRaridade.SelectedIndex != 0 && cbTipo.SelectedIndex != 0 && _Deck.CartasInformacao[j].Split('\n')[1] == string.Format("Raridade: {0}", raridade[cbRaridade.SelectedIndex - 1]) &&
+                    _Deck.CartasInformacao[j].Split('\n')[2] == string.Format("Tipo: {0}", tipo[cbTipo.SelectedIndex - 1]))
+                    listaCartas.Add(j);
         }
 
-        private void GerarDeck()
+        string[] Defesa = { "Gigante", "Golem", "Gigante Real" };
+        string[] AtkTorre = { "Corredor", "Ariete de Batalha", "Gigante Real" };
+        string[] AP = { "Bárbaros de Elite", "Gigante Real", "P.E.K.K.A" };
+        string[] C = { "Lápide", "Canhão" };
+        string[] CV3 = { "Cabana de Bárbaros", "Cabana de Goblins", "Fornalha" };
+        string[] CA = { "Sparky", "Esqueleto Gigante", "Megacavaleiro" };
+        string[] Si = { "Morteiro", "X-Besta" };
+        string[] F = { "Flechas", "Bola de Fogo", "Veneno" };
+        string[] FV2 = { "Relâmpago", "Foguete" };
+        string[] FV3 = { "Zap", "Tronco" };
+        string[] FV4 = { "Fúria", "Tornado" };
+        string[] Surp = { "Mineiro", "Barril de Goblins" };
+        string[] Ciclar = { "Esqueletos", "Goblins", "Goblins Lanceiros", "Espírito de Gelo", "Espíritos de Fogo", "Morcegos", "Golem de Gelo" };
+        string[] Sup = { "Bruxa", "Príncipe", "Megacavaleiro", "Mosqueteira", "Três Mosqueteiras", "Bruxa Sombria", "Lançador", "Caçador", "Executor", "Carrinho de Canhão", "Patifes" };
+        string[] SV2 = { "Bebê Dragão", "Mini P.E.K.K.A", "Valquíria", "Dragão Infernal", "Mago Elétrico", "Príncipe das Trevas", "Lenhador", "Eletrocutadores", "Máquina Voadora" };
+        string[] SV3 = { "Fantasma Real", "Arqueiro Mágico", "Bandida", "Princesa", "Mago de Gelo", "Barril de Esqueletos", "Exército de Esqueletos", "Cavaleiro", "Gangue de Goblins", "Guardas", "Arqueiras" };
+        string[] M = { "Servos", "Horda de Servos", "Megasservo" };
+
+        string[] Tipos =
         {
-            for (byte i = 0; i < _Deck.deckAtual.Length; i++)
-                _Deck.deckAnterior[i] = _Deck.deckAtual[i];
-            btnVoltarDeck.Enabled = true;
-            System.Array.Clear(_Deck.deckAtual, 0, _Deck.deckAtual.Length);
-
-            if (ckGInteligente.Checked)
-            {
-                string[] Defesa = { "Gigante", "Golem", "Gigante Real" };
-                string[] AtkTorre = { "Corredor", "Ariete de Batalha", "Gigante Real" };
-                string[] AP = { "Bárbaros de Elite", "Gigante Real", "P.E.K.K.A" };
-                string[] Sup = { "Bruxa", "Príncipe", "Megacavaleiro", "Mosqueteira", "Três Mosqueteiras", "Bruxa Sombria", "Lançador", "Caçador", "Executor", "Carrinho de Canhão" };
-                string[] C = { "Torre Inferno", "Canhão" };
-                string[] CV3 = { "Cabana de Bárbaros", "Cabana de Goblins", "Fornalha" };
-                string[] CA = { "Sparky", "Esqueleto Gigante", "Megacavaleiro" };
-                string[] Si = { "Morteiro", "X-Besta" };
-                string[] F = { "Flechas", "Bola de Fogo", "Veneno" };
-                string[] FV2 = { "Relâmpago", "Foguete" };
-                string[] FV3 = { "Zap", "Tronco" };
-                string[] FV4 = { "Fúria", "Gelo" };
-                string[] Surp = { "Mineiro", "Barril de Goblins" };
-                string[] Ciclar = { "Esqueletos", "Goblins", "Goblins Lanceiros", "Espírito de Gelo", "Espíritos de Fogo", "Morcegos", "Golem de Gelo" };
-                string[] SV2 = { "Bebê Dragão", "Mini P.E.K.K.A", "Valquíria", "Dragão Infernal", "Mago Elétrico", "Príncipe das Trevas", "Lenhador", "Eletrocutadores", "Máquina Voadora" };
-                string[] SV3 = { "Fantasma Real", "Arqueiro Mágico", "Bandida", "Princesa", "Mago de Gelo", "Barril de Esqueletos", "Exército de Esqueletos", "Cavaleiro", "Gangue de Goblins", "Guardas", "Arqueiras" };
-                string[] M = { "Servos", "Horda de Servos", "Megasservo" };
-
-                string[] Tipos =
-                {
+                    "Três Mosqueteiras|Patifes|Mineiro|SV3|SV3|Ciclar|FV3|Coletor de Elixir",
+                    "Patifes|P.E.K.K.A|Mineiro|Veneno|Ciclar|FV3|SV3|SV3",
+                    "Patifes|Cabana de Goblins|Cemitério|Veneno|Ciclar|M|FV3|SV3",
+                    "Patifes|Príncipe|Barril de Goblins|SV3|SV3|F|FV3|Ciclar",
+                    "Patifes|Lava Hound|Balão|M|F|FV3|M|C",
+                    "Patifes|Mineiro|Barril de Goblins|M|SV3|FV3|SV2|SV3",
+                    "Três Mosqueteiras|Corredor|Fantasma Real|Ciclar|SV2|M|FV3|C",
+                    "Golem|Príncipe|Arqueiro Mágico|M|SV3|Ciclar|F|FV3",
+                    "Gigante|Arqueiro Mágico|Príncipe|M|SV3|F|SV3|FV3",
+                    "Arqueiro Mágico|Mineiro|Balão|Ciclar|Ciclar|FV4|FV3|SV3",
+                    "Megacavaleiro|Barril de Esqueletos|Ciclar|SV3|SV2|Surp|F|FV3",
+                    "Megacavaleiro|Balão|Mineiro|Ciclar|Ciclar|M|M|FV3",
+                    "Megacavaleiro|Máquina Voadora|Cemitério|Veneno|Ciclar|Ciclar|FV3|SV2",
+                    "Megacavaleiro|Gigante|F|M|SV3|SV2|FV3|Coletor de Elixir",
+                    "Mineiro|Caçador|Príncipe|Príncipe das Trevas|Ciclar|Ciclar|F|FV3",
+                    "Mineiro|Caçador|Ciclar|Ciclar|Ciclar|FV3|SV3|F",
+                    "Si|Caçador|Ciclar|SV3|FV3|Ciclar|M|F",
+                    "Golem|Caçador|Bruxa Sombria|Ciclar|FV4|F|FV3|SV3",
+                    "Golem|Eletrocutadores|Bruxa Sombria|FV3|F|FV3|M|Ciclar",
+                    "Mineiro|F|Caçador|Eletrocutadores|SV3|FV3|Surp|SV2",
+                    "Gangue de Goblins|Eletrocutadores|SV3|SV3|FV3|FV2|FV4|SV3",
+                    "Três Mosqueteiras|Eletrocutadores|Mago de Gelo|Ciclar|FV4|SV2|FV3|Coletor de Elixir",
                     "D|S|SV2|SV3|Ciclar|Ciclar|FV3|F",
                     "Si|Ciclar|Ciclar|SV3|SV2|FV2|FV3|M",
                     "Ciclar|AP|FV3|F|S|SV3|FV3|Surp",
@@ -3922,6 +4038,15 @@
                     "Si|FV3|M|Surp|Ciclar|Ciclar|SV3|SV3"
                 };
 
+        private void GerarDeck()
+        {
+            for (byte i = 0; i < _Deck.deckAtual.Length; i++)
+                _Deck.deckAnterior[i] = _Deck.deckAtual[i];
+            btnVoltarDeck.Enabled = true;
+            System.Array.Clear(_Deck.deckAtual, 0, _Deck.deckAtual.Length);
+
+            if (ckGInteligente.Checked)
+            {
                 string[][] grupos = { Defesa, Sup, AP, FV3, Si, F, FV2, C, SV2, SV3, M, AtkTorre, Surp, Ciclar, CV3, FV4, CA, };
                 string[] tropas = { "D", "S", "AP", "FV3", "Si", "F", "FV2", "C", "SV2", "SV3", "M", "AT", "Surp", "Ciclar", "CV3", "FV4", "CA" };
 
@@ -4350,7 +4475,7 @@
                 btn[i].FlatAppearance.MouseDownBackColor = corFundoClick;
             }
             btnMinimizar.FlatAppearance.MouseDownBackColor = corFundoClick;
-            btnMaximizar.FlatAppearance.MouseDownBackColor = corFundoClick;
+            btnRedimensionar.FlatAppearance.MouseDownBackColor = corFundoClick;
             for (byte i = 0; i < btnInfo.Length; i++) { btnInfo[i].BackColor = corFundo2; btnInfo[i].FlatAppearance.MouseDownBackColor = corFundoClick; }
             for (byte i = 0; i < (btnCopia == null ? 0 : btnCopia.Length); i++) { btnCopia[i].BackColor = corFundo2; btnCopia[i].FlatAppearance.MouseDownBackColor = corFundo2; }
             for (byte i = 0; i < (btnCola == null ? 0 : btnCola.Length); i++) { btnCola[i].BackColor = corFundo2; btnCola[i].FlatAppearance.MouseDownBackColor = corFundo2; }
@@ -4367,7 +4492,7 @@
             valorMedia.BackColor = nUpTCarta.BackColor = corFundo;
             valorMedia.ForeColor = nUpTCarta.ForeColor = corLetra;
 
-            System.Windows.Forms.CheckBox[] ck = { chkBuscarDeck, ckGInteligente, ckNome, ckEfeito, ckDesfoque, ckVoltarDeck };
+            System.Windows.Forms.CheckBox[] ck = { chkBuscarDeck, ckGInteligente, ckNome, ckEfeitoMouse, ckDesfoque, ckVoltarDeck };
             for (byte i = 0; i < ck.Length; i++) ck[i].ForeColor = corLetra;
 
             rbMin.ForeColor = rbMed.ForeColor = rbMax.ForeColor = corLetra = rbGrafico.ForeColor =
@@ -4456,6 +4581,7 @@
                 wc.DownloadFileCompleted += (s, ee) =>
                 {
                     SwitchToThisWindow(this.Handle);
+                    ClickBotao(true, pAtualizador, btnAtualizador);
                     lblStatus.Text = "Status: Download concluído. Abra o arquivo na pasta do executável!";
                     picGIF.Visible = false;
                     emAtualizacao = false;
@@ -4614,8 +4740,8 @@
 
         private void AttNome(string nome)
         {
-            lblNome.Text = nome;
-            Text = nome;
+            lblNome.Text = nome.Trim();
+            Text = nome.Trim();
             lblNome.Location = new System.Drawing.Point((pBarra.Size.Width - lblNome.Size.Width) / 2, 2);
         }
 
@@ -4624,7 +4750,7 @@
             if (ckNome.Checked) Properties.Settings.Default.tipCartas = true;
             else Properties.Settings.Default.tipCartas = false;
 
-            if (ckEfeito.Checked)
+            if (ckEfeitoMouse.Checked)
             {
                 Properties.Settings.Default.efeitoCartas = true;
                 Properties.Settings.Default.efeitoValor = System.Convert.ToByte(nUpTCarta.Value);
@@ -4634,6 +4760,9 @@
                 Properties.Settings.Default.efeitoCartas = false;
                 Properties.Settings.Default.efeitoValor = 0;
             }
+
+            if (ckEfeitoClick.Checked) Properties.Settings.Default.cliqueCartas = true;
+            else Properties.Settings.Default.cliqueCartas = false;
 
             if (ckDesfoque.Checked) Properties.Settings.Default.desfoque = true;
             else Properties.Settings.Default.desfoque = false;
@@ -4711,25 +4840,26 @@
             return frase;
         }
 
-        #region Métodos extras
         private void ResetarSalvo()
         {
             if (Properties.Settings.Default.efeitoCartas == true)
             {
-                ckEfeito.Checked = true;
+                ckEfeitoMouse.Checked = true;
                 nUpTCarta.Enabled = true;
                 nUpTCarta.Minimum = 1;
                 nUpTCarta.Value = Properties.Settings.Default.efeitoValor;
             }
             else
             {
-                ckEfeito.Checked = false;
+                ckEfeitoMouse.Checked = false;
                 nUpTCarta.Minimum = 0;
                 nUpTCarta.Value = 0;
                 nUpTCarta.Enabled = false;
             }
             if (Properties.Settings.Default.tipCartas) ckNome.Checked = true;
             else ckNome.Checked = false;
+            if (Properties.Settings.Default.cliqueCartas) ckEfeitoClick.Checked = true;
+            else ckEfeitoClick.Checked = false;
             if (Properties.Settings.Default.desfoque) ckDesfoque.Checked = true;
             else ckDesfoque.Checked = false;
             if (Properties.Settings.Default.voltarDeck) ckVoltarDeck.Checked = true;
@@ -4747,7 +4877,8 @@
         private void ResetarPadrao()
         {
             ckNome.Checked = true;
-            ckEfeito.Checked = true;
+            ckEfeitoMouse.Checked = true;
+            ckEfeitoClick.Checked = true;
             nUpTCarta.Minimum = 1;
             nUpTCarta.Value = 2;
             nUpTCarta.Enabled = true;
@@ -4771,25 +4902,25 @@
 
         private void Seleciona(bool atualiza)
         {
-            if ((this.Location.Y + pBarra.Size.Height + btnGeradorDeck.Location.Y) <= MousePosition.Y && (this.Location.Y + pBarra.Size.Height + btnGeradorDeck.Location.Y + btnGeradorDeck.Size.Height) >= MousePosition.Y)
+            if ((this.Location.Y + btnGeradorDeck.Location.Y) <= MousePosition.Y && (this.Location.Y + btnGeradorDeck.Location.Y + btnGeradorDeck.Size.Height) >= MousePosition.Y)
                 ClickBotao(atualiza, pGerador, btnGeradorDeck);
-            else if ((this.Location.Y + pBarra.Size.Height + btnSelecaoDeCartas.Location.Y) <= MousePosition.Y && (this.Location.Y + pBarra.Size.Height + btnSelecaoDeCartas.Location.Y + btnSelecaoDeCartas.Size.Height) >= MousePosition.Y)
+            else if ((this.Location.Y + btnSelecaoDeCartas.Location.Y) <= MousePosition.Y && (this.Location.Y + btnSelecaoDeCartas.Location.Y + btnSelecaoDeCartas.Size.Height) >= MousePosition.Y)
                 ClickBotao(atualiza, pSelecaoDeCartas, btnSelecaoDeCartas);
-            else if ((this.Location.Y + pBarra.Size.Height + btnDecksSalvos.Location.Y) <= MousePosition.Y && (this.Location.Y + pBarra.Size.Height + btnDecksSalvos.Location.Y + btnDecksSalvos.Size.Height) >= MousePosition.Y)
+            else if ((this.Location.Y + btnDecksSalvos.Location.Y) <= MousePosition.Y && (this.Location.Y + btnDecksSalvos.Location.Y + btnDecksSalvos.Size.Height) >= MousePosition.Y)
                 ClickBotao(atualiza, pDecksSalvos, btnDecksSalvos);
-            else if ((this.Location.Y + pBarra.Size.Height + btnMelhoresDecks.Location.Y) <= MousePosition.Y && (this.Location.Y + pBarra.Size.Height + btnMelhoresDecks.Location.Y + btnMelhoresDecks.Size.Height) >= MousePosition.Y)
+            else if ((this.Location.Y + btnMelhoresDecks.Location.Y) <= MousePosition.Y && (this.Location.Y + btnMelhoresDecks.Location.Y + btnMelhoresDecks.Size.Height) >= MousePosition.Y)
                 ClickBotao(atualiza, pMelhoresDecks, btnMelhoresDecks);
-            else if ((this.Location.Y + pBarra.Size.Height + btnBalanceamento.Location.Y) <= MousePosition.Y && (this.Location.Y + pBarra.Size.Height + btnBalanceamento.Location.Y + btnBalanceamento.Size.Height) >= MousePosition.Y)
+            else if ((this.Location.Y + btnBalanceamento.Location.Y) <= MousePosition.Y && (this.Location.Y + btnBalanceamento.Location.Y + btnBalanceamento.Size.Height) >= MousePosition.Y)
                 ClickBotao(atualiza, pBalanceamento, btnBalanceamento);
-            else if ((this.Location.Y + pBarra.Size.Height + btnConfig.Location.Y) <= MousePosition.Y && (this.Location.Y + pBarra.Size.Height + btnConfig.Location.Y + btnConfig.Size.Height) >= MousePosition.Y)
+            else if ((this.Location.Y + btnConfig.Location.Y) <= MousePosition.Y && (this.Location.Y + btnConfig.Location.Y + btnConfig.Size.Height) >= MousePosition.Y)
                 ClickBotao(atualiza, pConfig, btnConfig);
-            else if ((this.Location.Y + pBarra.Size.Height + btnAtualizador.Location.Y) <= MousePosition.Y && (this.Location.Y + pBarra.Size.Height + btnAtualizador.Location.Y + btnAtualizador.Size.Height) >= MousePosition.Y)
+            else if ((this.Location.Y + btnAtualizador.Location.Y) <= MousePosition.Y && (this.Location.Y + btnAtualizador.Location.Y + btnAtualizador.Size.Height) >= MousePosition.Y)
                 ClickBotao(atualiza, pAtualizador, btnAtualizador);
-            else if ((this.Location.Y + pBarra.Size.Height + btnSobre.Location.Y) <= MousePosition.Y && (this.Location.Y + pBarra.Size.Height + btnSobre.Location.Y + btnSobre.Size.Height) >= MousePosition.Y)
+            else if ((this.Location.Y + btnSobre.Location.Y) <= MousePosition.Y && (this.Location.Y + btnSobre.Location.Y + btnSobre.Size.Height) >= MousePosition.Y)
                 ClickBotao(atualiza, pSobre, btnSobre);
-            else if (pAtualizador.Visible && (this.Location.Y + pBarra.Size.Height + btnAtualizador.Location.Y + btnAtualizador.Size.Height) <= MousePosition.Y && (this.Location.Y + pBarra.Size.Height + btnSobre.Location.Y) + 1 >= MousePosition.Y)
+            else if (pAtualizador.Visible && (this.Location.Y + btnAtualizador.Location.Y + btnAtualizador.Size.Height) <= MousePosition.Y && (this.Location.Y + btnSobre.Location.Y) + 1 >= MousePosition.Y)
                 ClickBotao(atualiza, pAtualizador, btnAtualizador);
-            else if (pSobre.Visible && (this.Location.Y + pBarra.Size.Height + btnAtualizador.Location.Y + btnAtualizador.Size.Height) <= MousePosition.Y && (this.Location.Y + pBarra.Size.Height + btnSobre.Location.Y) >= MousePosition.Y)
+            else if (pSobre.Visible && (this.Location.Y + btnAtualizador.Location.Y + btnAtualizador.Size.Height) <= MousePosition.Y && (this.Location.Y + btnSobre.Location.Y) >= MousePosition.Y)
                 ClickBotao(atualiza, pSobre, btnSobre);
         }
 
@@ -4798,15 +4929,13 @@
             posInicialGD[i] = Cartas[i].Location;
             tamInicialGD[i] = Cartas[i].Size;
         }
-        #endregion
 
         System.Drawing.Point newPoint;
         int X, Y;
 
         private void Control_MouseMove(object sender, System.Windows.Forms.MouseEventArgs e)
         {
-            if (e.Button == System.Windows.Forms.MouseButtons.Left && this.Size != new System.Drawing.Size(System.Windows.Forms.Screen.PrimaryScreen.WorkingArea.Width,
-                    System.Windows.Forms.Screen.PrimaryScreen.WorkingArea.Height))
+            if (e.Button == System.Windows.Forms.MouseButtons.Left && btnRedimensionar.Text != "2" && this.Size != System.Windows.Forms.Screen.PrimaryScreen.WorkingArea.Size)
             {
                 newPoint = MousePosition;
                 newPoint.X -= X;
@@ -4822,7 +4951,7 @@
         }
 
         System.Drawing.Point localInicialForm;
-        private void Control_MaximizaRestaura(object sender, System.EventArgs e)
+        private void Control_MaximizaRestaura()
         {
             if (cbSort.SelectedIndex != 0)
                 cbSort.SelectedIndex = 0;
@@ -4841,11 +4970,10 @@
 
             int valorAtual = pBalanceamento.Size.Width;
 
-            if (this.Size != new System.Drawing.Size(System.Windows.Forms.Screen.PrimaryScreen.WorkingArea.Width,
-                    System.Windows.Forms.Screen.PrimaryScreen.WorkingArea.Height))
+            if (btnRedimensionar.Text != "2" && this.Size != System.Windows.Forms.Screen.PrimaryScreen.WorkingArea.Size)
             {
-                this.btnMaximizar.Font = new System.Drawing.Font("Marlett", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0x32);
-                this.btnMaximizar.Text = "2";
+                this.btnRedimensionar.Font = new System.Drawing.Font("Marlett", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0x32);
+                this.btnRedimensionar.Text = "2";
                 localInicialForm = this.Location;
                 this.Location = new System.Drawing.Point(0, 0);
                 this.Size = new System.Drawing.Size(System.Windows.Forms.Screen.PrimaryScreen.WorkingArea.Width,
@@ -4853,8 +4981,8 @@
             }
             else
             {
-                this.btnMaximizar.Font = new System.Drawing.Font("Marlett", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0x31);
-                this.btnMaximizar.Text = "1";
+                this.btnRedimensionar.Font = new System.Drawing.Font("Marlett", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0x31);
+                this.btnRedimensionar.Text = "1";
                 this.Location = localInicialForm;
                 this.Size = new System.Drawing.Size(933, 470);
             }
@@ -4940,7 +5068,7 @@
         private System.Windows.Forms.PictureBox picIco;
         private System.Windows.Forms.Label lblNome;
         private System.Windows.Forms.Button btnMinimizar;
-        private System.Windows.Forms.Button btnMaximizar;
+        private System.Windows.Forms.Button btnRedimensionar;
         private System.Windows.Forms.Button btnFechar;
         // Barra lateral esquerda
         private System.Windows.Forms.Panel pOpcoes;
@@ -4996,6 +5124,8 @@
         System.Windows.Forms.GroupBox gbProx;
         System.Windows.Forms.Label lblProx;
         System.Windows.Forms.PictureBox picProx;
+        System.Windows.Forms.CheckBox cbProx;
+        System.Windows.Forms.Button btnProx;
         System.Windows.Forms.PictureBox[] picCarta;
         System.Windows.Forms.Label[] lblInfo;
         System.Windows.Forms.CheckBox[] cbPermitir;
@@ -5137,9 +5267,10 @@
         string[] cartasBalanceadas;
         // Configurações
         private System.Windows.Forms.Panel pConfig;
-        private System.Windows.Forms.CheckBox ckEfeito;
+        private System.Windows.Forms.CheckBox ckEfeitoMouse;
         private System.Windows.Forms.Button btnCSalvar;
         private System.Windows.Forms.CheckBox ckNome;
+        private System.Windows.Forms.CheckBox ckEfeitoClick;
         private System.Windows.Forms.NumericUpDown nUpTCarta;
         private System.Windows.Forms.Label lblTamanho;
         private System.Windows.Forms.ContextMenuStrip CMSConfig;
