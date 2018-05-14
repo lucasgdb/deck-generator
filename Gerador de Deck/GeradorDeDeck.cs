@@ -1,4 +1,4 @@
-﻿namespace Gerador_de_Deck
+namespace Gerador_de_Deck
 {
     abstract class InicializaPrograma
     {
@@ -4147,7 +4147,7 @@
                     point2 = MousePosition;
                     point2.X -= x2;
                     point2.Y -= y2;
-                    if (this.Size != new System.Drawing.Size(System.Windows.Forms.Screen.PrimaryScreen.WorkingArea.Width,
+                    if (this.btnRedimensionar.Text != "2" && this.Size != new System.Drawing.Size(System.Windows.Forms.Screen.PrimaryScreen.WorkingArea.Width,
                         System.Windows.Forms.Screen.PrimaryScreen.WorkingArea.Height))
                         Location = point2;
                 }
