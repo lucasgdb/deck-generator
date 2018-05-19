@@ -27,7 +27,7 @@
             }
         }
     }
-	
+
     partial class Programa : System.Windows.Forms.Form
     {
         public Programa()
@@ -347,16 +347,24 @@
                 Location = new System.Drawing.Point(2, 3),
                 Size = new System.Drawing.Size(23, 23),
                 Visible = false,
-                Image = Properties.Resources.icon.ToBitmap(),
+                Image = Properties.Resources.Ícone.ToBitmap(),
                 SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage,
                 Cursor = System.Windows.Forms.Cursors.Hand
             };
             this.picGeradorDeck.Click += (s, e) => ClickBotao(true, pGerador, btnGeradorDeck);
             this.tip.SetToolTip(this.picGeradorDeck, "Gerador de Deck");
 
+            this.picLinha11 = new System.Windows.Forms.PictureBox()
+            {
+                Size = new System.Drawing.Size(30, 1),
+                Location = new System.Drawing.Point(0, this.picGeradorDeck.Location.Y + this.picGeradorDeck.Size.Height + 3),
+                Visible = false,
+                BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+            };
+
             this.picSelecaoDeCartas = new System.Windows.Forms.PictureBox()
             {
-                Location = new System.Drawing.Point(2, this.picGeradorDeck.Location.Y + this.picGeradorDeck.Size.Height + 5),
+                Location = new System.Drawing.Point(2, this.picLinha11.Location.Y + this.picLinha11.Size.Height + 3),
                 Size = new System.Drawing.Size(23, 23),
                 Visible = false,
                 Image = Properties.Resources.select.ToBitmap(),
@@ -366,9 +374,17 @@
             this.picSelecaoDeCartas.Click += (s, e) => ClickBotao(true, pSelecaoDeCartas, btnSelecaoDeCartas);
             this.tip.SetToolTip(this.picSelecaoDeCartas, "Seleção de Cartas");
 
+            this.picLinha12 = new System.Windows.Forms.PictureBox()
+            {
+                Size = new System.Drawing.Size(30, 1),
+                Location = new System.Drawing.Point(0, this.picSelecaoDeCartas.Location.Y + this.picSelecaoDeCartas.Size.Height + 3),
+                Visible = false,
+                BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+            };
+
             this.picDecksSalvos = new System.Windows.Forms.PictureBox()
             {
-                Location = new System.Drawing.Point(2, this.picSelecaoDeCartas.Location.Y + this.picSelecaoDeCartas.Size.Height + 5),
+                Location = new System.Drawing.Point(2, this.picLinha12.Location.Y + this.picLinha12.Size.Height + 3),
                 Size = new System.Drawing.Size(23, 23),
                 Visible = false,
                 Image = Properties.Resources.salvar.ToBitmap(),
@@ -378,9 +394,17 @@
             this.picDecksSalvos.Click += (s, e) => ClickBotao(true, pDecksSalvos, btnDecksSalvos);
             this.tip.SetToolTip(this.picDecksSalvos, "Decks salvos");
 
+            this.picLinha13 = new System.Windows.Forms.PictureBox()
+            {
+                Size = new System.Drawing.Size(30, 1),
+                Location = new System.Drawing.Point(0, this.picDecksSalvos.Location.Y + this.picDecksSalvos.Size.Height + 3),
+                Visible = false,
+                BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+            };
+
             this.picMelhoresDecks = new System.Windows.Forms.PictureBox()
             {
-                Location = new System.Drawing.Point(2, this.picDecksSalvos.Location.Y + this.picDecksSalvos.Size.Height + 5),
+                Location = new System.Drawing.Point(2, this.picLinha13.Location.Y + this.picLinha13.Size.Height + 3),
                 Size = new System.Drawing.Size(23, 23),
                 Visible = false,
                 Image = Properties.Resources.melhoresdecks,
@@ -390,9 +414,17 @@
             this.picMelhoresDecks.Click += (s, e) => ClickBotao(true, pMelhoresDecks, btnMelhoresDecks);
             this.tip.SetToolTip(this.picMelhoresDecks, "Melhores Decks");
 
+            this.picLinha14 = new System.Windows.Forms.PictureBox()
+            {
+                Size = new System.Drawing.Size(30, 1),
+                Location = new System.Drawing.Point(0, this.picMelhoresDecks.Location.Y + this.picMelhoresDecks.Size.Height + 3),
+                Visible = false,
+                BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+            };
+
             this.picBalanceamento = new System.Windows.Forms.PictureBox()
             {
-                Location = new System.Drawing.Point(2, this.picMelhoresDecks.Location.Y + this.picMelhoresDecks.Size.Height + 5),
+                Location = new System.Drawing.Point(2, this.picLinha14.Location.Y + this.picLinha14.Size.Height + 3),
                 Size = new System.Drawing.Size(23, 23),
                 Visible = false,
                 Image = Properties.Resources.balancear.ToBitmap(),
@@ -402,9 +434,17 @@
             this.picBalanceamento.Click += (s, e) => ClickBotao(true, pBalanceamento, btnBalanceamento);
             this.tip.SetToolTip(this.picBalanceamento, "Balanceamento");
 
+            this.picLinha15 = new System.Windows.Forms.PictureBox()
+            {
+                Size = new System.Drawing.Size(30, 1),
+                Location = new System.Drawing.Point(0, this.picBalanceamento.Location.Y + this.picBalanceamento.Size.Height + 3),
+                Visible = false,
+                BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+            };
+
             this.picConfig = new System.Windows.Forms.PictureBox()
             {
-                Location = new System.Drawing.Point(2, this.picBalanceamento.Location.Y + this.picBalanceamento.Size.Height + 5),
+                Location = new System.Drawing.Point(2, this.picLinha15.Location.Y + this.picLinha15.Size.Height + 3),
                 Size = new System.Drawing.Size(23, 23),
                 Visible = false,
                 Image = Properties.Resources.config.ToBitmap(),
@@ -414,21 +454,37 @@
             this.picConfig.Click += (s, e) => ClickBotao(true, pConfig, btnConfig);
             this.tip.SetToolTip(this.picConfig, "Configurações");
 
+            this.picLinha16 = new System.Windows.Forms.PictureBox()
+            {
+                Size = new System.Drawing.Size(30, 1),
+                Location = new System.Drawing.Point(0, this.picConfig.Location.Y + this.picConfig.Size.Height + 3),
+                Visible = false,
+                BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+            };
+
             this.picAtualizador = new System.Windows.Forms.PictureBox()
             {
-                Location = new System.Drawing.Point(2, this.picConfig.Location.Y + this.picConfig.Size.Height + 5),
+                Location = new System.Drawing.Point(2, this.picLinha16.Location.Y + this.picLinha16.Size.Height + 3),
                 Size = new System.Drawing.Size(23, 23),
                 Visible = false,
-                Image = Properties.Resources.atualizar.ToBitmap(),
+                Image = Properties.Resources.update.ToBitmap(),
                 SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage,
                 Cursor = System.Windows.Forms.Cursors.Hand
             };
             this.picAtualizador.Click += (s, e) => ClickBotao(true, pAtualizador, btnAtualizador);
             this.tip.SetToolTip(this.picAtualizador, "Atualizador");
 
+            this.picLinha17 = new System.Windows.Forms.PictureBox()
+            {
+                Size = new System.Drawing.Size(30, 1),
+                Location = new System.Drawing.Point(0, this.picAtualizador.Location.Y + this.picAtualizador.Size.Height + 3),
+                Visible = false,
+                BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+            };
+
             this.picSobre = new System.Windows.Forms.PictureBox()
             {
-                Location = new System.Drawing.Point(2, this.picAtualizador.Location.Y + this.picAtualizador.Size.Height + 5),
+                Location = new System.Drawing.Point(2, this.picLinha17.Location.Y + this.picLinha17.Size.Height + 3),
                 Size = new System.Drawing.Size(23, 23),
                 Visible = false,
                 Image = Properties.Resources.info.ToBitmap(),
@@ -437,6 +493,14 @@
             };
             this.picSobre.Click += (s, e) => ClickBotao(true, pSobre, btnSobre);
             this.tip.SetToolTip(this.picSobre, "Sobre");
+
+            this.picLinha18 = new System.Windows.Forms.PictureBox()
+            {
+                Size = new System.Drawing.Size(30, 1),
+                Location = new System.Drawing.Point(0, this.picSobre.Location.Y + this.picSobre.Size.Height + 3),
+                Visible = false,
+                BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+            };
 
             this.pOpcoes.SuspendLayout();
             this.pOpcoes.Controls.Add(this.picLinha1);
@@ -449,6 +513,14 @@
             this.pOpcoes.Controls.Add(this.picLinha8);
             this.pOpcoes.Controls.Add(this.picLinha9);
             this.pOpcoes.Controls.Add(this.picLinha10);
+            this.pOpcoes.Controls.Add(this.picLinha11);
+            this.pOpcoes.Controls.Add(this.picLinha12);
+            this.pOpcoes.Controls.Add(this.picLinha13);
+            this.pOpcoes.Controls.Add(this.picLinha14);
+            this.pOpcoes.Controls.Add(this.picLinha15);
+            this.pOpcoes.Controls.Add(this.picLinha16);
+            this.pOpcoes.Controls.Add(this.picLinha17);
+            this.pOpcoes.Controls.Add(this.picLinha18);
             this.pOpcoes.Controls.Add(this.picGeradorDeck);
             this.pOpcoes.Controls.Add(this.picSelecaoDeCartas);
             this.pOpcoes.Controls.Add(this.picDecksSalvos);
@@ -483,11 +555,11 @@
             this.picIco = new System.Windows.Forms.PictureBox
             {
                 Cursor = System.Windows.Forms.Cursors.Hand,
-                Location = new System.Drawing.Point(2, 3),
+                Location = new System.Drawing.Point(2, 2),
                 Size = new System.Drawing.Size(23, 23),
                 SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage,
                 TabStop = false,
-                Image = Properties.Resources.icon.ToBitmap()
+                Image = Properties.Resources.Ícone.ToBitmap()
             };
             ((System.ComponentModel.ISupportInitialize)(this.picIco)).BeginInit();
             this.picIco.Click += (s, e) => Control_MaximizaRestaura(false);
@@ -3823,7 +3895,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(42, 44, 51);
             this.ClientSize = new System.Drawing.Size(933, 470);
             this.ForeColor = System.Drawing.Color.White;
-            this.Icon = Properties.Resources.icon;
+            this.Icon = Properties.Resources.Ícone;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(this.ClientSize.Width, 470);
@@ -3876,7 +3948,7 @@
 
                 System.Windows.Forms.ContextMenuStrip cmsNIcon = new System.Windows.Forms.ContextMenuStrip();
                 cmsNIcon.Items.Add("Gerador de Deck");
-                cmsNIcon.Items[0].Image = Properties.Resources.icon.ToBitmap();
+                cmsNIcon.Items[0].Image = Properties.Resources.Ícone.ToBitmap();
                 cmsNIcon.Items[0].Click += (ss, ee) => { SwitchToThisWindow(this.Handle); ClickBotao(true, pGerador, btnGeradorDeck); };
                 cmsNIcon.Items.Add("Seleção de Cartas");
                 cmsNIcon.Items[1].Image = Properties.Resources.select.ToBitmap();
@@ -4013,7 +4085,7 @@
                 {
                     var codNome = CaixaDialogo(valorI);
                     for (byte j = 1; j < _Deck.CartasInformacao.Length; j++)
-                        if (codNome != string.Empty && System.Array.IndexOf(_Deck.deckAtual, j) == -1 && (codNome == _Deck.CartasInformacao[j].Split('\n')[0] || codNome == _Deck.CodigoCartas[j].ToString()))
+                        if (codNome != string.Empty && System.Array.IndexOf(_Deck.deckAtual, j) == -1 && (codNome == _Deck.CartasInformacao[j].Split('\n')[0]))
                         {
                             Cartas[valorI].Image = _Deck.CartasImagem[j];
                             media -= _Deck.CustoElixir[_Deck.deckAtual[valorI]] / 8;
@@ -4052,7 +4124,7 @@
             else { CorEscuro(); rbEscuro.Checked = true; }
         }
 
-        private byte bAtual = 38;
+        private byte bAtual = 39;
         private float media = 0.0f;
         private System.Random _Random = new System.Random();
         private System.Windows.Forms.AutoCompleteStringCollection dados = new System.Windows.Forms.AutoCompleteStringCollection();
@@ -4251,7 +4323,7 @@
             System.Windows.Forms.Form frmDialog = new System.Windows.Forms.Form()
             {
                 FormBorderStyle = System.Windows.Forms.FormBorderStyle.None,
-                Size = new System.Drawing.Size(370, 185),
+                Size = new System.Drawing.Size(335, 260),
                 StartPosition = System.Windows.Forms.FormStartPosition.CenterParent,
                 BackColor = corFundo,
                 ForeColor = corLetra,
@@ -4298,6 +4370,13 @@
             pBarra.MouseMove += new System.Windows.Forms.MouseEventHandler(Control_MouseMove);
             pBarra.MouseUp += new System.Windows.Forms.MouseEventHandler(Control_MouseUp);
 
+            System.Windows.Forms.PictureBox picLinha1 = new System.Windows.Forms.PictureBox()
+            {
+                Size = new System.Drawing.Size(1, 30),
+                Location = new System.Drawing.Point(28, 0),
+                BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+            };
+
             System.Windows.Forms.Panel pFundo = new System.Windows.Forms.Panel()
             {
                 BackColor = corFundo,
@@ -4333,9 +4412,9 @@
 
             System.Windows.Forms.PictureBox picIcon = new System.Windows.Forms.PictureBox()
             {
-                Image = Properties.Resources.icon.ToBitmap(),
+                Image = Properties.Resources.Ícone.ToBitmap(),
                 Size = new System.Drawing.Size(23, 23),
-                Location = new System.Drawing.Point(2, 3),
+                Location = new System.Drawing.Point(2, 2),
                 SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage,
                 Cursor = System.Windows.Forms.Cursors.Hand
             };
@@ -4346,16 +4425,16 @@
                 AutoSize = true,
                 ForeColor = System.Drawing.Color.White,
                 Text = "Trocador de Carta - " + (ind + 1) + "ª Carta",
-                Location = new System.Drawing.Point(62, 3),
                 Font = new System.Drawing.Font(Font.FontFamily, 12.75f, System.Drawing.FontStyle.Bold)
             };
+            lblTitulo.Location = new System.Drawing.Point((pBarra.Size.Width - lblTitulo.Size.Width - btnFechar.Size.Width - picIcon.Size.Width) / 4, 3);
             lblTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(Control_MouseDown);
             lblTitulo.MouseMove += new System.Windows.Forms.MouseEventHandler(Control_MouseMove);
             lblTitulo.MouseUp += new System.Windows.Forms.MouseEventHandler(Control_MouseUp);
 
             System.Windows.Forms.TextBox txtResposta = new System.Windows.Forms.TextBox()
             {
-                Size = new System.Drawing.Size(350, 7),
+                Size = new System.Drawing.Size(315, 7),
                 Location = new System.Drawing.Point(9, 6),
                 Font = new System.Drawing.Font(Font.FontFamily, 10.5f, System.Drawing.FontStyle.Regular),
                 TextAlign = System.Windows.Forms.HorizontalAlignment.Center,
@@ -4368,6 +4447,53 @@
             tList.Add(txtResposta); sList.Add("Digite o Nome ou Código da Carta para Trocar");
             SetCueText(ref tList, sList);
 
+            System.Windows.Forms.PictureBox picCarta = new System.Windows.Forms.PictureBox()
+            {
+                Size = new System.Drawing.Size(124, 154),
+                Location = new System.Drawing.Point(11, 67),
+                SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage,
+                Cursor = System.Windows.Forms.Cursors.Hand
+            };
+
+            int posInicialX = picCarta.Location.X, posInicialY = picCarta.Location.Y;
+            int tamInicialW = picCarta.Size.Width, tamInicialH = picCarta.Size.Height;
+
+            picCarta.Click += (s, e) => txtResposta.Select();
+            picCarta.MouseEnter += (s, e) =>
+            {
+                picCarta.Location = new System.Drawing.Point(posInicialX - System.Convert.ToByte(nUpTCarta.Value), posInicialY - System.Convert.ToByte(nUpTCarta.Value));
+                picCarta.Size = new System.Drawing.Size(tamInicialW + System.Convert.ToByte(nUpTCarta.Value) * 2, tamInicialH + System.Convert.ToByte(nUpTCarta.Value) * 2);
+            };
+            picCarta.MouseLeave += (s, e) =>
+            {
+                picCarta.Location = new System.Drawing.Point(posInicialX, posInicialY);
+                picCarta.Size = new System.Drawing.Size(tamInicialW, tamInicialH);
+            };
+            picCarta.MouseDown += (s, e) =>
+            {
+                if (ckEfeitoClick.Checked)
+                {
+                    picCarta.Location = new System.Drawing.Point(picCarta.Location.X + 2 + System.Convert.ToByte(nUpTCarta.Value), picCarta.Location.Y + 2 + System.Convert.ToByte(nUpTCarta.Value));
+                    picCarta.Size = new System.Drawing.Size(picCarta.Size.Width - 4 - System.Convert.ToByte(nUpTCarta.Value) * 2, picCarta.Size.Height - 4 - System.Convert.ToByte(nUpTCarta.Value) * 2);
+                }
+            };
+            picCarta.MouseUp += (s, e) =>
+            {
+                if (ckEfeitoClick.Checked)
+                {
+                    picCarta.Location = new System.Drawing.Point(picCarta.Location.X - 2 - System.Convert.ToByte(nUpTCarta.Value), picCarta.Location.Y - 2 - System.Convert.ToByte(nUpTCarta.Value));
+                    picCarta.Size = new System.Drawing.Size(picCarta.Size.Width + 4 + System.Convert.ToByte(nUpTCarta.Value) * 2, picCarta.Size.Height + 4 + System.Convert.ToByte(nUpTCarta.Value) * 2);
+                }
+            };
+
+            System.Windows.Forms.Label lblResultado = new System.Windows.Forms.Label()
+            {
+                AutoSize = true,
+                Location = new System.Drawing.Point(138, 78),
+                Font = new System.Drawing.Font(Font.FontFamily, 9.75f, System.Drawing.FontStyle.Regular)
+            };
+            lblResultado.Click += (s, e) => txtResposta.Select();
+
             System.Windows.Forms.ComboBox cbCartas = new System.Windows.Forms.ComboBox()
             {
                 FlatStyle = System.Windows.Forms.FlatStyle.Flat,
@@ -4377,35 +4503,34 @@
                 ForeColor = System.Drawing.Color.White,
                 Font = new System.Drawing.Font(Font.FontFamily, 10.5f, System.Drawing.FontStyle.Bold),
                 Cursor = System.Windows.Forms.Cursors.Hand,
-                TabIndex = 3
+                TabIndex = 1
             };
             cbCartas.SelectedIndexChanged += (s, e) =>
             {
                 if (!txtResposta.Focused)
                     if (cbCartas.SelectedIndex == 0) txtResposta.Clear();
                     else txtResposta.Text = cbCartas.Items[cbCartas.SelectedIndex].ToString();
+
+                for (byte i = 0; i < _Deck.CartasInformacao.Length; i++)
+                    if (cbCartas.Items[cbCartas.SelectedIndex].ToString() == _Deck.CartasInformacao[i].Split('\n')[0])
+                    {
+                        string txt = _Deck.CartasInformacao[i].Split('\n')[0];
+                        picCarta.Image = _Deck.CartasImagem[i];
+                        if (ckNome.Checked)
+                            tip.SetToolTip(picCarta, txt == "Nenhuma Carta selecionada" ? "Carta Inexistente" : txt);
+                        lblResultado.Text = txt == "Nenhuma Carta selecionada" ? txt : txt + System.Environment.NewLine +
+                        _Deck.CartasInformacao[i].Split('\n')[1] + System.Environment.NewLine + _Deck.CartasInformacao[i].Split('\n')[2] +
+                        System.Environment.NewLine + "Custo de Elixir: " + _Deck.CustoElixir[i];
+                    }
+
                 txtResposta.Select();
             };
 
             System.Windows.Forms.Button btnTrocar = new System.Windows.Forms.Button()
             {
                 Size = new System.Drawing.Size(95, 30),
-                Location = new System.Drawing.Point(264, 79),
+                Location = new System.Drawing.Point(229, 153),
                 Text = "Trocar",
-                Font = new System.Drawing.Font(Font.FontFamily, 10.5f, System.Drawing.FontStyle.Bold),
-                FlatStyle = System.Windows.Forms.FlatStyle.Flat,
-                BackColor = corFundo2,
-                ForeColor = System.Drawing.Color.White,
-                Cursor = System.Windows.Forms.Cursors.Hand,
-                TabIndex = 1
-            };
-            btnTrocar.FlatAppearance.MouseDownBackColor = corFundoClick;
-
-            System.Windows.Forms.Button btnCancelar = new System.Windows.Forms.Button()
-            {
-                Text = "Cancelar",
-                Size = new System.Drawing.Size(95, 30),
-                Location = new System.Drawing.Point(264, 114),
                 Font = new System.Drawing.Font(Font.FontFamily, 10.5f, System.Drawing.FontStyle.Bold),
                 FlatStyle = System.Windows.Forms.FlatStyle.Flat,
                 BackColor = corFundo2,
@@ -4413,16 +4538,22 @@
                 Cursor = System.Windows.Forms.Cursors.Hand,
                 TabIndex = 2
             };
+            btnTrocar.FlatAppearance.MouseDownBackColor = corFundoClick;
+
+            System.Windows.Forms.Button btnCancelar = new System.Windows.Forms.Button()
+            {
+                Text = "Cancelar",
+                Size = new System.Drawing.Size(95, 30),
+                Location = new System.Drawing.Point(229, 188),
+                Font = new System.Drawing.Font(Font.FontFamily, 10.5f, System.Drawing.FontStyle.Bold),
+                FlatStyle = System.Windows.Forms.FlatStyle.Flat,
+                BackColor = corFundo2,
+                ForeColor = System.Drawing.Color.White,
+                Cursor = System.Windows.Forms.Cursors.Hand,
+                TabIndex = 3
+            };
             btnCancelar.Click += (s, e) => frmDialog.Close();
             btnCancelar.FlatAppearance.MouseDownBackColor = corFundoClick;
-
-            System.Windows.Forms.Label lblResultado = new System.Windows.Forms.Label()
-            {
-                AutoSize = true,
-                Location = new System.Drawing.Point(5, 128),
-                Font = new System.Drawing.Font(Font.FontFamily, 9.75f, System.Drawing.FontStyle.Bold)
-            };
-            lblResultado.Click += (s, e) => txtResposta.Select();
 
             if (rbClaro.Checked) pBarra.BackColor = btnFecharDialogo.BackColor = cbCartas.BackColor = corFundo2;
             else if (rbPadrao.Checked) { pBarra.BackColor = btnFecharDialogo.BackColor = System.Drawing.Color.FromArgb(35, 35, 35); cbCartas.BackColor = corFundo; }
@@ -4479,29 +4610,46 @@
             {
                 if (txtResposta.Text.Trim() == string.Empty) cbCartas.SelectedIndex = 0;
                 else
-                {
                     for (byte i = 1; i < _Deck.CartasInformacao.Length; i++)
-                        if (RetirarAcentos(txtResposta.Text.Trim().ToLower()) == RetirarAcentos(_Deck.CartasInformacao[i].Split('\n')[0].ToLower()))
+                        if (RetirarAcentos(txtResposta.Text.Trim().ToLower()) == RetirarAcentos(_Deck.CartasInformacao[i].Split('\n')[0].ToLower()) || txtResposta.Text.Trim() == _Deck.CodigoCartas[i].ToString())
+                        {
                             for (byte j = 0; j < cbCartas.Items.Count; j++)
                                 if (cbCartas.Items[j].ToString() == _Deck.CartasInformacao[i].Split('\n')[0])
                                 { cbCartas.SelectedIndex = j; break; }
-
-                    btnTrocar.Text = "Trocar"; tip.SetToolTip(btnTrocar, "Trocar Carta");
-                }
+                            break;
+                        }
+                        else if (i == _Deck.CartasInformacao.Length - 1)
+                            for (byte j = 0; j < cbCartas.Items.Count; j++)
+                                if (RetirarAcentos(cbCartas.Items[j].ToString().ToLower()).Contains(RetirarAcentos(txtResposta.Text.Trim().ToLower())))
+                                { cbCartas.SelectedIndex = j; break; }
+                                else if (j == cbCartas.Items.Count - 1) cbCartas.SelectedIndex = 0;
             };
             txtResposta.KeyUp += (s, e) => { if (e.KeyCode == System.Windows.Forms.Keys.Enter) Trocar(); };
+            picCarta.Click += (s, e) =>
+            {
+                for (byte i = 0; i < _Deck.CartasInformacao.Length; i++)
+                    if (cbCartas.Items[cbCartas.SelectedIndex].ToString() == _Deck.CartasInformacao[i].Split('\n')[0])
+                    {
+                        string arena = string.Empty;
+                        for (byte k = 0; k < valores.Length; k++)
+                            if (i < valores[-(k - valores.Length + 1)])
+                            {
+                                arena = string.Format("{0}{1}", arenas[k], k == 0 ? string.Empty : " (" + k + ")");
+                                break;
+                            }
+                        string txt = _Deck.CartasInformacao[i].Split('\n')[0];
+                        lblInformacoes.Text = txt == "Nenhuma Carta selecionada" ? txt : _Deck.CartasInformacao[i] + System.Environment.NewLine +
+                        "Custo de Elixir: " + _Deck.CustoElixir[i] + System.Environment.NewLine + "Arena: " + arena;
+                    }
+            };
 
             void Trocar()
             {
                 txtResposta.Select();
                 for (byte i = 1; i < _Deck.CartasInformacao.Length; i++)
                 {
-                    if (RetirarAcentos(txtResposta.Text.Trim().ToLower()) == RetirarAcentos(_Deck.CartasInformacao[i].Split('\n')[0].ToLower()))
+                    if (cbCartas.Items[cbCartas.SelectedIndex].ToString() == _Deck.CartasInformacao[i].Split('\n')[0])
                     { resultado = _Deck.CartasInformacao[i].Split('\n')[0]; frmDialog.Close(); }
-                    else if (txtResposta.Text.Trim().Equals(_Deck.CodigoCartas[i].ToString()))
-                    { resultado = _Deck.CodigoCartas[i].ToString(); frmDialog.Close(); }
-                    else if (i == _Deck.CartasInformacao.Length - 1)
-                        lblResultado.Text = "Nome/Código de Carta não existe.";
                 }
             }
             tip.SetToolTip(btnFecharDialogo, "Fechar");
@@ -4511,11 +4659,13 @@
 
             frmDialog.Controls.Add(pBarra);
             frmDialog.Controls.Add(pFundo);
-            pBarra.Controls.Add(btnFecharDialogo);
             pBarra.Controls.Add(picIcon);
+            pBarra.Controls.Add(picLinha1);
             pBarra.Controls.Add(lblTitulo);
+            pBarra.Controls.Add(btnFecharDialogo);
             pFundo.Controls.Add(txtResposta);
             pFundo.Controls.Add(cbCartas);
+            pFundo.Controls.Add(picCarta);
             pFundo.Controls.Add(btnTrocar);
             pFundo.Controls.Add(btnCancelar);
             pFundo.Controls.Add(lblResultado);
@@ -4967,8 +5117,8 @@
 
         private string RetirarAcentos(string frase)
         {
-            string sAcento = "aaaaeeeiiioooouuu";
-            string cAcento = "áãâàéèêíìîóòõôúùû";
+            string sAcento = "aaaaeeeiiioooouuuc";
+            string cAcento = "áãâàéèêíìîóòõôúùûç";
             for (byte i = 0; i < sAcento.Length; i++)
             {
                 frase = frase.Replace(cAcento[i], sAcento[i]);
@@ -5146,6 +5296,14 @@
                     this.picConfig.Show();
                     this.picAtualizador.Show();
                     this.picSobre.Show();
+                    this.picLinha11.Show();
+                    this.picLinha12.Show();
+                    this.picLinha13.Show();
+                    this.picLinha14.Show();
+                    this.picLinha15.Show();
+                    this.picLinha16.Show();
+                    this.picLinha17.Show();
+                    this.picLinha18.Show();
 
                     this.pBarra.Size = new System.Drawing.Size(this.pBarra.Size.Width + 138, this.pBarra.Size.Height);
                     this.pBarra.Location = new System.Drawing.Point(this.pBarra.Location.X - 138, this.pBarra.Location.Y);
@@ -5175,6 +5333,14 @@
                     this.picConfig.Hide();
                     this.picAtualizador.Hide();
                     this.picSobre.Hide();
+                    this.picLinha11.Hide();
+                    this.picLinha12.Hide();
+                    this.picLinha13.Hide();
+                    this.picLinha14.Hide();
+                    this.picLinha15.Hide();
+                    this.picLinha16.Hide();
+                    this.picLinha17.Hide();
+                    this.picLinha18.Hide();
 
                     this.pBarra.Size = new System.Drawing.Size(this.pBarra.Size.Width - 138, this.pBarra.Size.Height);
                     this.pBarra.Location = new System.Drawing.Point(this.pBarra.Location.X + 138, this.pBarra.Location.Y);
@@ -5282,6 +5448,14 @@
         private System.Windows.Forms.PictureBox picLinha8;
         private System.Windows.Forms.PictureBox picLinha9;
         private System.Windows.Forms.PictureBox picLinha10;
+        private System.Windows.Forms.PictureBox picLinha11;
+        private System.Windows.Forms.PictureBox picLinha12;
+        private System.Windows.Forms.PictureBox picLinha13;
+        private System.Windows.Forms.PictureBox picLinha14;
+        private System.Windows.Forms.PictureBox picLinha15;
+        private System.Windows.Forms.PictureBox picLinha16;
+        private System.Windows.Forms.PictureBox picLinha17;
+        private System.Windows.Forms.PictureBox picLinha18;
         private System.Windows.Forms.Panel pOpcoes;
         private System.Windows.Forms.Button btnGeradorDeck;
         private System.Windows.Forms.Button btnSelecaoDeCartas;

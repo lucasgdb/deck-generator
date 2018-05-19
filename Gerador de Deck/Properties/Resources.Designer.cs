@@ -703,9 +703,9 @@ namespace Gerador_de_Deck.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Icon semelhante a (Ícone).
         /// </summary>
-        internal static System.Drawing.Icon icon {
+        internal static System.Drawing.Icon Ícone {
             get {
-                object obj = ResourceManager.GetObject("icon", resourceCulture);
+                object obj = ResourceManager.GetObject("Ícone", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
             }
         }

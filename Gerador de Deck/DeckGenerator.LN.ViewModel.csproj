@@ -33,11 +33,11 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
+    <Optimize>true</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
+    <WarningLevel>0</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
   </PropertyGroup>
@@ -113,6 +113,7 @@
   <ItemGroup>
     <Content Include="icon.ico" />
     <None Include="Resources\balancear.ico" />
+    <None Include="Resources\Ícone.ico" />
     <Content Include="Ícone.ico" />
     <None Include="Resources\Lapide.png" />
     <None Include="Resources\Tesla.png" />
@@ -201,7 +202,6 @@
     <None Include="Resources\copy.png" />
     <None Include="Resources\atalho.ico" />
     <None Include="Resources\melhoresdecks.png" />
-    <None Include="Resources\icon.ico" />
     <None Include="Resources\Logo.png" />
     <None Include="Resources\dica.ico" />
     <None Include="Resources\youtube.png" />
