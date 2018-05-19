@@ -55,8 +55,8 @@
             {
                 Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left,
                 BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle,
-                Location = new System.Drawing.Point(0, 30),
-                Size = new System.Drawing.Size(168, 440),
+                Location = new System.Drawing.Point(0, 29),
+                Size = new System.Drawing.Size(168, 441),
             };
 
             picLinha1 = new System.Windows.Forms.PictureBox
@@ -473,7 +473,7 @@
             pBarra2 = new System.Windows.Forms.Panel()
             {
                 Location = new System.Drawing.Point(0, 0),
-                Size = new System.Drawing.Size(168, 31),
+                Size = new System.Drawing.Size(168, 30),
                 BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle,
                 Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Top,
                 Cursor = System.Windows.Forms.Cursors.Hand
@@ -496,7 +496,7 @@
             lblMenus = new System.Windows.Forms.Label()
             {
                 Text = "Menu de Opções",
-                Location = new System.Drawing.Point(this.picIco.Location.X + this.picIco.Size.Width + 4, 5),
+                Location = new System.Drawing.Point(this.picIco.Location.X + this.picIco.Size.Width + 3, 5),
                 Font = new System.Drawing.Font("Microsoft Sans Serif", 10.0F, System.Drawing.FontStyle.Bold),
                 AutoSize = true,
                 ForeColor = System.Drawing.Color.White,
@@ -512,7 +512,7 @@
                 Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right,
                 BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle,
                 Location = new System.Drawing.Point(167, 0),
-                Size = new System.Drawing.Size(766, 31),
+                Size = new System.Drawing.Size(766, 30),
             };
 
             this.lblNome = new System.Windows.Forms.Label
@@ -531,7 +531,7 @@
                 Cursor = System.Windows.Forms.Cursors.Hand,
                 Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0),
                 Location = new System.Drawing.Point(676, 0),
-                Size = new System.Drawing.Size(30, 29),
+                Size = new System.Drawing.Size(30, 28),
                 Text = "─",
                 UseVisualStyleBackColor = true,
                 TabStop = false
@@ -547,7 +547,7 @@
                 Cursor = System.Windows.Forms.Cursors.Hand,
                 Font = new System.Drawing.Font("Marlett", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0x31),
                 Location = new System.Drawing.Point(706, 0),
-                Size = new System.Drawing.Size(30, 29),
+                Size = new System.Drawing.Size(30, 28),
                 Text = "1",
                 UseVisualStyleBackColor = true,
                 TextAlign = System.Drawing.ContentAlignment.MiddleRight,
@@ -567,7 +567,7 @@
                 Font = new System.Drawing.Font("Marlett", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0x72),
                 Text = "r",
                 TextAlign = System.Drawing.ContentAlignment.MiddleCenter,
-                Size = new System.Drawing.Size(30, 29),
+                Size = new System.Drawing.Size(30, 28),
                 UseVisualStyleBackColor = true,
                 TabStop = false
             };

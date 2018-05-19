@@ -1,6 +1,6 @@
 # Gerador de Deck para Clash Royale
 
-<img align="center" src="https://i.imgur.com/V5M7nPJ.jpg">
+<img align="center" src="https://i.imgur.com/DDw7PmV.jpg">
 
 ## Informações
 - **Escrito do zero, com Código aprimorado**
@@ -24,4 +24,4 @@
 - **Versão atual: 3.0 (Versão final)**
 - **Build atual: 38**
 
-<img align="center" src="https://i.imgur.com/YDp4QDK.jpg">
+<img align="center" src="https://i.imgur.com/NQpMuyf.jpg">
