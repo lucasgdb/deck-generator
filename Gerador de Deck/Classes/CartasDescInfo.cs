@@ -102,7 +102,7 @@
                 "Clique em Ligar Gerador para gerar Cartas sem parar, até desligar", "O Gerador de Deck Inteligente não depende da Arena, Raridade e Tipo escolhido",
                 "Desative/Ative a função Voltar ao Deck anterior, em Configurações", "Não é necessário Salvar nas Configurações, desmarcando/marcando já troca as funções. Mas é necessário salvar, caso queira que elas permaneçam",
                 "Baixe outras Versões do Gerador de Deck, em Atualizador", "Alterne entre os temas Claro, Escuro e Padrão, em Configurações", "Alterne entre os modos Minimalismo/Gráfico dos Decks salvos, em Configurações",
-                "Clique em Melhores Decks, para ver os Melhores Decks de todas as arenas atualmente",
+                "Clique em Melhores Decks, para ver os Melhores Decks de todas as arenas atualmente", "Clique em Menu de Opções para ativar o efeito de slide",
                 "Clique em Balanceamento, para ver as informações do último Balanceamento feito no Clash Royale" };
 
         public static string[] Atalhos = {

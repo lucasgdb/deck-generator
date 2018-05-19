@@ -178,5 +178,17 @@ namespace Gerador_de_Deck.Properties {
                 this["cliqueCartas"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool maior {
+            get {
+                return ((bool)(this["maior"]));
+            }
+            set {
+                this["maior"] = value;
+            }
+        }
     }
 }
