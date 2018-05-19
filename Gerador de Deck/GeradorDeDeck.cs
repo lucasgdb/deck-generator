@@ -4319,6 +4319,7 @@
         private string CaixaDialogo(byte ind)
         {
             string resultado = string.Empty;
+            System.Windows.Forms.AutoCompleteStringCollection dadosAtt = new System.Windows.Forms.AutoCompleteStringCollection();
 
             System.Windows.Forms.Form frmDialog = new System.Windows.Forms.Form()
             {
@@ -4439,13 +4440,10 @@
                 Font = new System.Drawing.Font(Font.FontFamily, 10.5f, System.Drawing.FontStyle.Regular),
                 TextAlign = System.Windows.Forms.HorizontalAlignment.Center,
                 AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append,
-                AutoCompleteCustomSource = dados,
                 AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource,
                 MaxLength = 22,
                 TabIndex = 0
             };
-            tList.Add(txtResposta); sList.Add("Digite o Nome ou Código da Carta para Trocar");
-            SetCueText(ref tList, sList);
 
             System.Windows.Forms.PictureBox picCarta = new System.Windows.Forms.PictureBox()
             {
@@ -4576,18 +4574,23 @@
                     try
                     {
                         if (cbRaridade.SelectedIndex == 0 && cbTipo.SelectedIndex == 0)
-                            cbCartas.Items.Add(_Deck.CartasInformacao[j].Split('\n')[0]);
+                        { cbCartas.Items.Add(_Deck.CartasInformacao[j].Split('\n')[0]); dadosAtt.Add(_Deck.CartasInformacao[j].Split('\n')[0]); dadosAtt.Add(_Deck.CodigoCartas[j].ToString()); }
                         else if (cbRaridade.SelectedIndex == 0 && cbTipo.SelectedIndex != 0 && _Deck.CartasInformacao[j].Split('\n')[2] == "Tipo: " + tipo[cbTipo.SelectedIndex - 1])
-                            cbCartas.Items.Add(_Deck.CartasInformacao[j].Split('\n')[0]);
+                        { cbCartas.Items.Add(_Deck.CartasInformacao[j].Split('\n')[0]); dadosAtt.Add(_Deck.CartasInformacao[j].Split('\n')[0]); dadosAtt.Add(_Deck.CodigoCartas[j].ToString()); }
                         else if (cbTipo.SelectedIndex == 0 && cbRaridade.SelectedIndex != 0 && _Deck.CartasInformacao[j].Split('\n')[1] == string.Format("Raridade: {0}", raridade[cbRaridade.SelectedIndex - 1]))
-                            cbCartas.Items.Add(_Deck.CartasInformacao[j].Split('\n')[0]);
+                        { cbCartas.Items.Add(_Deck.CartasInformacao[j].Split('\n')[0]); dadosAtt.Add(_Deck.CartasInformacao[j].Split('\n')[0]); dadosAtt.Add(_Deck.CodigoCartas[j].ToString()); }
                         else if (cbRaridade.SelectedIndex != 0 && cbTipo.SelectedIndex != 0 && _Deck.CartasInformacao[j].Split('\n')[1] == string.Format("Raridade: {0}", raridade[cbRaridade.SelectedIndex - 1]) &&
                             _Deck.CartasInformacao[j].Split('\n')[2] == string.Format("Tipo: {0}", tipo[cbTipo.SelectedIndex - 1]))
-                            cbCartas.Items.Add(_Deck.CartasInformacao[j].Split('\n')[0]);
+                        { cbCartas.Items.Add(_Deck.CartasInformacao[j].Split('\n')[0]); dadosAtt.Add(_Deck.CartasInformacao[j].Split('\n')[0]); dadosAtt.Add(_Deck.CodigoCartas[j].ToString()); }
                     }
                     catch { Classes.ArquivoRegras.ReCriar(); }
 
                 cbCartas.SelectedIndex = 0;
+
+                txtResposta.AutoCompleteCustomSource = dadosAtt;
+
+                tList.Add(txtResposta); sList.Add("Digite o Nome ou Código da Carta para Trocar");
+                SetCueText(ref tList, sList);
             };
             frmDialog.Deactivate += (s, e) =>
             {
@@ -4649,6 +4652,9 @@
                 for (byte i = 1; i < _Deck.CartasInformacao.Length; i++)
                 {
                     if (cbCartas.Items[cbCartas.SelectedIndex].ToString() == _Deck.CartasInformacao[i].Split('\n')[0])
+                    { resultado = _Deck.CartasInformacao[i].Split('\n')[0]; frmDialog.Close(); }
+                    else if (RetirarAcentos(txtResposta.Text.Trim().ToLower()) == RetirarAcentos(_Deck.CartasInformacao[i].Split('\n')[0].ToLower())
+                        || txtResposta.Text.Trim() == _Deck.CodigoCartas[i].ToString())
                     { resultado = _Deck.CartasInformacao[i].Split('\n')[0]; frmDialog.Close(); }
                 }
             }
