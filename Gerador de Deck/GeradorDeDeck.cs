@@ -4084,8 +4084,8 @@
                 CMS[i].Items[1].Click += (s, e) =>
                 {
                     var codNome = CaixaDialogo(valorI);
-                    for (byte j = 1; j < _Deck.CartasInformacao.Length; j++)
-                        if (codNome != string.Empty && System.Array.IndexOf(_Deck.deckAtual, j) == -1 && (codNome == _Deck.CartasInformacao[j].Split('\n')[0]))
+                    for (byte j = 0; j < _Deck.CartasInformacao.Length; j++)
+                        if (codNome == _Deck.CartasInformacao[0] || System.Array.IndexOf(_Deck.deckAtual, j) == -1 && (codNome == _Deck.CartasInformacao[j].Split('\n')[0]))
                         {
                             Cartas[valorI].Image = _Deck.CartasImagem[j];
                             media -= _Deck.CustoElixir[_Deck.deckAtual[valorI]] / 8;
@@ -4124,7 +4124,7 @@
             else { CorEscuro(); rbEscuro.Checked = true; }
         }
 
-        private byte bAtual = 39;
+        private byte bAtual = 40;
         private float media = 0.0f;
         private System.Random _Random = new System.Random();
         private System.Windows.Forms.AutoCompleteStringCollection dados = new System.Windows.Forms.AutoCompleteStringCollection();
@@ -4444,6 +4444,7 @@
                 MaxLength = 22,
                 TabIndex = 0
             };
+            txtResposta.Click += (s, e) => { txtResposta.Clear(); };
 
             System.Windows.Forms.PictureBox picCarta = new System.Windows.Forms.PictureBox()
             {
@@ -4456,7 +4457,7 @@
             int posInicialX = picCarta.Location.X, posInicialY = picCarta.Location.Y;
             int tamInicialW = picCarta.Size.Width, tamInicialH = picCarta.Size.Height;
 
-            picCarta.Click += (s, e) => txtResposta.Select();
+            picCarta.Click += (s, e) => txtResposta.SelectionStart = txtResposta.Text.Length;
             picCarta.MouseEnter += (s, e) =>
             {
                 picCarta.Location = new System.Drawing.Point(posInicialX - System.Convert.ToByte(nUpTCarta.Value), posInicialY - System.Convert.ToByte(nUpTCarta.Value));
@@ -4490,7 +4491,7 @@
                 Location = new System.Drawing.Point(138, 78),
                 Font = new System.Drawing.Font(Font.FontFamily, 9.75f, System.Drawing.FontStyle.Regular)
             };
-            lblResultado.Click += (s, e) => txtResposta.Select();
+            lblResultado.Click += (s, e) => txtResposta.SelectionStart = txtResposta.Text.Length;
 
             System.Windows.Forms.ComboBox cbCartas = new System.Windows.Forms.ComboBox()
             {
@@ -4521,7 +4522,8 @@
                         System.Environment.NewLine + "Custo de Elixir: " + _Deck.CustoElixir[i];
                     }
 
-                txtResposta.Select();
+                txtResposta.Focus();
+                txtResposta.SelectionStart = txtResposta.TextLength;
             };
 
             System.Windows.Forms.Button btnTrocar = new System.Windows.Forms.Button()
@@ -4559,7 +4561,7 @@
 
             frmDialog.Load += (s, e) =>
             {
-                txtResposta.Select();
+                pFundo.Select();
                 cbCartas.Items.Add(_Deck.CartasInformacao[0]);
 
                 byte qtdCartas = 0;
@@ -4585,7 +4587,11 @@
                     }
                     catch { Classes.ArquivoRegras.ReCriar(); }
 
-                cbCartas.SelectedIndex = 0;
+                for (byte i = 0; i < cbCartas.Items.Count; i++)
+                    if (_Deck.CartasInformacao[_Deck.deckAtual[ind]].Split('\n')[0].Equals(cbCartas.Items[i].ToString()))
+                    { cbCartas.SelectedIndex = i; break; }
+                    else if (i == cbCartas.Items.Count - 1)
+                        cbCartas.SelectedIndex = 0;
 
                 txtResposta.AutoCompleteCustomSource = dadosAtt;
 
@@ -4648,14 +4654,16 @@
 
             void Trocar()
             {
-                txtResposta.Select();
+                txtResposta.SelectionStart = txtResposta.Text.Length;
                 for (byte i = 1; i < _Deck.CartasInformacao.Length; i++)
                 {
-                    if (cbCartas.Items[cbCartas.SelectedIndex].ToString() == _Deck.CartasInformacao[i].Split('\n')[0])
+                    if (txtResposta.Text.Trim() == string.Empty) { resultado = "Nenhuma Carta selecionada"; frmDialog.Close(); }
+                    else if (cbCartas.Items[cbCartas.SelectedIndex].ToString() == _Deck.CartasInformacao[i].Split('\n')[0])
                     { resultado = _Deck.CartasInformacao[i].Split('\n')[0]; frmDialog.Close(); }
                     else if (RetirarAcentos(txtResposta.Text.Trim().ToLower()) == RetirarAcentos(_Deck.CartasInformacao[i].Split('\n')[0].ToLower())
                         || txtResposta.Text.Trim() == _Deck.CodigoCartas[i].ToString())
                     { resultado = _Deck.CartasInformacao[i].Split('\n')[0]; frmDialog.Close(); }
+                    else if (i == _Deck.CartasInformacao.Length - 1) pFundo.Select();
                 }
             }
             tip.SetToolTip(btnFecharDialogo, "Fechar");

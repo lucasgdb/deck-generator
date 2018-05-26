@@ -111,7 +111,6 @@
     <None Include="Resources\copiar.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="icon.ico" />
     <None Include="Resources\balancear.ico" />
     <None Include="Resources\Ícone.ico" />
     <Content Include="Ícone.ico" />
