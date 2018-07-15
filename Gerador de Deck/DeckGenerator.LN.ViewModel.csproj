@@ -64,7 +64,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\ArquivoRegras.cs" />
-    <Compile Include="Classes\CartasDescInfo.cs" />
     <Compile Include="Classes\CartasInformacoes.cs" />
     <Compile Include="GeradorDeDeck.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -113,6 +112,8 @@
   <ItemGroup>
     <None Include="Resources\balancear.ico" />
     <None Include="Resources\Ícone.ico" />
+    <None Include="Resources\Bola_de_Neve.png" />
+    <None Include="Resources\Porcos_Reais.png" />
     <Content Include="Ícone.ico" />
     <None Include="Resources\Lapide.png" />
     <None Include="Resources\Tesla.png" />

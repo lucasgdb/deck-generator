@@ -12,85 +12,87 @@
                 Properties.Resources.Mini_Pekka, //mini pekka
                 Properties.Resources.Bola_de_Fogo, //bola de fogo
                 Properties.Resources.Cavaleiro, //cavaleiro
-                Properties.Resources.Arqueiras, //arqueiras
-                Properties.Resources.Bombardeiro, //bombardeiro 
-                Properties.Resources.Flechas, //flechas
-                Properties.Resources.Barril_de_Goblin,//barril de goblins
-                Properties.Resources.Relampago,//relampago
-                Properties.Resources.Valquiria,//valquiria
-                Properties.Resources.Cabana_de_Goblins,//cabana de goblins
-                Properties.Resources.Goblins,//goblins
-                Properties.Resources.Goblins_Lanceiros,//goblins lanceiros
-                Properties.Resources.Balao,//balao
-                Properties.Resources.Gigante_Esqueleto,//gigante esqueleto
-                Properties.Resources.Torre_de_Bombas,//torre de bombas
-                Properties.Resources.Lapide, //Lápide
-                Properties.Resources.Servos,//servos
-                Properties.Resources.Esqueletos,//esqueletos
-                Properties.Resources.X_Besta,//x-besta
-                Properties.Resources.Furia, //furia
-                Properties.Resources.Cabana_de_Barbaros, //cabana barbaros
-                Properties.Resources.Foguete, //foguete
-                Properties.Resources.Barbaros,//bárbaros
-                Properties.Resources.Canhao, //canhao
-                Properties.Resources.Lava_Hound,//lavahound
-                Properties.Resources.Dragao_Infernal,//dragao infernal
-                Properties.Resources.Pekka,//pekka
-                Properties.Resources.Gelo, //gelo
-                Properties.Resources.Corredor, //corredor
-                Properties.Resources.Torre_Inferno,//torre inferno
-                Properties.Resources.Horda_de_Servos, //horda de servos
-                Properties.Resources.Tesla,//tesla
-                Properties.Resources.Mago_de_Gelo,//mago de gelo
-                Properties.Resources.Cemiterio, //cemiterio
-                Properties.Resources.Espelho, //espelho
-                Properties.Resources.Veneno, //veneno
-                Properties.Resources.Mago,//mago
-                Properties.Resources.Fornalha, //fornalha
-                Properties.Resources.Espiritos_de_Fogo,//espiritos de fogo
-                Properties.Resources.Zap,//zap
-                Properties.Resources.Mineiro,//mineiro
-                Properties.Resources.Sparky, //sparky
-                Properties.Resources.Tronco, //tronco
-                Properties.Resources.Golem,//golem
-                Properties.Resources.Tornado,//tornado
-                Properties.Resources.Ariete_de_Batalha, //ariete de batalha
-                Properties.Resources.Coletor_de_Elixir,//coletor de elixir
-                Properties.Resources.Barril_de_Esqueletos,//barril de esqueletos
-                Properties.Resources.Morteiro,//morteiro
-                Properties.Resources.Princesa,//princesa
-                Properties.Resources.Mago_Eletrico,//mago eletrico
-                Properties.Resources.Guardas,//guardas
-                Properties.Resources.Principe_das_Trevas,//principe das trevas
-                Properties.Resources.Tres_Mosqueteiras,//tres mosqueteiras
-                Properties.Resources.Megasservo,//megasservo
-                Properties.Resources.Gigante_Real,//gigante real
-                Properties.Resources.Barbaros_de_Elite,//barbaros de elite
-                Properties.Resources.Lenhador,//lenhador
-                Properties.Resources.Bruxa_Sombria,//bruxa sombria
-                Properties.Resources.Lançador,//lançador
-                Properties.Resources.Clone, //clone
-                Properties.Resources.Golem_de_Gelo,//golem de gelo
-                Properties.Resources.Espirito_de_Gelo,//espirito de gelo
-                Properties.Resources.Morcegos, //morcegos
-                Properties.Resources.Bandida,//bandida
-                Properties.Resources.Caçador, //caçador
-                Properties.Resources.Executor,//executador
-                Properties.Resources.Goblin_com_Dardo,//goblin com dardo
-                Properties.Resources.Maquina_Voadora,//maquina voadora
-                Properties.Resources.Gangue_de_Goblins,//gangue de goblins
-                Properties.Resources.Patifes, // Patifes
-                Properties.Resources.Fantasma_Real, //Fantasma Real
-                Properties.Resources.Megacavaleiro,//megacavaleiro
-                Properties.Resources.Carrinho_de_Canhao, // carrinho de canhao
-                Properties.Resources.Barril_de_Barbaro, //Barril de bárbaro
-                Properties.Resources.Cura,//cura
-                Properties.Resources.Arqueiro_Magico, // Arqueiro mágico
-                Properties.Resources.Eletrocutadores//eletrocutadores
+                Properties.Resources.Arqueiras,
+                Properties.Resources.Servos,
+                Properties.Resources.Flechas,
+                Properties.Resources.Caçador,
+                Properties.Resources.Barril_de_Goblin,
+                Properties.Resources.Corredor,
+                Properties.Resources.Cabana_de_Goblins,
+                Properties.Resources.Goblins,
+                Properties.Resources.Goblins_Lanceiros,
+                Properties.Resources.Balao,
+                Properties.Resources.Gigante_Esqueleto,
+                Properties.Resources.Valquiria,
+                Properties.Resources.Lapide,
+                Properties.Resources.Esqueletos,
+                Properties.Resources.Bombardeiro,
+                Properties.Resources.Golem,
+                Properties.Resources.Barril_de_Barbaro,
+                Properties.Resources.Ariete_de_Batalha,
+                Properties.Resources.Cabana_de_Barbaros,
+                Properties.Resources.Barbaros,
+                Properties.Resources.Canhao,
+                Properties.Resources.Lava_Hound,
+                Properties.Resources.Mineiro,
+                Properties.Resources.Pekka,
+                Properties.Resources.Relampago,
+                Properties.Resources.Megasservo,
+                Properties.Resources.Torre_Inferno,
+                Properties.Resources.Horda_de_Servos,
+                Properties.Resources.Zap,
+                Properties.Resources.Bruxa_Sombria,
+                Properties.Resources.Cemiterio,
+                Properties.Resources.Gelo,
+                Properties.Resources.Veneno,
+                Properties.Resources.Mago,
+                Properties.Resources.Fornalha,
+                Properties.Resources.Espiritos_de_Fogo,
+                Properties.Resources.Morcegos,
+                Properties.Resources.Dragao_Infernal,
+                Properties.Resources.Tronco,
+                Properties.Resources.Carrinho_de_Canhao,
+                Properties.Resources.X_Besta,
+                Properties.Resources.Maquina_Voadora,
+                Properties.Resources.Foguete,
+                Properties.Resources.Barril_de_Esqueletos,
+                Properties.Resources.Morteiro,
+                Properties.Resources.Princesa,
+                Properties.Resources.Fantasma_Real,
+                Properties.Resources.Guardas,
+                Properties.Resources.Principe_das_Trevas,
+                Properties.Resources.Tres_Mosqueteiras,
+                Properties.Resources.Cura,
+                Properties.Resources.Gigante_Real,
+                Properties.Resources.Mago_de_Gelo,
+                Properties.Resources.Lenhador,
+                Properties.Resources.Lançador,
+                Properties.Resources.Tornado,
+                Properties.Resources.Golem_de_Gelo,
+                Properties.Resources.Coletor_de_Elixir,
+                Properties.Resources.Espirito_de_Gelo,
+                Properties.Resources.Bola_de_Neve,
+                Properties.Resources.Bandida,
+                Properties.Resources.Executor,
+                Properties.Resources.Goblin_com_Dardo,
+                Properties.Resources.Gangue_de_Goblins,
+                Properties.Resources.Patifes,
+                Properties.Resources.Megacavaleiro,
+                Properties.Resources.Arqueiro_Magico,
+                Properties.Resources.Furia,
+                Properties.Resources.Porcos_Reais,
+                Properties.Resources.Torre_de_Bombas,
+                Properties.Resources.Barbaros_de_Elite,
+                Properties.Resources.Sparky,
+                Properties.Resources.Mago_Eletrico,
+                Properties.Resources.Espelho,
+                Properties.Resources.Clone,
+                Properties.Resources.Eletrocutadores,
+                Properties.Resources.Tesla
         };
 
-        public float[] CustoElixir = { 0,5,3,4,5,5,4,4,4,3,3,3,3,3,6,4,5,2,2,5,6,5,3,3,1,6,2,7,6,5,3,7,4,7,4,4,5,5,4,3,5,1.4f,4,5,4,2,2,3,6,2,8,3,4,6,3,
-        4,3,4,3,4,9,3,6,6,4,4,5,3,2,1,2,3,4,5,3,4,3,5,3,7,5,3,3,4,4};
+        public float[] CustoElixir = { 0, 5, 3, 4, 5, 5, 4, 4, 4, 3, 3, 3, 3, 4, 3, 4, 5, 2, 2, 5, 6, 4, 3, 1, 3, 8, 3, 4, 7, 5, 3, 7, 3, 7, 6, 3, 5, 5, 2, 4, 5, 4, 4, 5, 4, 2, 2,
+        4, 2, 5, 6, 4, 6, 3, 4, 3, 3, 3, 4, 9, 3, 6, 4, 4, 5, 3, 2, 6, 1, 2, 3, 5, 3, 3, 5, 7, 4, 2, 5, 5, 6, 6, 4, 1.4f, 3, 4, 4};
 
         public string[] CartasInformacao = {
         "Nenhuma Carta selecionada",
@@ -104,106 +106,127 @@
         "Bola de Fogo\nRaridade: Rara\nTipo: Feitiço\nRaio: 2.5",
         "Cavaleiro\nRaridade: Comum\nTipo: Tropa\nVelocidade de impacto: 1.2seg\nAlvos: Terrestre\nVelocidade: Média\nAlcance: Corpo a corpo\nTempo de mobilização: 1seg",
         "Arqueiras\nRaridade: Comum\nTipo: Tropa\nVelocidade de impacto: 1.2seg\nAlvos: Aéreo/Terrestre\nVelocidade: Média\nAlcance: 5\nTempo de mobilização: 1seg\nContagem: x2",
-        "Bombardeiro\nRaridade: Comum\nTipo: Tropa\nVelocidade de impacto: 1.9seg\nAlvos: Terrestre\nVelocidade: Média\nAlcance: 4.5\nTempo de mobilização: 1seg",
+        "Servos\nRaridade: Comum\nTipo: Tropa\nVelocidade de impacto: 1seg\nAlvos: Aéreo/Terrestre\nVelocidade: Rápida\nAlcance: 2\nTempo de mobilização: 1seg\nContagem: x3",
         "Flechas\nRaridade: Comum\nTipo: Feitiço\nRaio: 4",
-        // Estádio Goblin
+
+        "Caçador\nRaridade: Épica\nTipo: Tropa\nVelocidade de impacto: 2.2seg\nAlvos: Aéreo/Terrestre\nVelocidade: Média\nAlcance: 4\nAlcance da bala: 6.5\nTempo de mobilização: 1seg",
         "Barril de Goblins\nRaridade: Épica\nTipo: Feitiço\nContagem de Goblin: x3",
-        "Relâmpago\nRaridade: Épica\nTipo: Feitiço\nContagem: x3\nDuração de Paralisia: 0.5seg\nRaio: 3",
-        "Valquíria\nRaridade: Rara\nTipo: Tropa\nVelocidade de impacto: 1.4seg\nAlvos: Terrestre\nVelocidade: Média\nAlcance: Corpo a corpo\nTempo de mobilização: 1seg",
+        "Corredor\nRaridade: Rara\nTipo: Tropa\nVelocidade de impacto: 1.6seg\nAlvos: Construções\nVelocidade: Muito rápida\nAlcance: Corpo a corpo\nTempo de mobilização: 1seg",
         "Cabana de Goblins\nRaridade: Rara\nTipo: Construção\nVelocidade de geração: 5seg\nTempo de mobilização: 1seg\nTempo de efeito: 1min 0seg",
-        "Goblins\nRaridade: Comum\nTipo: Tropa\nVelocidade de impacto: 1.1seg\nAlvos: Terrestre\nVelocidade: Muito Rápida\nAlcance: Corpo a corpo\nTempo de mobilização: 1seg\nContagem: x3",
-        "Goblins Lanceiros\nRaridade: Comum\nTipo: Tropa\nVelocidade de impacto: 1.1seg\nAlvos: Aéreo/Terrestre\nVelocidade: Muito Rápida\nAlcance: 5\nTempo de mobilização: 1seg\nContagem: x3",
-        // Fosso dos Ossos
+        "Goblins\nRaridade: Comum\nTipo: Tropa\nVelocidade de impacto: 1.1seg\nAlvos: Terrestre\nVelocidade: Muito rápida\nAlcance: Corpo a corpo\nTempo de mobilização: 1seg\nContagem: x3",
+        "Goblins Lanceiros\nRaridade: Comum\nTipo: Tropa\nVelocidade de impacto: 1.1seg\nAlvos: Aéreo/Terrestre\nVelocidade: Muito rápida\nAlcance: 5\nTempo de mobilização: 1seg\nContagem: x3",
+
         "Balão\nRaridade: Épica\nTipo: Tropa\nVelocidade de impacto: 3seg\nAlvos: Construções\nVelocidade: Média\nAlcance: Corpo a corpo\nTempo de mobilização: 1seg",
         "Esqueleto Gigante\nRaridade: Épica\nTipo: Tropa\nVelocidade de impacto: 1.5seg\nAlvos: Terrestre\nVelocidade: Média\nAlcance: Corpo a corpo\nTempo de mobilização: 1seg",
-        "Torre de Bombas\nRaridade: Rara\nTipo: Construção\nVelocidade de impacto: 1.6seg\nAlvos: Terrestre\nAlcance: 6\nTempo de mobilização: 1seg\nTempo de efeito: 40seg",
+        "Valquíria\nRaridade: Rara\nTipo: Tropa\nVelocidade de impacto: 1.4seg\nAlvos: Terrestre\nVelocidade: Média\nAlcance: Corpo a corpo\nTempo de mobilização: 1seg",
         "Lápide\nRaridade: Rara\nTipo: Construção\nVelocidade de geração:2.9seg\nTempo de mobilização: 1seg\nTempo de efeito: 40seg",
-        "Servos\nRaridade: Comum\nTipo: Tropa\nVelocidade de impacto: 1seg\nAlvos: Aéreo/Terrestre\nVelocidade: Rápida\nAlcance: 2\nTempo de mobilização: 1seg\nContagem: x3",
         "Esqueletos\nRaridade: Comum\nTipo: Tropa\nVelocidade de impacto: 1seg\nAlvos: Terrestre\nVelocidade: Rápida\nAlcance: Corpo a corpo\nTempo de mobilização: 1seg\nContagem: x3",
-        // Torneio Bárbaro
-        "X-Besta\nRaridade: Épica\nTipo: Construção\nVelocidade de impacto: 0.25seg\nAlvos: Terrestre\nAlcance: 11.5\nTempo de mobilização: 3.5seg\nTempo de efeito: 40seg",
-        "Fúria\nRaridade: Épica\nTipo: Feitiço\nDuração: 7.5seg\nMelhorar: +35%\nRaio: 5",
+        "Bombardeiro\nRaridade: Comum\nTipo: Tropa\nVelocidade de impacto: 1.9seg\nAlvos: Terrestre\nVelocidade: Média\nAlcance: 4.5\nTempo de mobilização: 1seg",
+
+        "Golem\nRaridade: Épica\nTipo: Tropa\nVelocidade de impacto: 2.5seg\nAlvos: Construções\nVelocidade: Lenta\nAlcance: Corpo a corpo\nTempo de mobilização: 3seg",
+        "Barril de Bárbaro\nRaridade: Épica\nTipo: Feitiço\nAlvos: Terrestre\nLargura: 3.9\nAlcance: 6.5",
+        "Ariete de Batalha\nRaridade: Rara\nTipo: Tropa\nAlvos: Construções\nVelocidade: Média\nAlcance: Corpo a corpo\nTempo de mobilização: 1seg",
         "Cabana de Bárbaros\nRaridade: Rara\nTipo: Construção\nVelocidade de geração: 14seg\nTempo de mobilização: 1seg\nTempo de efeito: 1min 0seg",
-        "Foguete\nRaridade: Rara\nTipo: Feitiço\nRaio: 2",
         "Bárbaros\nRaridade: Comum\nTipo: Tropa\nVelocidade de impacto: 1.5seg\nAlvos: Terrestre\nVelocidade: Média\nAlcance: Corpo a corpo\nTempo de mobilização: 1seg\nContagem: x4",
         "Canhão\nRaridade: Comum\nTipo: Construção\nVelocidade de impacto: 0.8seg\nAlvos: Terrestre\nAlcance: 5.5\nTempo de mobilização: 1seg\nTempo de efeito: 30seg",
-        // Parquinho da P.E.K.K.A
+
         "Lava Hound\nRaridade: Lendária\nTipo: Tropa\nVelocidade de impacto: 1.3seg\nAlvos: Construções\nVelocidade: Lenta\nAlcance: 2\nTempo de mobilização: 1seg",
-        "Dragão Infernal\nRaridade: Lendária\nTipo: Tropa\nVelocidade de impacto: 0.4seg\nAlvos: Aéreo/Terrestre\nVelocidade: Média\nAlcance: 4\nTempo de mobilização: 1seg",
+        "Mineiro\nRaridade: Lendária\nTipo: Tropa\nVelocidade de impacto: 1.2seg\nAlvos: Terrestre\nVelocidade: Rápida\nAlcance: Corpo a corpo\nTempo de mobilização: 1seg",
         "P.E.K.K.A\nRaridade: Épica\nTipo: Tropa\nVelocidade de impacto: 1.8seg\nAlvos: Terrestre\nVelocidade: Lenta\nAlcance: Corpo a corpo\nTempo de mobilização: 1seg",
-        "Gelo\nRaridade: Épica\nTipo: Feitiço\nDuração: 4.9seg\nRaio: 3",
-        "Corredor\nRaridade: Rara\nTipo: Tropa\nVelocidade de impacto: 1.6seg\nAlvos: Construções\nVelocidade: Muito Rápida\nAlcance: Corpo a corpo\nTempo de mobilização: 1seg",
+        "Relâmpago\nRaridade: Épica\nTipo: Feitiço\nContagem: x3\nDuração de Paralisia: 0.5seg\nRaio: 3",
+        "Megasservo\nRaridade: Rara\nTipo: Tropa\nVelocidade de impacto: 1.5seg\nAlvos: Aéreo/Terrestre\nVelocidade: Média\nAlcance: 2\nTempo de mobilização: 1seg",
         "Torre Inferno\nRaridade: Rara\nTipo: Construção\nVelocidade de impacto: 0.4seg\nAlvos: Aéreo/Terrestre\nAlcance: 6\nTempo de mobilização: 1seg\nTempo de efeito: 40seg",
         "Horda de Servos\nRaridade: Comum\nTipo: Tropa\nVelocidade de impacto: 1seg\nAlvos: Aéreo/Terrestre\nVelocidade: Rápida\nAlcance: 2\nTempo de mobilização: 1seg\nContagem: x6",
-        "Tesla\nRaridade: Comum\nTipo: Construção\nVelocidade de impacto: 1seg\nAlvos: Aéreo/Terrestre\nAlcance: 5.5\nTempo de mobilização: 1seg\nTempo de efeito: 40seg",
-        // Vale dos Feitiços
-        "Mago de Gelo\nRaridade: Lendária\nTipo: Tropa\nVelocidade de impacto: 1.7seg\nAlvos: Aéreo/Terrestre\nVelocidade: Média\nAlcance: 5.5\nTempo de mobilização: 1seg",
+        "Zap\nRaridade: Comum\nTipo: Feitiço\nDuração de Paralisia: 0.5seg\nRaio: 2.5",
+
+        "Bruxa Sombria\nRaridade: Lendária\nTipo: Tropa\nVelocidade de geração: 7seg\nVelocidade de impacto: 1.5seg\nAlvos: Terrestre\nVelocidade: Média\nAlcance: Corpo a corpo\nTempo de mobilização: 1seg",
         "Cemitério\nRaridade: Lendária\nTipo: Feitiço\nVelocidade de geração: 0.5seg\nDuração: 10seg\nRaio: 4",
-        "Espelho\nRaridade: Épica\nTipo: Feitiço",
+        "Gelo\nRaridade: Épica\nTipo: Feitiço\nDuração: 4.9seg\nRaio: 3",
         "Veneno\nRaridade: Épica\nTipo: Feitiço\nDuração: 8seg\nRaio: 3.5",
         "Mago\nRaridade: Rara\nTipo: Tropa\nVelocidade de impacto: 1.4seg\nAlvos: Aéreo/Terrestre\nVelocidade: Média\nAlcance: 5.5\nTempo de mobilização: 1seg",
         "Fornalha\nRaridade: Rara\nTipo: Construção\nVelocidade de geração: 10seg\nTempo de mobilização: 1seg\nTempo de efeito: 50seg",
-        "Espíritos de Fogo\nRaridade: Comum\nTipo: Tropa\nAlvos: Aéreo/Terrestre\nVelocidade: Muito Rápida\nAlcance: 2\nTempo de mobilização: 1seg\nContagem: x3",
-        "Zap\nRaridade: Comum\nTipo: Feitiço\nDuração de Paralisia: 0.5seg\nRaio: 2.5",
-        // Oficina do Construtor
-        "Mineiro\nRaridade: Lendária\nTipo: Tropa\nVelocidade de impacto: 1.2seg\nAlvos: Terrestre\nVelocidade: Rápida\nAlcance: Corpo a corpo\nTempo de mobilização: 1seg",
-        "Sparky\nRaridade: Lendária\nTipo: Tropa\nVelocidade de impacto: 4seg\nAlvos: Terrestre\nVelocidade: Lenta\nAlcance: 4.5\nTempo de mobilização: 1seg",
+        "Espíritos de Fogo\nRaridade: Comum\nTipo: Tropa\nAlvos: Aéreo/Terrestre\nVelocidade: Muito rápida\nAlcance: 2\nTempo de mobilização: 1seg\nContagem: x3",
+        "Morcegos\nRaridade: Comum\nTipo: Tropa\nVelocidade de impacto: 1.1seg\nAlvos: Aéreo/Terrestre\nVelocidade: Muito rápida\nAlcance: Corpo a corpo\nTempo de mobilização: 1seg\nContagem: x5",
+
+        "Dragão Infernal\nRaridade: Lendária\nTipo: Tropa\nVelocidade de impacto: 0.4seg\nAlvos: Aéreo/Terrestre\nVelocidade: Média\nAlcance: 4\nTempo de mobilização: 1seg",
         "Tronco\nRaridade: Lendária\nTipo: Feitiço\nAlvos: Terrestre\nLargura: 3.9\nAlcance: 11.1",
-        "Golem\nRaridade: Épica\nTipo: Tropa\nVelocidade de impacto: 2.5seg\nAlvos: Construções\nVelocidade: Lenta\nAlcance: Corpo a corpo\nTempo de mobilização: 3seg",
-        "Tornado\nRaridade: Épica\nTipo: Feitiço\nAlvos: Tropas\nDuração: 2.5seg\nRaio: 5.5",
-        "Ariete de Batalha\nRaridade: Rara\nTipo: Tropa\nAlvos: Construções\nVelocidade: Média\nAlcance: Corpo a corpo\nTempo de mobilização: 1seg",
-        "Coletor de Elixir\nRaridade: Rara\nTipo: Construção\nVelocidade de produção: 8.5seg\nTempo de mobilização: 1seg\ntempo de efeito: 1min 10seg",
+        "Carrinho de Canhão\nRaridade: Épica\nTipo: Tropa\nVelocidade de impacto: 1.2seg\nAlvos: Terrestre\nVelocidade: Rápida\nAlcance: 5.5\nTempo de mobilização: 1seg",
+        "X-Besta\nRaridade: Épica\nTipo: Construção\nVelocidade de impacto: 0.25seg\nAlvos: Terrestre\nAlcance: 11.5\nTempo de mobilização: 3.5seg\nTempo de efeito: 40seg",
+        "Máquina Voadora\nRaridade: Rara\nTipo: Tropa\nVelocidade de impacto: 1seg\nAlvos: Aéreo/Terrestre\nVelocidade: Rápida\nAlcance: 6\nTempo de mobilização: 1seg",
+        "Foguete\nRaridade: Rara\nTipo: Feitiço\nRaio: 2",
         "Barril de Esqueletos\nRaridade: Comum\nTipo: Tropa\nAlvos: Construções\nVelocidade: Média\nTempo de mobilização: 1seg\nContagem de Esqueleto: x6",
         "Morteiro\nRaridade: Comum\nTipo: Construção\nVelocidade de impacto: 5seg\nAlvos: Terrestre\nAlcance: 11.5\nAlcance mínimo: 3.5\nTempo de mobilização: 3.5seg\nTempo de efeito: 30seg",
-        // Arena Real
+
         "Princesa\nRaridade: Lendária\nTipo: Tropa\nVelocidade de impacto: 3seg\nAlvos: Aéreo/Terrestre\nVelocidade: Média\nAlcance: 9\nTempo de mobilização: 1seg",
-        "Mago Elétrico\nRaridade: Lendária\nTipo: Tropa\nDuração de Paralisia: 0.5seg\nVelocidade de impacto: 1.8seg\nAlvos: Aéreo/Terrestre\nVelocidade: Rápida\nAlcance: 5\nTempo de mobilização: 1seg",
+        "Fantasma Real\nRaridade: Lendária\nTipo: Tropa\nVelocidade de impacto: 1.8seg\nAlvos: Terrestre\nVelocidade: Rápida\nAlcance: Corpo a corpo\nAtraso da Invisibilidade: 1.2seg\nTempo de mobilização: 1seg",
         "Guardas\nRaridade: Épica\nTipo: Tropa\nVelocidade de impacto: 1.1seg\nAlvos: Terrestre\nVelocidade: Rápida\nAlcance: Corpo a corpo\nTempo de mobilização: 1seg\nContagem: x3",
         "Príncipe das Trevas\nRaridade: Épica\nTipo: Tropa\nVelocidade de impacto: 1.3seg\nAlvos: Terrestre\nVelocidade: Média\nAlcance: Corpo a corpo\nTempo de mobilização: 1seg",
         "Três Mosqueteiras\nRaridade: Rara\nTipo: Tropa\nVelocidade de impacto: 1.1seg\nAlvos: Aéreo/Terrestre\nVelocidade: Média\nAlcance: 6\nTempo de mobilização: 1seg\nContagem: x3",
-        "Megasservo\nRaridade: Rara\nTipo: Tropa\nVelocidade de impacto: 1.5seg\nAlvos: Aéreo/Terrestre\nVelocidade: Média\nAlcance: 2\nTempo de mobilização: 1seg",
+        "Cura\nRaridade: Rara\nTipo: Feitiço\nDuração: 2.5seg\nRaio: 3",
         "Gigante Real\nRaridade: Comum\nTipo: Tropa\nVelocidade de impacto: 1.7seg\nAlvos: Construções\nVelocidade: Lenta\nAlcance: 6.5\nTempo de mobilização: 2seg",
-        "Bárbaros de Elite\nRaridade: Comum\nTipo: Tropa\nVelocidade de impacto: 1.5seg\nAlvos: Terrestre\nVelocidade: Muito Rápida\nAlcance: Corpo a corpo\nTempo de mobilização: 1seg\nContagem: x2",
-        // Pico Congelado
-        "Lenhador\nRaridade: Lendária\nTipo: Tropa\nVelocidade de impacto: 0.7seg\nAlvos: Terrestre\nVelocidade: Muito Rápida\nAlcance: Corpo a corpo\nTempo de mobilização: 1seg",
-        "Bruxa Sombria\nRaridade: Lendária\nTipo: Tropa\nVelocidade de geração: 7seg\nVelocidade de impacto: 1.5seg\nAlvos: Terrestre\nVelocidade: Média\nAlcance: Corpo a corpo\nTempo de mobilização: 1seg",
+
+        "Mago de Gelo\nRaridade: Lendária\nTipo: Tropa\nVelocidade de impacto: 1.7seg\nAlvos: Aéreo/Terrestre\nVelocidade: Média\nAlcance: 5.5\nTempo de mobilização: 1seg",
+        "Lenhador\nRaridade: Lendária\nTipo: Tropa\nVelocidade de impacto: 0.7seg\nAlvos: Terrestre\nVelocidade: Muito rápida\nAlcance: Corpo a corpo\nTempo de mobilização: 1seg",
         "Lançador\nRaridade: Épica\nTipo: Tropa\nVelocidade de impacto: 2.5seg\nAlvos: Terrestre\nVelocidade: Lenta\nAlcance: 5\nTempo de mobilização: 1seg",
-        "Clone\nRaridade: Épica\nTipo: Feitiço\nRaio: 3",
+        "Tornado\nRaridade: Épica\nTipo: Feitiço\nAlvos: Tropas\nDuração: 2.5seg\nRaio: 5.5",
         "Golem de Gelo\nRaridade: Rara\nTipo: Tropa\nVelocidade de impacto: 2.5seg\nAlvos: Construções\nVelocidade: Lenta\nAlcance: Corpo a corpo\nDuração do efeito de morte: 1seg\nTempo de mobilização: 1seg",
-        "Espírito de Gelo\nRaridade: Comum\nTipo: Tropa\nDuração de gelo: 1.5seg\nAlvos: Aéreo/Terrestre\nVelocidade: Muito Rápida\nAlcance: 2.5\nTempo de mobilização: 1seg",
-        "Morcegos\nRaridade: Comum\nTipo: Tropa\nVelocidade de impacto: 1.1seg\nAlvos: Aéreo/Terrestre\nVelocidade: Muito Rápida\nAlcance: Corpo a corpo\nTempo de mobilização: 1seg\nContagem: x5",
-        // Arena da Selva
+        "Coletor de Elixir\nRaridade: Rara\nTipo: Construção\nVelocidade de produção: 8.5seg\nTempo de mobilização: 1seg\ntempo de efeito: 1min 10seg",
+        "Espírito de Gelo\nRaridade: Comum\nTipo: Tropa\nDuração de gelo: 1.5seg\nAlvos: Aéreo/Terrestre\nVelocidade: Muito rápida\nAlcance: 2.5\nTempo de mobilização: 1seg",
+        "Bola de Neve\nRaridade: Comum\nTipo: Feitiço\nDuração de Desaceleração: 2seg\nRaio: 3",
+
         "Bandida\nRaridade: Lendária\nTipo: Tropa\nAlcance por colisão: 3.5 - 6\nVelocidade de impacto: 1seg\nAlvos: Terrestre\nVelocidade: Rápida\nAlcance: Corpo a corpo\nTempo de mobilização: 1seg",
-        "Caçador\nRaridade: Épica\nTipo: Tropa\nVelocidade de impacto: 2.2seg\nAlvos: Aéreo/Terrestre\nVelocidade: Média\nAlcance: 4\nAlcance da bala: 6.5\nTempo de mobilização: 1seg",
         "Executor\nRaridade: Épica\nTipo: Tropa\nVelocidade de impacto: 2.4seg\nAlvos: Aéreo/Terrestre\nVelocidade: Média\nAlcance: 4.5\nAlcance da bala: 6.5\nTempo de mobilização: 1seg",
-        "Goblin com Dardo\nRaridade: Rara\nTipo: Tropa\nVelocidade de impacto: 0.6seg\nAlvos: Aéreo/Terrestre\nVelocidade: Muito Rápida\nAlcance: 6.5\nTempo de mobilização: 1seg",
-        "Máquina Voadora\nRaridade: Rara\nTipo: Tropa\nVelocidade de impacto: 1seg\nAlvos: Aéreo/Terrestre\nVelocidade: Rápida\nAlcance: 6\nTempo de mobilização: 1seg",
+        "Goblin com Dardo\nRaridade: Rara\nTipo: Tropa\nVelocidade de impacto: 0.6seg\nAlvos: Aéreo/Terrestre\nVelocidade: Muito rápida\nAlcance: 6.5\nTempo de mobilização: 1seg",
         "Gangue de Goblins\nRaridade: Comum\nTipo: Tropa\nContagem de Goblin: x3\nContagem de Goblin Lanceiro: x2\nTempo de mobilização: 1seg",
         "Patifes\nRaridade: Comum\nTipo: Tropa\nContagem de Patifa: x2\nContagem de Patife: x1\nTempo de mobilização: 1seg",
-        // Montanha do Porco
-        "Fantasma Real\nRaridade: Lendária\nTipo: Tropa\nVelocidade de impacto: 1.8seg\nAlvos: Terrestre\nVelocidade: Rápida\nAlcance: Corpo a corpo\nAtraso da Invisibilidade: 1.2seg\nTempo de mobilização: 1seg",
+
         "Megacavaleiro\nRaridade: Lendária\nTipo: Tropa\nVelocidade de impacto: 1.8seg\nAlvos: Terrestre\nVelocidade: Média\nAlcance: Corpo a corpo\nTempo de mobilização: 1seg",
-        "Carrinho de Canhão\nRaridade: Épica\nTipo: Tropa\nVelocidade de impacto: 1.2seg\nAlvos: Terrestre\nVelocidade: Rápida\nAlcance: 5.5\nTempo de mobilização: 1seg",
-        "Barril de Bárbaro\nRaridade: Épica\nTipo: Feitiço\nAlvos: Terrestre\nLargura: 3.9\nAlcance: 6.5",
-        "Cura\nRaridade: Rara\nTipo: Feitiço\nDuração: 2.5seg\nRaio: 3",
-        // Eletrovale
         "Arqueiro Mágico\nRaridade: Lendária\nTipo: Tropa\nVelocidade de impacto: 1seg\nAlvos: Aéreo/Terrestre\nVelocidade: Média\nAlcance: 7\nAlcance da bala: 11\nTempo de mobilização: 1seg",
-        "Eletrocutadores\nRaridade: Rara\nTipo: Tropa\nVelocidade de impacto: 1.6seg\nAlvos: Aéreo/Terrestre\nVelocidade: Média\nAlcance: 4.5\nDuração de Paralisar: 0.5seg\nContagem: x3\nTempo de mobilização: 1seg"
+        "Fúria\nRaridade: Épica\nTipo: Feitiço\nDuração: 7.5seg\nMelhorar: +35%\nRaio: 5",
+        "Porcos Reais\nRaridade: Rara\nTipo: Tropa\nVelocidade de impacto: 1.1seg\nAlvos: Construções\nVelocidade: Muito rápida\nAlcance: Corpo a corpo\nTempo de mobilização: 1seg\nContagem: x4",
+        "Torre de Bombas\nRaridade: Rara\nTipo: Construção\nVelocidade de impacto: 1.6seg\nAlvos: Terrestre\nAlcance: 6\nTempo de mobilização: 1seg\nTempo de efeito: 40seg",
+        "Bárbaros de Elite\nRaridade: Comum\nTipo: Tropa\nVelocidade de impacto: 1.5seg\nAlvos: Terrestre\nVelocidade: Muito rápida\nAlcance: Corpo a corpo\nTempo de mobilização: 1seg\nContagem: x2",
+
+        "Sparky\nRaridade: Lendária\nTipo: Tropa\nVelocidade de impacto: 4seg\nAlvos: Terrestre\nVelocidade: Lenta\nAlcance: 4.5\nTempo de mobilização: 1seg",
+        "Mago Elétrico\nRaridade: Lendária\nTipo: Tropa\nDuração de Paralisia: 0.5seg\nVelocidade de impacto: 1.8seg\nAlvos: Aéreo/Terrestre\nVelocidade: Rápida\nAlcance: 5\nTempo de mobilização: 1seg",
+        "Espelho\nRaridade: Épica\nTipo: Feitiço",
+        "Clone\nRaridade: Épica\nTipo: Feitiço\nRaio: 3",
+        "Eletrocutadores\nRaridade: Rara\nTipo: Tropa\nVelocidade de impacto: 1.6seg\nAlvos: Aéreo/Terrestre\nVelocidade: Média\nAlcance: 4.5\nDuração de Paralisar: 0.5seg\nContagem: x3\nTempo de mobilização: 1seg",
+        "Tesla\nRaridade: Comum\nTipo: Construção\nVelocidade de impacto: 1seg\nAlvos: Aéreo/Terrestre\nAlcance: 5.5\nTempo de mobilização: 1seg\nTempo de efeito: 40seg"
         };
 
-        public int[] CodigoCartas = {
-            0,26000007, 26000012, 26000015, 26000016, 26000003, 26000014, 26000018, 28000000,
-            26000000, 26000001, 26000013, 28000001,28000004, 28000007, 26000011, 27000001, 26000002, 26000019,// Arena 1
-            26000006, 26000020, 27000004, 27000009, 26000005, 26000010, // Arena 2
-            27000008,28000002, 27000005, 28000003, 26000008, 27000000, // Arena 3
-            26000029, 26000037, 26000004, 28000005, 26000021, 27000003, 26000022, 27000006,// Arena 4
-            26000023, 28000010, 28000006, 28000009, 26000017, 27000010, 26000031, 28000008, // Arena 5
-            26000032, 26000033, 28000011, 26000009, 28000012, 26000036, 27000007, 26000056, 27000002, // Arena 6
-            26000026, 26000042,26000025, 26000027, 26000028, 26000039, 26000024, 26000043, // Arena 7
-            26000035, 26000048, 26000034, 28000013, 26000038, 26000030, 26000049, // Arena 8
-            26000046,26000044,26000045, 26000040, 26000057, 26000041, 26000053, // Arena 9
-            26000050,26000055, 26000054, 28000015, 28000016, // Arena 10
-            26000062, 26000052 // Arena 11
+        public int[] CodigoCartas = { 0, 26000007, 26000012, 26000015, 26000016, 26000003, 26000014, 26000018, 28000000, 26000000, 26000001, 26000005, 28000001,
+               26000044, 28000004, 26000021, 27000001, 26000002, 26000019,
+               26000006, 26000020, 26000011, 27000009, 26000010, 26000013,
+               26000009,28000015,26000036,27000005,26000008,27000000,
+               26000029,26000032,26000004,28000007,26000039,27000003,26000022,28000008,
+               26000048,28000010,28000005,28000009,26000017,27000010,26000031,26000049,
+               26000037,28000011,26000054,27000008,26000057,28000003,26000056,27000002,
+               26000026,26000050,26000025,26000027,26000028,28000016,26000024,
+               26000023,26000035,26000034,28000012,26000038,27000007,26000030,28000017,
+               26000046,26000045,26000040,26000041,26000053,
+               26000055,26000062,28000002,26000059,27000004,26000043,
+               26000033,26000042,28000006,28000013,26000052,27000006
+        };
+
+        public string[] Dica = { "Clique com o botão direito do mouse nos formulários para ver mais opções", "Selecione sua Arena, Raridade e Tipo de Carta de preferência, em Gerador de Deck",
+                "Há 53.060.358.690 possibilidades de Decks diferentes", "Remova as Cartas que você não possui do ciclo de geração, em Seleção de Cartas",
+                "Salve seus Decks favoritos (Max: 50 Decks)", "Verifique atualizações periodicamente, em Atualizador", "Copie e cole Decks no dentro e fora do Programa",
+                "Embaralhe seus Decks no Gerador, clicando com o botão direito do mouse", "Clique no baú ao lado das dicas para ver os melhores Decks atualmente (M.E.T.A.)",
+                "Visite meu canal no YouTube, clicando no ícone do YouTube", "Clique em Buscar Deck para gerar Decks até encontrar com o Elixir médio escolhido",
+                "Clique em Configurações, para mudar algumas preferências de acordo com sua vontade", "Clique em Decks salvos para ver seu histórico de Decks",
+                "Clique com o botão direito do mouse em cima da Carta para ver mais opções", "Monte seu Deck trocando Carta por Carta no Gerador, clicando com o botão direito do mouse na Carta",
+                "Programa de Código aberto, para estudos da lógica e algoritmos", "Clique no ícone do GitHub, em Sobre, para ver o Código Fonte do programa",
+                "Envie dicas, críticas e bugs para o e-mail do desenvolvedor, em Sobre", "Ative a opção Gerador de Deck Inteligente para Gerar Decks melhores",
+                "Clique em Ligar Gerador para gerar Cartas sem parar, até desligar", "O Gerador de Deck Inteligente não depende da Arena, Raridade e Tipo escolhido",
+                "Desative/Ative a função Voltar ao Deck anterior, em Configurações", "Não é necessário Salvar nas Configurações, desmarcando/marcando já troca as funções. Mas é necessário salvar, caso queira que elas permaneçam",
+                "Baixe outras Versões do Gerador de Deck, em Atualizador", "Alterne entre os temas Claro, Escuro e Padrão, em Configurações", "Alterne entre os modos Minimalismo/Gráfico dos Decks salvos, em Configurações",
+                "Clique em Melhores Decks, para ver os Melhores Decks de todas as arenas atualmente", "Clique em Menu de Opções para ativar o efeito de slide",
+                "Clique em Balanceamento, para ver as informações do último Balanceamento feito no Clash Royale" };
+
+        public string[] Atalhos = {
+            "Pressione e segure G para Gerar Decks sem parar, em Gerador de Deck", "Pressione e segure E para Embaralhar o Deck sem parar, em Gerador de Deck", "Pressione Ctrl + C para Copiar o Deck, em Gerador de Deck",
+            "Pressione Ctrl + V para Colar o Deck, em Gerador de Deck", "Pressione Ctrl + S para Salvar o Deck, em Gerador de Deck", "Pressione Ctrl + L para Limpar o Deck, em Gerador de Deck", "Pressione P em Seleção de Cartas para focar na caixa de pesquisa",
         };
 
         public byte[] deckAtual = new byte[8];

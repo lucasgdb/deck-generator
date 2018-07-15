@@ -35,7 +35,7 @@
             // Variáveis
             this.components = new System.ComponentModel.Container();
             _Deck = new Classes.CartasInformacoes();
-            valores = new byte[] { 85, 85, 82, 78, 71, 64, 56, 47, 39, 31, 25, 19, 13 };
+            valores = new byte[] { 87, 87, 82, 75, 70, 62, 55, 47, 39, 31, 25, 19, 13 };
             arenas = new string[] { "Campo de Treino", "Estádio Goblin", "Fosso dos Ossos", "Torneio Bárbaro",
                 "Parquinho da P.E.K.K.A", "Vale dos Feitiços", "Oficina do Construtor", "Arena Real", "Pico Congelado",
                 "Arena da Selva", "Montanha do Porco", "Eletrovale", "Arena Lendária" };
@@ -783,8 +783,8 @@
             this.picDica.Click += (s, e) =>
             {
                 pGerador.Select();
-                byte i = System.Convert.ToByte(_Random.Next(0, Classes.CartasDescInfo.Dica.Length));
-                System.Windows.Forms.MessageBox.Show(Classes.CartasDescInfo.Dica[i] + '.', string.Format("Dica {0} de {1}", (i + 1).ToString().Length == 1 ? "0" + (i + 1) : (i + 1).ToString(), Classes.CartasDescInfo.Dica.Length), System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Information);
+                byte i = System.Convert.ToByte(_Random.Next(0, _Deck.Dica.Length));
+                System.Windows.Forms.MessageBox.Show(_Deck.Dica[i] + '.', string.Format("Dica {0} de {1}", (i + 1).ToString().Length == 1 ? "0" + (i + 1) : (i + 1).ToString(), _Deck.Dica.Length), System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Information);
             };
             ((System.ComponentModel.ISupportInitialize)(this.picDica)).EndInit();
 
@@ -1721,7 +1721,7 @@
                 Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0),
                 Location = new System.Drawing.Point(11, 405),
                 Size = new System.Drawing.Size(357, 25),
-                Text = "Versão atual do Clash Royale: 2.2.3"
+                Text = "Compatível com a versão 2.3.2 do Clash Royale"
             };
             this.lbl5.Click += (s, e) => pSobre.Select();
 
@@ -1742,9 +1742,9 @@
             {
                 pSobre.Select();
                 byte i = 0; System.Windows.Forms.DialogResult dialog;
-                do dialog = System.Windows.Forms.MessageBox.Show(Classes.CartasDescInfo.Atalhos[i] + '.' + System.Environment.NewLine + "Deseja ir para o próximo atalho?", string.Format("Atalho {0} de 0{1}", (i + 1).ToString().Length == 1 ? "0" + (++i) : (++i).ToString(), Classes.CartasDescInfo.Atalhos.Length), System.Windows.Forms.MessageBoxButtons.YesNo, System.Windows.Forms.MessageBoxIcon.Information);
-                while (dialog == System.Windows.Forms.DialogResult.Yes && i < Classes.CartasDescInfo.Atalhos.Length - 1);
-                if (dialog == System.Windows.Forms.DialogResult.Yes) System.Windows.Forms.MessageBox.Show(Classes.CartasDescInfo.Atalhos[Classes.CartasDescInfo.Atalhos.Length - 1] + '.', "Atalho 0" + Classes.CartasDescInfo.Atalhos.Length + " de 0" + Classes.CartasDescInfo.Atalhos.Length, System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Information);
+                do dialog = System.Windows.Forms.MessageBox.Show(_Deck.Atalhos[i] + '.' + System.Environment.NewLine + "Deseja ir para o próximo atalho?", string.Format("Atalho {0} de 0{1}", (i + 1).ToString().Length == 1 ? "0" + (++i) : (++i).ToString(), _Deck.Atalhos.Length), System.Windows.Forms.MessageBoxButtons.YesNo, System.Windows.Forms.MessageBoxIcon.Information);
+                while (dialog == System.Windows.Forms.DialogResult.Yes && i < _Deck.Atalhos.Length - 1);
+                if (dialog == System.Windows.Forms.DialogResult.Yes) System.Windows.Forms.MessageBox.Show(_Deck.Atalhos[_Deck.Atalhos.Length - 1] + '.', "Atalho 0" + _Deck.Atalhos.Length + " de 0" + _Deck.Atalhos.Length, System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Information);
             };
             ((System.ComponentModel.ISupportInitialize)(this.picAtalho)).EndInit();
 
@@ -1801,9 +1801,9 @@
             {
                 pSobre.Select();
                 byte i = 0; System.Windows.Forms.DialogResult dialog;
-                do dialog = System.Windows.Forms.MessageBox.Show(Classes.CartasDescInfo.Dica[i] + '.' + System.Environment.NewLine + "Deseja ir para a próxima dica?", string.Format("Dica {0} de {1}", (i + 1).ToString().Length == 1 ? "0" + (++i) : (++i).ToString(), Classes.CartasDescInfo.Dica.Length), System.Windows.Forms.MessageBoxButtons.YesNo, System.Windows.Forms.MessageBoxIcon.Information);
-                while (dialog == System.Windows.Forms.DialogResult.Yes && i < Classes.CartasDescInfo.Dica.Length - 1);
-                if (dialog == System.Windows.Forms.DialogResult.Yes) System.Windows.Forms.MessageBox.Show(Classes.CartasDescInfo.Dica[Classes.CartasDescInfo.Dica.Length - 1] + '.', "Dica " + Classes.CartasDescInfo.Dica.Length + " de " + Classes.CartasDescInfo.Dica.Length, System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Information);
+                do dialog = System.Windows.Forms.MessageBox.Show(_Deck.Dica[i] + '.' + System.Environment.NewLine + "Deseja ir para a próxima dica?", string.Format("Dica {0} de {1}", (i + 1).ToString().Length == 1 ? "0" + (++i) : (++i).ToString(), _Deck.Dica.Length), System.Windows.Forms.MessageBoxButtons.YesNo, System.Windows.Forms.MessageBoxIcon.Information);
+                while (dialog == System.Windows.Forms.DialogResult.Yes && i < _Deck.Dica.Length - 1);
+                if (dialog == System.Windows.Forms.DialogResult.Yes) System.Windows.Forms.MessageBox.Show(_Deck.Dica[_Deck.Dica.Length - 1] + '.', "Dica " + _Deck.Dica.Length + " de " + _Deck.Dica.Length, System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Information);
             };
             ((System.ComponentModel.ISupportInitialize)(this.picDica2)).EndInit();
 
@@ -2335,7 +2335,6 @@
             grpBoxSCartas = new System.Windows.Forms.GroupBox[_Deck.CartasInformacao.Length - 1];
             picCarta = new System.Windows.Forms.PictureBox[_Deck.CartasInformacao.Length - 1];
             lblInfo = new System.Windows.Forms.Label[_Deck.CartasInformacao.Length - 1];
-            btnInfo = new System.Windows.Forms.Button[_Deck.CartasInformacao.Length - 1];
             cbPermitir = new System.Windows.Forms.CheckBox[_Deck.CartasInformacao.Length - 1];
 
             txtPesquisa.AutoCompleteCustomSource = dados;
@@ -2386,23 +2385,12 @@
                   string.Format("Código: {0}", _Deck.CodigoCartas[i + 1]) + System.Environment.NewLine +
                   string.Format("Arena: {0}", arena == 0 ? "Campo de Treino" : arena.ToString())
                 };
-                // btnInfo
-                btnInfo[i] = new System.Windows.Forms.Button
-                {
-                    Text = "Descrição",
-                    FlatStyle = System.Windows.Forms.FlatStyle.Flat,
-                    Cursor = System.Windows.Forms.Cursors.Hand,
-                    Size = new System.Drawing.Size(80, 25),
-                    Font = new System.Drawing.Font(Font.FontFamily, 8.25f, System.Drawing.FontStyle.Bold),
-                    Location = new System.Drawing.Point(177, 136),
-                    ForeColor = System.Drawing.Color.White
-                };
                 // cbPermitir
                 cbPermitir[i] = new System.Windows.Forms.CheckBox
                 {
                     Text = "Permitir",
                     AutoSize = true,
-                    Location = new System.Drawing.Point(192, 116),
+                    Location = new System.Drawing.Point(192, 145),
                     Cursor = System.Windows.Forms.Cursors.Hand,
                     BackColor = System.Drawing.Color.Transparent
                 };
@@ -2411,7 +2399,6 @@
                 #region Métodos
                 if (ckNome.Checked)
                     tip.SetToolTip(picCarta[i], _Deck.CartasInformacao[i + 1].Split('\n')[0]);
-                tip.SetToolTip(btnInfo[i], "Descrição da Carta");
                 #endregion
 
                 int localInicialX = picCarta[i].Location.X, localInicialY = picCarta[i].Location.Y;
@@ -2462,13 +2449,6 @@
                     infoAdicional;
                 };
 
-                btnInfo[i].Click += (s, e) =>
-                {
-                    grpBoxSCartas[valorI].Select();
-                    string descricao = Classes.CartasDescInfo.Descricao[valorI + 1];
-                    System.Windows.Forms.MessageBox.Show(descricao, "Descrição - " + _Deck.CartasInformacao[valorI + 1].Split('\n')[0], System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Information);
-                };
-
                 cbPermitir[i].CheckedChanged += (s, e) => { ChecarCB(); };
 
                 lblInfo[i].Click += (s, e) => { grpBoxSCartas[valorI].Select(); };
@@ -2480,7 +2460,6 @@
                 pSelecaoDeCartas.Controls.Add(grpBoxSCartas[i]);
                 grpBoxSCartas[i].Controls.Add(picCarta[i]);
                 grpBoxSCartas[i].Controls.Add(lblInfo[i]);
-                grpBoxSCartas[i].Controls.Add(btnInfo[i]);
                 grpBoxSCartas[i].Controls.Add(cbPermitir[i]);
                 #endregion
 
@@ -2545,21 +2524,9 @@
                 Enabled = false,
                 Text = "Permitir",
                 AutoSize = true,
-                Location = new System.Drawing.Point(192, 116),
+                Location = new System.Drawing.Point(192, 145),
                 Cursor = System.Windows.Forms.Cursors.Hand,
                 BackColor = System.Drawing.Color.Transparent
-            };
-
-            btnProx = new System.Windows.Forms.Button()
-            {
-                Enabled = false,
-                Text = "Descrição",
-                FlatStyle = System.Windows.Forms.FlatStyle.Flat,
-                Cursor = System.Windows.Forms.Cursors.Hand,
-                Size = new System.Drawing.Size(80, 25),
-                Font = new System.Drawing.Font(Font.FontFamily, 8.25f, System.Drawing.FontStyle.Bold),
-                Location = new System.Drawing.Point(177, 136),
-                ForeColor = System.Drawing.Color.White
             };
 
             gbProx = new System.Windows.Forms.GroupBox()
@@ -2574,7 +2541,6 @@
             gbProx.Controls.Add(lblProx);
             gbProx.Controls.Add(picProx);
             gbProx.Controls.Add(cbProx);
-            gbProx.Controls.Add(btnProx);
 
             for (byte i = 0; i < tsItems.Length; i++)
             {
@@ -3687,7 +3653,6 @@
                 for (byte i = 0; i < (picImagemBalanceamento == null ? 0 : picImagemBalanceamento.Length); i++) picImagemBalanceamento[i].Dispose();
                 for (byte i = 0; i < (lblBalanceamento == null ? 0 : lblBalanceamento.Length); i++) lblBalanceamento[i].Dispose();
                 for (byte i = 0; i < (grpBoxBalanceamento == null ? 0 : grpBoxBalanceamento.Length); i++) grpBoxBalanceamento[i].Dispose();
-                for (byte i = 0; i < (cmsPicBalanceamento == null ? 0 : cmsPicBalanceamento.Length); i++) cmsPicBalanceamento[i].Dispose();
 
                 pBalanceamento.Controls.Remove(lblAjuda3);
 
@@ -3696,7 +3661,6 @@
                 grpBoxBalanceamento = new System.Windows.Forms.GroupBox[cartasBalanceadas.Length];
                 picImagemBalanceamento = new System.Windows.Forms.PictureBox[cartasBalanceadas.Length];
                 lblBalanceamento = new System.Windows.Forms.Label[cartasBalanceadas.Length];
-                cmsPicBalanceamento = new System.Windows.Forms.ContextMenuStrip[cartasBalanceadas.Length];
 
                 int yG = 30;
                 for (byte i = 0; i < cartasBalanceadas.Length; i++)
@@ -3777,19 +3741,6 @@
                         }
                     };
 
-                    cmsPicBalanceamento[i] = new System.Windows.Forms.ContextMenuStrip();
-                    cmsPicBalanceamento[i].Items.Add("Descrição da Carta");
-                    cmsPicBalanceamento[i].Items[0].Image = Properties.Resources.info.ToBitmap();
-                    cmsPicBalanceamento[i].Items[0].Click += (s, e) =>
-                    {
-                        grpBoxBalanceamento[copiaI].Select();
-                        for (byte j = 0; j < _Deck.CodigoCartas.Length; j++)
-                            if (cartasBalanceadas[copiaI].Split('|')[0] == _Deck.CodigoCartas[j].ToString())
-                                System.Windows.Forms.MessageBox.Show(Classes.CartasDescInfo.Descricao[j], "Descrição - " + _Deck.CartasInformacao[j].Split('\n')[0], System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Information);
-                    };
-
-                    picImagemBalanceamento[i].ContextMenuStrip = cmsPicBalanceamento[i];
-
                     lblBalanceamento[i] = new System.Windows.Forms.Label()
                     {
                         Location = new System.Drawing.Point(137, 84),
@@ -3867,7 +3818,6 @@
                         for (byte i = 0; i < (picImagemBalanceamento == null ? 0 : picImagemBalanceamento.Length); i++) picImagemBalanceamento[i].Dispose();
                         for (byte i = 0; i < (lblBalanceamento == null ? 0 : lblBalanceamento.Length); i++) lblBalanceamento[i].Dispose();
                         for (byte i = 0; i < (grpBoxBalanceamento == null ? 0 : grpBoxBalanceamento.Length); i++) grpBoxBalanceamento[i].Dispose();
-                        for (byte i = 0; i < (cmsPicBalanceamento == null ? 0 : cmsPicBalanceamento.Length); i++) cmsPicBalanceamento[i].Dispose();
                         pBalanceamento.Controls.Add(lblAjuda3);
                     }
                 }
@@ -4070,18 +4020,9 @@
 
                 CMS[i] = new System.Windows.Forms.ContextMenuStrip();
 
-                CMS[i].Items.Add("Descrição da Carta");
-                CMS[i].Items[0].Image = Properties.Resources.info.ToBitmap();
-                CMS[i].Items[0].Click += (s, e) =>
-                {
-                    pOpcoes.Select();
-                    string descricao = Classes.CartasDescInfo.Descricao[_Deck.deckAtual[valorI]];
-                    string txt = _Deck.CartasInformacao[_Deck.deckAtual[valorI]].Split('\n')[0];
-                    System.Windows.Forms.MessageBox.Show(descricao, "Descrição - " + (txt == "Nenhuma Carta selecionada" ? "Carta Inexistente" : txt), System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Information);
-                };
                 CMS[i].Items.Add("Trocar de Carta");
-                CMS[i].Items[1].Image = Properties.Resources.atualizar.ToBitmap();
-                CMS[i].Items[1].Click += (s, e) =>
+                CMS[i].Items[0].Image = Properties.Resources.atualizar.ToBitmap();
+                CMS[i].Items[0].Click += (s, e) =>
                 {
                     var codNome = CaixaDialogo(valorI);
                     for (byte j = 0; j < _Deck.CartasInformacao.Length; j++)
@@ -4099,8 +4040,8 @@
                     lblMedia.Text = string.Format("Elixir Médio: {0:f1}", media).Replace(',', '.');
                 };
                 CMS[i].Items.Add("Remover a Carta");
-                CMS[i].Items[2].Image = Properties.Resources.apagar.ToBitmap();
-                CMS[i].Items[2].Click += (s, e) =>
+                CMS[i].Items[1].Image = Properties.Resources.apagar.ToBitmap();
+                CMS[i].Items[1].Click += (s, e) =>
                 {
                     media -= _Deck.CustoElixir[_Deck.deckAtual[valorI]] / 8;
                     Cartas[valorI].Image = _Deck.CartasImagem[0];
@@ -4124,7 +4065,7 @@
             else { CorEscuro(); rbEscuro.Checked = true; }
         }
 
-        private byte bAtual = 40;
+        private byte bAtual = 41;
         private float media = 0.0f;
         private System.Random _Random = new System.Random();
         private System.Windows.Forms.AutoCompleteStringCollection dados = new System.Windows.Forms.AutoCompleteStringCollection();
@@ -4163,13 +4104,13 @@
         }
 
         string[] Defesa = { "Gigante", "Golem", "Gigante Real" };
-        string[] AtkTorre = { "Corredor", "Ariete de Batalha", "Gigante Real" };
+        string[] AtkTorre = { "Corredor", "Ariete de Batalha", "Gigante Real", "Porcos Reais" };
         string[] AP = { "Bárbaros de Elite", "Gigante Real", "P.E.K.K.A" };
         string[] C = { "Lápide", "Canhão" };
         string[] CV3 = { "Cabana de Bárbaros", "Cabana de Goblins", "Fornalha" };
         string[] CA = { "Sparky", "Esqueleto Gigante", "Megacavaleiro" };
         string[] Si = { "Morteiro", "X-Besta" };
-        string[] F = { "Flechas", "Bola de Fogo", "Veneno" };
+        string[] F = { "Flechas", "Bola de Fogo", "Veneno", "Bola de Neve" };
         string[] FV2 = { "Relâmpago", "Foguete" };
         string[] FV3 = { "Zap", "Tronco" };
         string[] FV4 = { "Fúria", "Tornado" };
@@ -4330,7 +4271,8 @@
                 ForeColor = corLetra,
                 Icon = Icon,
                 Text = "Trocador de Carta",
-                ShowInTaskbar = false
+                ShowInTaskbar = false,
+                KeyPreview = true
             };
 
             System.Drawing.Point point, point2; int x = 0, y = 0, x2 = 0, y2 = 0; bool click = false;
@@ -4561,7 +4503,7 @@
 
             frmDialog.Load += (s, e) =>
             {
-                pFundo.Select();
+                txtResposta.Select();
                 cbCartas.Items.Add(_Deck.CartasInformacao[0]);
 
                 byte qtdCartas = 0;
@@ -4598,6 +4540,10 @@
                 tList.Add(txtResposta); sList.Add("Digite o Nome ou Código da Carta para Trocar");
                 SetCueText(ref tList, sList);
             };
+            frmDialog.KeyDown += (s, e) =>
+            {
+                if (e.KeyCode == System.Windows.Forms.Keys.Enter) Trocar();
+            };
             frmDialog.Deactivate += (s, e) =>
             {
                 if (ckDesfoque.Checked) frmDialog.Opacity = 0.93;
@@ -4633,7 +4579,6 @@
                                 { cbCartas.SelectedIndex = j; break; }
                                 else if (j == cbCartas.Items.Count - 1) cbCartas.SelectedIndex = 0;
             };
-            txtResposta.KeyUp += (s, e) => { if (e.KeyCode == System.Windows.Forms.Keys.Enter) Trocar(); };
             picCarta.Click += (s, e) =>
             {
                 for (byte i = 0; i < _Deck.CartasInformacao.Length; i++)
@@ -4771,7 +4716,6 @@
             }
             btnMinimizar.FlatAppearance.MouseDownBackColor = corFundoClick;
             btnRedimensionar.FlatAppearance.MouseDownBackColor = corFundoClick;
-            for (byte i = 0; i < btnInfo.Length; i++) { btnInfo[i].BackColor = corFundo2; btnInfo[i].FlatAppearance.MouseDownBackColor = corFundoClick; }
             for (byte i = 0; i < (btnCopia == null ? 0 : btnCopia.Length); i++) { btnCopia[i].BackColor = corFundo2; btnCopia[i].FlatAppearance.MouseDownBackColor = corFundo2; }
             for (byte i = 0; i < (btnCola == null ? 0 : btnCola.Length); i++) { btnCola[i].BackColor = corFundo2; btnCola[i].FlatAppearance.MouseDownBackColor = corFundo2; }
             for (byte i = 0; i < (btnCopiaMDecks == null ? 0 : btnCopiaMDecks.Length); i++) { btnCopiaMDecks[i].BackColor = corFundo2; btnCopiaMDecks[i].FlatAppearance.MouseDownBackColor = corFundo2; }
@@ -5532,11 +5476,9 @@
         System.Windows.Forms.Label lblProx;
         System.Windows.Forms.PictureBox picProx;
         System.Windows.Forms.CheckBox cbProx;
-        System.Windows.Forms.Button btnProx;
         System.Windows.Forms.PictureBox[] picCarta;
         System.Windows.Forms.Label[] lblInfo;
         System.Windows.Forms.CheckBox[] cbPermitir;
-        System.Windows.Forms.Button[] btnInfo;
         System.Windows.Forms.Button btnSalvar = new System.Windows.Forms.Button()
         {
             Anchor = System.Windows.Forms.AnchorStyles.Top,
@@ -5663,7 +5605,6 @@
         System.Windows.Forms.GroupBox[] grpBoxBalanceamento;
         System.Windows.Forms.PictureBox[] picImagemBalanceamento;
         System.Windows.Forms.Label[] lblBalanceamento;
-        System.Windows.Forms.ContextMenuStrip[] cmsPicBalanceamento;
         System.Windows.Forms.Label lblAjuda3 = new System.Windows.Forms.Label()
         {
             AutoSize = true,

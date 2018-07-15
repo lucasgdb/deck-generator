@@ -1,12 +1,12 @@
 ﻿# Gerador de Deck para Clash Royale
 
-<img align="center" src="https://i.imgur.com/6MppiSV.jpg">
+<img align="center" src="https://i.imgur.com/Q1hcAky.png">
 
 ## Informações
 - **Escrito do zero, com Código aprimorado**
 - **Gerador de Deck multifunções para Clash Royale**
 - **Gere de Decks aleatórios e Inteligentes**
-- **Há 43.595.145.594 possibilidades de Decks diferentes**
+- **Há 53.060.358.690 possibilidades de Decks diferentes**
 - **Remova do ciclo de geração as Cartas que você não possui**
 - **Salve seus melhores Decks para maior controle de Decks (Max: 50)**
 - **Veja os melhores Decks atualmente, em Melhores Decks**
@@ -16,12 +16,12 @@
 - **Gratuito e livre de propagandas**
 - **O melhor e mais rápido**
 
-## Scan: [Clique aqui](https://www.virustotal.com/#/file/0c9ebf77a39083452f06724b920b5fdb9536b054d7dbe68c57ded225b0a8aa9f/detection)
+## Scan: [Clique aqui](https://www.virustotal.com/#/file/a38cb5f548c521dc08110fbee8d41bd59ba636c9749e29e40c1d32577c8ef319/detection)
 - **Livre de Vírus e Trojans**
 - **Código limpo**
 
 ## Download: [Clique aqui](https://drive.google.com/uc?authuser=0&id=1vuXyuBnBiT8DRhQUed6OYj3OwsCb-eQH&export=download)
 - **Versão atual: 3.0 (Versão final)**
-- **Build atual: 40**
+- **Build atual: 41**
 
-<img align="center" src="https://i.imgur.com/k1wZ7cU.jpg">
+<img align="center" src="https://i.imgur.com/5OaoG37.png">
