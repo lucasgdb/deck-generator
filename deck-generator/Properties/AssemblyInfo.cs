@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("Gerador de Deck")]
 [assembly: AssemblyDescription("Gerador de Deck para Clash Royale (multifunção)")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("YouTube.com/c/LucasNaja")]
+[assembly: AssemblyCompany("http://github.com/LucasNaja")]
 [assembly: AssemblyProduct("Gerador de Deck")]
 [assembly: AssemblyCopyright("Copyright ©  2018")]
 [assembly: AssemblyTrademark("Lucas Naja")]
