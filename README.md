@@ -1,6 +1,6 @@
 ﻿# Gerador de Deck para Clash Royale
 
-<img align="center" src="https://i.imgur.com/Q1hcAky.png">
+<img align="center" src="https://i.imgur.com/GoD5s0t.png">
 
 ## Informações
 - **Escrito do zero, com Código aprimorado**
@@ -16,12 +16,12 @@
 - **Gratuito e livre de propagandas**
 - **O melhor e mais rápido**
 
-## Scan: [Clique aqui](https://www.virustotal.com/#/file/a38cb5f548c521dc08110fbee8d41bd59ba636c9749e29e40c1d32577c8ef319/detection)
+## Scan: [Clique aqui](https://www.virustotal.com/#/file/0385e4dedb862289ea6ee6267cd1c604e72dd36253a4b878085c29d86c7a7b13/detection)
 - **Livre de Vírus e Trojans**
 - **Código limpo**
 
 ## Download: [Clique aqui](https://drive.google.com/uc?authuser=0&id=1vuXyuBnBiT8DRhQUed6OYj3OwsCb-eQH&export=download)
 - **Versão atual: 3.0 (Versão final)**
-- **Build atual: 41**
+- **Build atual: 42**
 
-<img align="center" src="https://i.imgur.com/5OaoG37.png">
+<img align="center" src="https://i.imgur.com/b8QXLEp.png">

@@ -190,5 +190,17 @@ namespace Gerador_de_Deck.Properties {
                 this["maior"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool topmost {
+            get {
+                return ((bool)(this["topmost"]));
+            }
+            set {
+                this["topmost"] = value;
+            }
+        }
     }
 }

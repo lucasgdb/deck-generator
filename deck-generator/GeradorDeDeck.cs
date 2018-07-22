@@ -747,13 +747,29 @@
             this.menuStripGerador.ResumeLayout(false);
             this.menuStripGerador.PerformLayout();
 
+            this.picGitHub2 = new System.Windows.Forms.PictureBox
+            {
+                Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right,
+                BackColor = System.Drawing.Color.Transparent,
+                Cursor = System.Windows.Forms.Cursors.Hand,
+                Image = Properties.Resources.github.ToBitmap(),
+                Location = new System.Drawing.Point(97, 6),
+                Size = new System.Drawing.Size(27, 26),
+                SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage,
+                TabStop = false
+            };
+            ((System.ComponentModel.ISupportInitialize)(this.picGitHub2)).BeginInit();
+            this.tip.SetToolTip(this.picGitHub2, "GitHub");
+            this.picGitHub2.Click += (s, e) => System.Diagnostics.Process.Start("https://github.com/LucasNaja/deck-generator");
+            ((System.ComponentModel.ISupportInitialize)(this.picGitHub2)).EndInit();
+
             this.picBau = new System.Windows.Forms.PictureBox
             {
                 Anchor = System.Windows.Forms.AnchorStyles.Top,
                 BackColor = System.Drawing.Color.Transparent,
                 Cursor = System.Windows.Forms.Cursors.Hand,
                 Image = Properties.Resources.bau.ToBitmap(),
-                Location = new System.Drawing.Point(97, 6),
+                Location = new System.Drawing.Point(130, 6),
                 Size = new System.Drawing.Size(27, 26),
                 SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage,
                 TabStop = false
@@ -773,7 +789,7 @@
                 BackColor = System.Drawing.Color.Transparent,
                 Cursor = System.Windows.Forms.Cursors.Hand,
                 Image = Properties.Resources.dica.ToBitmap(),
-                Location = new System.Drawing.Point(130, 6),
+                Location = new System.Drawing.Point(163, 6),
                 Size = new System.Drawing.Size(27, 26),
                 SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage,
                 TabStop = false
@@ -787,22 +803,6 @@
                 System.Windows.Forms.MessageBox.Show(_Deck.Dica[i] + '.', string.Format("Dica {0} de {1}", (i + 1).ToString().Length == 1 ? "0" + (i + 1) : (i + 1).ToString(), _Deck.Dica.Length), System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Information);
             };
             ((System.ComponentModel.ISupportInitialize)(this.picDica)).EndInit();
-
-            this.picYouTube = new System.Windows.Forms.PictureBox
-            {
-                Anchor = System.Windows.Forms.AnchorStyles.Top,
-                BackColor = System.Drawing.Color.Transparent,
-                Cursor = System.Windows.Forms.Cursors.Hand,
-                Image = Properties.Resources.youtube,
-                Location = new System.Drawing.Point(163, 6),
-                Size = new System.Drawing.Size(27, 26),
-                SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage,
-                TabStop = false
-            };
-            ((System.ComponentModel.ISupportInitialize)(this.picYouTube)).BeginInit();
-            this.tip.SetToolTip(this.picYouTube, "YouTube");
-            this.picYouTube.Click += (s, e) => System.Diagnostics.Process.Start("https://www.youtube.com/c/lucasnaja");
-            ((System.ComponentModel.ISupportInitialize)(this.picYouTube)).EndInit();
 
             this.btnDiminuirArena = new System.Windows.Forms.Button
             {
@@ -1333,9 +1333,9 @@
             this.pGerador.Controls.Add(this.btnDiminuirTipo);
             this.pGerador.Controls.Add(this.cbTipo);
             this.pGerador.Controls.Add(this.btnAumentarTipo);
+            this.pGerador.Controls.Add(this.picGitHub2);
             this.pGerador.Controls.Add(this.picBau);
             this.pGerador.Controls.Add(this.picDica);
-            this.pGerador.Controls.Add(this.picYouTube);
             this.pGerador.Controls.Add(this.cbRaridade);
             this.pGerador.Controls.Add(this.lblInformacoes);
             this.pGerador.Controls.Add(this.lbl1);
@@ -1579,13 +1579,14 @@
             {
                 Anchor = System.Windows.Forms.AnchorStyles.Top,
                 AutoSize = true,
+                Cursor = System.Windows.Forms.Cursors.Hand,
                 BackColor = System.Drawing.Color.Transparent,
                 Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0),
                 Size = new System.Drawing.Size(392, 25),
                 Text = "Programa Desenvolvido por Lucas Naja"
             };
             lbl2.Location = new System.Drawing.Point((pSobre.Size.Width - lbl2.Size.Width) / 2, 9);
-            this.lbl2.Click += (s, e) => System.Diagnostics.Process.Start("https://www.youtube.com/c/lucasnaja");
+            this.lbl2.Click += (s, e) => System.Diagnostics.Process.Start("https://github.com/LucasNaja");
 
             this.lbl3 = new System.Windows.Forms.Label
             {
@@ -1615,7 +1616,7 @@
             {
                 Anchor = System.Windows.Forms.AnchorStyles.Top,
                 BackColor = System.Drawing.Color.Transparent,
-                Cursor = System.Windows.Forms.Cursors.Default,
+                Cursor = System.Windows.Forms.Cursors.Hand,
                 Image = Properties.Resources.Logo,
                 Location = new System.Drawing.Point(159, 94),
                 Size = new System.Drawing.Size(213, 224),
@@ -1623,7 +1624,7 @@
                 TabStop = false
             };
             ((System.ComponentModel.ISupportInitialize)(this.picCanal)).BeginInit();
-            this.picCanal.Click += (s, e) => System.Diagnostics.Process.Start("https://www.youtube.com/c/lucasnaja");
+            this.picCanal.Click += (s, e) => System.Diagnostics.Process.Start("https://github.com/LucasNaja");
             ((System.ComponentModel.ISupportInitialize)(this.picCanal)).EndInit();
 
             this.lbl6 = new System.Windows.Forms.Label
@@ -1674,7 +1675,7 @@
                 Size = new System.Drawing.Size(160, 25),
                 Text = "• &Código aberto"
             };
-            this.lbl9.Click += (s, e) => System.Diagnostics.Process.Start("https://github.com/LucasNaja/DeckGenerator");
+            this.lbl9.Click += (s, e) => System.Diagnostics.Process.Start("https://github.com/LucasNaja/deck-generator");
 
             this.lbl10 = new System.Windows.Forms.Label
             {
@@ -1731,7 +1732,7 @@
                 BackColor = System.Drawing.Color.Transparent,
                 Cursor = System.Windows.Forms.Cursors.Hand,
                 Image = Properties.Resources.atalho.ToBitmap(),
-                Location = new System.Drawing.Point(596, 407),
+                Location = new System.Drawing.Point(629, 407),
                 Size = new System.Drawing.Size(27, 26),
                 SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage,
                 TabStop = false
@@ -1754,14 +1755,14 @@
                 BackColor = System.Drawing.Color.Transparent,
                 Cursor = System.Windows.Forms.Cursors.Hand,
                 Image = Properties.Resources.github.ToBitmap(),
-                Location = new System.Drawing.Point(629, 404),
+                Location = new System.Drawing.Point(662, 404),
                 Size = new System.Drawing.Size(27, 26),
                 SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage,
                 TabStop = false
             };
             ((System.ComponentModel.ISupportInitialize)(this.picGitHub)).BeginInit();
             this.tip.SetToolTip(this.picGitHub, "GitHub");
-            this.picGitHub.Click += (s, e) => System.Diagnostics.Process.Start("https://github.com/LucasNaja/DeckGenerator");
+            this.picGitHub.Click += (s, e) => System.Diagnostics.Process.Start("https://github.com/LucasNaja/deck-generator");
             ((System.ComponentModel.ISupportInitialize)(this.picGitHub)).EndInit();
 
             this.picBau2 = new System.Windows.Forms.PictureBox
@@ -1770,7 +1771,7 @@
                 BackColor = System.Drawing.Color.Transparent,
                 Cursor = System.Windows.Forms.Cursors.Hand,
                 Image = Properties.Resources.bau.ToBitmap(),
-                Location = new System.Drawing.Point(662, 404),
+                Location = new System.Drawing.Point(695, 404),
                 Size = new System.Drawing.Size(27, 26),
                 SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage,
                 TabStop = false
@@ -1790,7 +1791,7 @@
                 BackColor = System.Drawing.Color.Transparent,
                 Cursor = System.Windows.Forms.Cursors.Hand,
                 Image = Properties.Resources.dica.ToBitmap(),
-                Location = new System.Drawing.Point(695, 404),
+                Location = new System.Drawing.Point(728, 404),
                 Size = new System.Drawing.Size(27, 26),
                 SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage,
                 TabStop = false
@@ -1807,22 +1808,6 @@
             };
             ((System.ComponentModel.ISupportInitialize)(this.picDica2)).EndInit();
 
-            this.picYouTube2 = new System.Windows.Forms.PictureBox
-            {
-                Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right,
-                BackColor = System.Drawing.Color.Transparent,
-                Cursor = System.Windows.Forms.Cursors.Hand,
-                Image = Properties.Resources.youtube,
-                Location = new System.Drawing.Point(728, 404),
-                Size = new System.Drawing.Size(27, 26),
-                SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage,
-                TabStop = false
-            };
-            ((System.ComponentModel.ISupportInitialize)(this.picYouTube2)).BeginInit();
-            this.tip.SetToolTip(this.picYouTube2, "YouTube");
-            this.picYouTube2.Click += (s, e) => System.Diagnostics.Process.Start("https://www.youtube.com/c/lucasnaja");
-            ((System.ComponentModel.ISupportInitialize)(this.picYouTube2)).EndInit();
-
             this.pSobre.SuspendLayout();
             this.pSobre.Controls.Add(this.lbl12);
             this.pSobre.Controls.Add(this.lblBuild2);
@@ -1830,7 +1815,6 @@
             this.pSobre.Controls.Add(this.picGitHub);
             this.pSobre.Controls.Add(this.picBau2);
             this.pSobre.Controls.Add(this.picDica2);
-            this.pSobre.Controls.Add(this.picYouTube2);
             this.pSobre.Controls.Add(this.lbl11);
             this.pSobre.Controls.Add(this.lbl10);
             this.pSobre.Controls.Add(this.lbl9);
@@ -2101,6 +2085,28 @@
             if (!Properties.Settings.Default.voltarDeck) btnVoltarDeck.Visible = false;
             else ckVoltarDeck.Checked = true;
 
+            this.ckTopMost = new System.Windows.Forms.CheckBox
+            {
+                Anchor = System.Windows.Forms.AnchorStyles.Top,
+                AutoSize = true,
+                BackColor = System.Drawing.Color.Transparent,
+                Cursor = System.Windows.Forms.Cursors.Hand,
+                Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0),
+                ForeColor = System.Drawing.Color.White,
+                Location = new System.Drawing.Point(221, 165),
+                Size = new System.Drawing.Size(267, 24),
+                Text = "Permanecer sempre no 1° plano",
+                UseVisualStyleBackColor = false,
+                TabIndex = 5
+            };
+            this.ckTopMost.CheckedChanged += (s, e) =>
+            {
+                if (ckTopMost.Checked) this.TopMost = true;
+                else this.TopMost = false;
+            };
+            if (Properties.Settings.Default.topmost)
+                this.ckTopMost.Checked = true;
+
             this.rbMin = new System.Windows.Forms.RadioButton
             {
                 AutoSize = true,
@@ -2154,7 +2160,7 @@
                 BackColor = System.Drawing.Color.Transparent,
                 Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0),
                 ForeColor = System.Drawing.Color.White,
-                Location = new System.Drawing.Point(218, 170),
+                Location = new System.Drawing.Point(218, 195),
                 Size = new System.Drawing.Size(330, 52),
                 TabStop = false,
                 Text = "Elixir Médio total de Cartas ao mudar Arena/Raridade",
@@ -2220,7 +2226,7 @@
                 BackColor = System.Drawing.Color.Transparent,
                 Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0),
                 ForeColor = System.Drawing.Color.White,
-                Location = new System.Drawing.Point(218, 228),
+                Location = new System.Drawing.Point(218, 253),
                 Size = new System.Drawing.Size(330, 52),
                 TabStop = false,
                 Text = "Temas",
@@ -2271,7 +2277,7 @@
                 BackColor = System.Drawing.Color.Transparent,
                 Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0),
                 ForeColor = System.Drawing.Color.White,
-                Location = new System.Drawing.Point(218, 286),
+                Location = new System.Drawing.Point(218, 311),
                 Size = new System.Drawing.Size(330, 52),
                 TabStop = false,
                 Text = "Decks salvos - Modo",
@@ -2289,7 +2295,7 @@
                 Cursor = System.Windows.Forms.Cursors.Hand,
                 Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0),
                 ForeColor = System.Drawing.Color.White,
-                Location = new System.Drawing.Point(218, 344),
+                Location = new System.Drawing.Point(218, 369),
                 Size = new System.Drawing.Size(130, 40),
                 Text = "&Salvar",
                 UseVisualStyleBackColor = false,
@@ -2305,6 +2311,7 @@
             this.pConfig.Controls.Add(this.gbTema);
             this.pConfig.Controls.Add(this.gbCusto);
             this.pConfig.Controls.Add(this.ckVoltarDeck);
+            this.pConfig.Controls.Add(this.ckTopMost);
             this.pConfig.Controls.Add(this.btnCSalvar);
             this.pConfig.Controls.Add(this.ckDesfoque);
             this.pConfig.Controls.Add(this.lblTamanho);
@@ -3948,7 +3955,7 @@
 
             // Variáveis de controles e Métodos
             System.Windows.Forms.PictureBox[]
-            Icons = { picYouTube, picDica, picBau, picBau2, picYouTube2, picDica2, picGitHub, picAtalho };
+            Icons = { picGitHub2, picDica, picBau, picBau2, picDica2, picGitHub, picAtalho };
             Cartas = new System.Windows.Forms.PictureBox[8] { Carta1, Carta2, Carta3, Carta4, Carta5, Carta6, Carta7, Carta8 };
             System.Windows.Forms.ContextMenuStrip[] CMS = new System.Windows.Forms.ContextMenuStrip[8];
             posInicialGD = new System.Drawing.Point[8];
@@ -4065,7 +4072,7 @@
             else { CorEscuro(); rbEscuro.Checked = true; }
         }
 
-        private byte bAtual = 41;
+        private byte bAtual = 42;
         private float media = 0.0f;
         private System.Random _Random = new System.Random();
         private System.Windows.Forms.AutoCompleteStringCollection dados = new System.Windows.Forms.AutoCompleteStringCollection();
@@ -4755,6 +4762,7 @@
             pSelected.BackColor = corFundo;
             picGIF.Image = Properties.Resources.gifEscuro;
             picGitHub.Image = Properties.Resources.github.ToBitmap();
+            picGitHub2.Image = Properties.Resources.github.ToBitmap();
 
             System.Windows.Forms.ComboBox[] cbo = { cbArena, cbRaridade, cbTipo, cbSort };
             for (byte i = 0; i < cbo.Length; i++) { cbo[i].BackColor = corLetra; cbo[i].ForeColor = corFundo; }
@@ -4774,6 +4782,7 @@
             pSelected.BackColor = System.Drawing.Color.Teal;
             picGIF.Image = Properties.Resources.gifBranco;
             picGitHub.Image = Properties.Resources.github_icon;
+            picGitHub2.Image = Properties.Resources.github_icon;
 
             System.Windows.Forms.ComboBox[] cbo = { cbArena, cbRaridade, cbTipo, cbSort };
             for (byte i = 0; i < cbo.Length; i++) { cbo[i].BackColor = corFundo2; cbo[i].ForeColor = corLetra; }
@@ -4794,6 +4803,7 @@
             pSelected.BackColor = System.Drawing.Color.White;
             picGIF.Image = Properties.Resources.gifBranco;
             picGitHub.Image = Properties.Resources.github_icon;
+            picGitHub2.Image = Properties.Resources.github_icon;
 
             System.Windows.Forms.ComboBox[] cbo = { cbArena, cbRaridade, cbTipo, cbSort };
             for (byte i = 0; i < cbo.Length; i++) { cbo[i].BackColor = corFundo2; cbo[i].ForeColor = corLetra; }
@@ -5014,6 +5024,9 @@
             if (ckVoltarDeck.Checked) Properties.Settings.Default.voltarDeck = true;
             else Properties.Settings.Default.voltarDeck = false;
 
+            if (ckTopMost.Checked) Properties.Settings.Default.topmost = true;
+            else Properties.Settings.Default.topmost = false;
+
             if (rbMin.Checked) Properties.Settings.Default.minmmax = 0;
             else if (rbMed.Checked) Properties.Settings.Default.minmmax = 1;
             else Properties.Settings.Default.minmmax = 2;
@@ -5100,20 +5113,30 @@
                 nUpTCarta.Value = 0;
                 nUpTCarta.Enabled = false;
             }
+
             if (Properties.Settings.Default.tipCartas) ckNome.Checked = true;
             else ckNome.Checked = false;
+
             if (Properties.Settings.Default.cliqueCartas) ckEfeitoClick.Checked = true;
             else ckEfeitoClick.Checked = false;
+
             if (Properties.Settings.Default.desfoque) ckDesfoque.Checked = true;
             else ckDesfoque.Checked = false;
+
             if (Properties.Settings.Default.voltarDeck) ckVoltarDeck.Checked = true;
             else ckVoltarDeck.Checked = false;
+
+            if (Properties.Settings.Default.topmost) this.ckTopMost.Checked = true;
+            else this.ckTopMost.Checked = false;
+
             if (Properties.Settings.Default.minmmax == 0) rbMin.Checked = true;
             else if (Properties.Settings.Default.minmmax == 1) rbMed.Checked = true;
             else rbMax.Checked = true;
+
             if (Properties.Settings.Default.tema == 0) rbClaro.Checked = true;
             else if (Properties.Settings.Default.tema == 2) rbEscuro.Checked = true;
             else rbPadrao.Checked = true;
+
             if (Properties.Settings.Default.modo == true) rbGrafico.Checked = true;
             else rbMinimalistico.Checked = true;
         }
@@ -5128,8 +5151,9 @@
             nUpTCarta.Enabled = true;
             ckDesfoque.Checked = true;
             ckVoltarDeck.Checked = true;
+            ckTopMost.Checked = false;
             rbMed.Checked = true;
-            rbPadrao.Checked = true;
+            rbEscuro.Checked = true;
             rbMinimalistico.Checked = true;
         }
 
@@ -5437,9 +5461,9 @@
         private System.Windows.Forms.ContextMenuStrip CMSGerador;
         private System.Windows.Forms.ToolStripMenuItem TSIGerador;
         private System.Windows.Forms.MenuStrip menuStripGerador;
+        private System.Windows.Forms.PictureBox picGitHub2;
         private System.Windows.Forms.PictureBox picBau;
         private System.Windows.Forms.PictureBox picDica;
-        private System.Windows.Forms.PictureBox picYouTube;
         private System.Windows.Forms.Label lblMedia;
         private System.Windows.Forms.Label lbl1;
         private System.Windows.Forms.Label lblInformacoes;
@@ -5624,6 +5648,7 @@
         private System.Windows.Forms.ContextMenuStrip CMSConfig;
         private System.Windows.Forms.CheckBox ckDesfoque;
         private System.Windows.Forms.CheckBox ckVoltarDeck;
+        private System.Windows.Forms.CheckBox ckTopMost;
         private System.Windows.Forms.GroupBox gbTema;
         private System.Windows.Forms.RadioButton rbEscuro;
         private System.Windows.Forms.RadioButton rbClaro;
@@ -5655,7 +5680,6 @@
         private System.Windows.Forms.PictureBox picCanal;
         private System.Windows.Forms.PictureBox picBau2;
         private System.Windows.Forms.PictureBox picDica2;
-        private System.Windows.Forms.PictureBox picYouTube2;
         private System.Windows.Forms.PictureBox picGitHub;
         private System.Windows.Forms.PictureBox picAtalho;
         private System.Windows.Forms.Label lbl2;

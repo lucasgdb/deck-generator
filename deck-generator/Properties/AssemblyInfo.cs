@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 // conjunto de atributos. Altere estes valores de atributo para modificar as informações
 // associada a um assembly.
 [assembly: AssemblyTitle("Gerador de Deck")]
-[assembly: AssemblyDescription("Gerador de Deck para Clash Royale (multifunções)")]
+[assembly: AssemblyDescription("Gerador de Deck para Clash Royale (multifunção)")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("YouTube.com/c/LucasNaja")]
 [assembly: AssemblyProduct("Gerador de Deck")]
@@ -33,7 +33,7 @@ using System.Runtime.InteropServices;
 // É possível especificar todos os valores ou usar como padrão os Números de Build e da Revisão
 // utilizando o "*" como mostrado abaixo:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("3.0.41")]
-[assembly: AssemblyFileVersion("3.0.41")]
+[assembly: AssemblyVersion("3.0.42")]
+[assembly: AssemblyFileVersion("3.0.42")]
 [assembly: NeutralResourcesLanguage("pt-BR")]
 
