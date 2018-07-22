@@ -4723,6 +4723,7 @@
             }
             btnMinimizar.FlatAppearance.MouseDownBackColor = corFundoClick;
             btnRedimensionar.FlatAppearance.MouseDownBackColor = corFundoClick;
+
             for (byte i = 0; i < (btnCopia == null ? 0 : btnCopia.Length); i++) { btnCopia[i].BackColor = corFundo2; btnCopia[i].FlatAppearance.MouseDownBackColor = corFundo2; }
             for (byte i = 0; i < (btnCola == null ? 0 : btnCola.Length); i++) { btnCola[i].BackColor = corFundo2; btnCola[i].FlatAppearance.MouseDownBackColor = corFundo2; }
             for (byte i = 0; i < (btnCopiaMDecks == null ? 0 : btnCopiaMDecks.Length); i++) { btnCopiaMDecks[i].BackColor = corFundo2; btnCopiaMDecks[i].FlatAppearance.MouseDownBackColor = corFundo2; }
@@ -4738,7 +4739,7 @@
             valorMedia.BackColor = nUpTCarta.BackColor = corFundo;
             valorMedia.ForeColor = nUpTCarta.ForeColor = corLetra;
 
-            System.Windows.Forms.CheckBox[] ck = { chkBuscarDeck, ckGInteligente, ckNome, ckEfeitoClick, ckEfeitoMouse, ckDesfoque, ckVoltarDeck };
+            System.Windows.Forms.CheckBox[] ck = { chkBuscarDeck, ckGInteligente, ckNome, ckEfeitoClick, ckEfeitoMouse, ckDesfoque, ckVoltarDeck, ckTopMost };
             for (byte i = 0; i < ck.Length; i++) ck[i].ForeColor = corLetra;
 
             rbMin.ForeColor = rbMed.ForeColor = rbMax.ForeColor = corLetra = rbGrafico.ForeColor =
