@@ -2880,7 +2880,7 @@
                 AutoScroll = true,
                 BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle,
                 Location = new System.Drawing.Point(167, 29),
-                Size = new System.Drawing.Size(766, 441),
+                Size = new System.Drawing.Size(766, 441)
             };
             this.pDecksSalvos.Click += (s, e) => pDecksSalvos.Select();
 
@@ -2914,8 +2914,8 @@
             TSMIDS.DropDownItems[1].Image = Properties.Resources.apagar.ToBitmap();
             menuStripDS.Items.Add(TSMIDS);
             // Eventos
-            conMenu.Items[1].Click += (s, e) => ApagarTodos();
             conMenu.Items[0].Click += (s, e) => CriaDecksSalvos();
+            conMenu.Items[1].Click += (s, e) => ApagarTodos();
             TSMIDS.DropDownItems[0].Click += (s, e) => { pDecksSalvos.Select(); CriaDecksSalvos(); };
             TSMIDS.DropDownItems[1].Click += (s, e) => { pDecksSalvos.Select(); ApagarTodos(); };
 
@@ -2985,7 +2985,7 @@
                     };
                     grpBoxDSalvos[i].Location = new System.Drawing.Point((pDecksSalvos.Size.Width - grpBoxDSalvos[i].Size.Width) / 2 - 30, yG);
 
-                    float m = 0.0f;
+                    double m = 0.0d;
                     for (byte b = 0; b < decksSalvos[i].Split(';').Length; b++)
                         for (byte j = 0; j < _Deck.CustoElixir.Length; j++) if (decksSalvos[i].Split(';')[b] == _Deck.CodigoCartas[j].ToString()) m += _Deck.CustoElixir[j] / 8;
                     grpBoxDSalvos[i].Text = string.Format("Deck {0} - Elixir Médio: {1:f1}", i + 1, m).Replace(',', '.');
@@ -3405,7 +3405,7 @@
                     cmsGBMDecks[i].Items[2].Image = Properties.Resources.salvar.ToBitmap();
                     cmsGBMDecks[i].Items[2].Click += (s, e) => SalvarMD();
 
-                    float elixirMedio = 0.0f;
+                    double elixirMedio = 0.0f;
                     for (byte j = 0; j < melhoresDecks[i].Split('|')[0].Split(';').Length; j++)
                         for (byte k = 1; k < _Deck.CodigoCartas.Length; k++)
                             if (melhoresDecks[i].Split('|')[0].Split(';')[j] == _Deck.CodigoCartas[k].ToString())
@@ -3856,6 +3856,7 @@
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(this.ClientSize.Width, 470);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.KeyPreview = true;
             this.Controls.Add(this.pBarra);
             this.Controls.Add(this.pBarra2);
             this.Controls.Add(this.pOpcoes);
@@ -3948,6 +3949,22 @@
                 nIcon.DoubleClick += (ss, ee) => SwitchToThisWindow(this.Handle);
 
                 SwitchToThisWindow(this.Handle);
+            };
+            this.KeyDown += (s, e) =>
+            {
+                if (e.KeyCode == System.Windows.Forms.Keys.F5)
+                    if (pGerador.Visible)
+                        GerarDeck();
+                    else if (pSelecaoDeCartas.Visible)
+                        Atualizar();
+                    else if (pDecksSalvos.Visible)
+                        CriaDecksSalvos();
+                    else if (pMelhoresDecks.Visible && tsmiMDecks.DropDownItems[0].Enabled)
+                        BaixaMelhoresDecks();
+                    else if (pBalanceamento.Visible && tsmiBalanceamento.DropDownItems[0].Enabled)
+                        BaixaBalanceamento();
+                    else if (pConfig.Visible)
+                        ResetarSalvo();
             };
             this.ResumeLayout(false);
             #endregion
@@ -4072,7 +4089,7 @@
         }
 
         private byte bAtual = 43;
-        private float media = 0.0f;
+        private double media = 0.0d;
         private System.Random _Random = new System.Random();
         private System.Windows.Forms.AutoCompleteStringCollection dados = new System.Windows.Forms.AutoCompleteStringCollection();
         private bool emAtualizacao = false;
@@ -5387,6 +5404,9 @@
                     break;
                 case System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.L:
                     if (pGerador.Visible) LimparDeck();
+                    break;
+                case System.Windows.Forms.Keys.F5:
+                    if (pSelecaoDeCartas.Visible) AtualizaListaCartas();
                     break;
             }
             return base.ProcessCmdKey(ref msg, keyData);

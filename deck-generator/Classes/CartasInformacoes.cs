@@ -91,8 +91,8 @@
                 Properties.Resources.Tesla
         };
 
-        public float[] CustoElixir = { 0, 5, 3, 4, 5, 5, 4, 4, 4, 3, 3, 3, 3, 4, 3, 4, 5, 2, 2, 5, 6, 4, 3, 1, 3, 8, 3, 4, 7, 5, 3, 7, 3, 7, 6, 3, 5, 5, 2, 4, 5, 4, 4, 5, 4, 2, 2,
-        4, 2, 5, 6, 4, 6, 3, 4, 3, 3, 3, 4, 9, 3, 6, 4, 4, 5, 3, 2, 6, 1, 2, 3, 5, 3, 3, 5, 7, 4, 2, 5, 5, 6, 6, 4, 1.4f, 3, 4, 4};
+        public double[] CustoElixir = { 0, 5, 3, 4, 5, 5, 4, 4, 4, 3, 3, 3, 3, 4, 3, 4, 5, 2, 2, 5, 6, 4, 3, 1, 3, 8, 3, 4, 7, 5, 3, 7, 3, 7, 6, 3, 5, 5, 2, 4, 5, 4, 4, 5, 4, 2, 2,
+        4, 2, 5, 6, 4, 6, 3, 4, 3, 3, 3, 4, 9, 3, 6, 4, 4, 5, 3, 2, 6, 1, 2, 3, 5, 3, 3, 5, 7, 4, 2, 5, 5, 6, 6, 4, 1.4d, 3, 4, 4};
 
         public string[] CartasInformacao = {
         "Nenhuma Carta selecionada",
@@ -222,11 +222,12 @@
                 "Desative/Ative a função Voltar ao Deck anterior, em Configurações", "Não é necessário Salvar nas Configurações, desmarcando/marcando já troca as funções. Mas é necessário salvar, caso queira que elas permaneçam",
                 "Baixe outras Versões do Gerador de Deck, em Atualizador", "Alterne entre os temas Claro, Escuro e Padrão, em Configurações", "Alterne entre os modos Minimalismo/Gráfico dos Decks salvos, em Configurações",
                 "Clique em Melhores Decks, para ver os Melhores Decks de todas as arenas atualmente", "Clique em Menu de Opções para ativar o efeito de slide",
-                "Clique em Balanceamento, para ver as informações do último Balanceamento feito no Clash Royale" };
+                "Clique em Balanceamento, para ver as informações do último Balanceamento feito no Clash Royale", "Pressione F5 nos formulários para atualizá-los" };
 
         public string[] Atalhos = {
             "Pressione e segure G para Gerar Decks sem parar, em Gerador de Deck", "Pressione e segure E para Embaralhar o Deck sem parar, em Gerador de Deck", "Pressione Ctrl + C para Copiar o Deck, em Gerador de Deck",
             "Pressione Ctrl + V para Colar o Deck, em Gerador de Deck", "Pressione Ctrl + S para Salvar o Deck, em Gerador de Deck", "Pressione Ctrl + L para Limpar o Deck, em Gerador de Deck", "Pressione P em Seleção de Cartas para focar na caixa de pesquisa",
+            "Pressione F5 nos formulários para atualizá-los"
         };
 
         public byte[] deckAtual = new byte[8];
