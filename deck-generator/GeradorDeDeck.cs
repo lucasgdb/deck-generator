@@ -749,7 +749,7 @@
 
             this.picGitHub2 = new System.Windows.Forms.PictureBox
             {
-                Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right,
+                Anchor = System.Windows.Forms.AnchorStyles.Top,
                 BackColor = System.Drawing.Color.Transparent,
                 Cursor = System.Windows.Forms.Cursors.Hand,
                 Image = Properties.Resources.github.ToBitmap(),
@@ -1286,7 +1286,6 @@
             this.btnGerar.Click += (s, e) =>
             {
                 pGerador.Select();
-                Classes.ArquivoRegras.Criar();
                 GerarDeck();
             };
 
@@ -4072,7 +4071,7 @@
             else { CorEscuro(); rbEscuro.Checked = true; }
         }
 
-        private byte bAtual = 42;
+        private byte bAtual = 43;
         private float media = 0.0f;
         private System.Random _Random = new System.Random();
         private System.Windows.Forms.AutoCompleteStringCollection dados = new System.Windows.Forms.AutoCompleteStringCollection();

@@ -7,8 +7,17 @@
             try
             {
                 if (!System.IO.File.Exists(pathSCartas)) CriarArquivo();
-                else if (System.IO.File.ReadAllLines(pathSCartas).Length < 84) ReCriar();
+                else if (System.IO.File.ReadAllLines(pathSCartas).Length < 86) ReCriar();
                 else if (System.Array.IndexOf(System.IO.File.ReadAllLines(pathSCartas), string.Empty) != -1) ReCriar();
+                else
+                {
+                    string[] cartas = System.IO.File.ReadAllLines(pathSCartas);
+                    for (int i = 1; i < Gerador_de_Deck.Programa._Deck.CartasInformacao.Length; i++)
+                        if (cartas[i - 1].Split('|')[0] != Gerador_de_Deck.Programa._Deck.CartasInformacao[i].Split('\n')[0])
+                        {
+                            ReCriar(); break;
+                        }
+                }
             }
             catch { }
         }
